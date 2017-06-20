@@ -1,0 +1,16 @@
+{
+  "db": {
+    "name": "db",
+    "connector": "memory"
+  },
+  "SportmanDb": {
+    "host": "us-cdbr-sl-dfw-01.cleardb.net",
+    "port": 3306,
+    "url": "mysql://b7f5f59994dbfa:dd455d76@us-cdbr-sl-dfw-01.cleardb.net:3306/ibmx_35d1eda45baf9cc?reconnect=true",
+    "database": "ibmx_35d1eda45baf9cc",
+    "password": "dd455d76",
+    "name": "SportmanDb",
+    "user": "b7f5f59994dbfa",
+    "connector": "mysql"
+  }
+}
