@@ -37,6 +37,44 @@
   },
   "user": {
     "dataSource": "SportmanDb",
-    "public": true
+    "public": true,
+    "$promise": {},
+    "$resolved": true
+  },
+  "competition": {
+    "dataSource": "SportmanDb",
+    "public": true,
+    "$promise": {},
+    "$resolved": true
+  },
+  "fixture": {
+    "dataSource": "SportmanDb",
+    "public": true,
+    "$promise": {},
+    "$resolved": true
+  },
+  "match": {
+    "dataSource": "SportmanDb",
+    "public": true,
+    "$promise": {},
+    "$resolved": true
+  },
+  "message": {
+    "dataSource": "SportmanDb",
+    "public": true,
+    "$promise": {},
+    "$resolved": true
+  },
+   "schedule": {
+    "dataSource": "SportmanDb",
+    "public": true,
+    "$promise": {},
+    "$resolved": true
+  },
+   "team": {
+    "dataSource": "SportmanDb",
+    "public": true,
+    "$promise": {},
+    "$resolved": true
   }
 }
