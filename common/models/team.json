@@ -44,6 +44,9 @@
     "team_goalAgainst": {
       "type": "string"
     },
+    "coach_id": {
+      "type": "string"
+    },
     "team_squad": {
       "type": [
         "string"

@@ -14,8 +14,8 @@ var teams = [
     team_lose: '',
     team_goalFor: '',
     team_goalAgainst: '',
-    team_squad: [],
-    coach_id: ''
+    coach_id: 'C001',
+    team_squad: []
   }
 ];
  
