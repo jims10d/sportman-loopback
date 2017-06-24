@@ -2,8 +2,8 @@ var app = require('../server');
  
 var teams = [
   {
-    team_abrName: 'ars',
-    team_name: 'arsenal',
+    team_abrName: 'mu',
+    team_name: 'manchester united',
     team_logo: '',
     team_coach: '',
     team_position: '',
@@ -14,7 +14,8 @@ var teams = [
     team_lose: '',
     team_goalFor: '',
     team_goalAgainst: '',
-    team_squad: []
+    team_squad: [],
+    coach_id: ''
   }
 ];
  
