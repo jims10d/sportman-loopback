@@ -33,16 +33,27 @@ module.exports = function(Team) {
 
 	Team.search = function(input,cb){
 		var TeamMember = Team.app.models.User;
-		var memberResult = [];
-		TeamMember.find({where: {username: {like: input}}},
+		Team.find({where: {team_name: {like: input}}}, 
 			function (err,instance){
-				if(instance===null){
+				if (instance===null){
 					cb(null,null);
-				}else{
-					memberResult = instance;
-					cb(null,memberResult);
+				} else {
+					var teamResult = [];
+					teamResult = instance;
+					var memberResult = [];
+					TeamMember.find({where: {username: {like: input}}},
+						function (err,instance){
+							if (instance===null){
+								cb(null,null);
+							} else {
+								memberResult = instance;
+								cb(null,memberResult);
+							}
+						}
+					);
 				}
-			})	;
+			}
+		);
 	};
 
 	Team.remoteMethod(
