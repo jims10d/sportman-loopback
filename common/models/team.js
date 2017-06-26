@@ -32,7 +32,8 @@ module.exports = function(Team) {
 	};
 
 	Team.search = function(input,cb){
-		Team.find({where: {team_name: {like: input}}}, 
+		var TeamMember = Team.app.models.User;
+		TeamMember.find({where: {username: {like: input}}}, 
 			function (err,instance){
 				if (instance===null){
 					cb(null,null);
@@ -62,7 +63,7 @@ module.exports = function(Team) {
 			http: {path: '/search', verb: 'get', source: 'query'},
 			accepts: {arg: 'input', type: 'string'},
 			returns: [
-					{arg: 'team', type: 'string'}
+					{arg: 'member', type: 'string'}
 					 ]
 					
 		}
