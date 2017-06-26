@@ -65,13 +65,13 @@
     "$promise": {},
     "$resolved": true
   },
-   "schedule": {
+  "schedule": {
     "dataSource": "SportmanDb",
     "public": true,
     "$promise": {},
     "$resolved": true
   },
-   "team": {
+  "team": {
     "dataSource": "SportmanDb",
     "public": true,
     "$promise": {},

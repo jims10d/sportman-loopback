@@ -7,7 +7,7 @@
     "validateUpsert": true
   },
   "properties": {
-   "id": {
+    "id": {
       "type": "string",
       "id": true,
       "idInjection": true
@@ -35,7 +35,8 @@
   },
   "validations": [],
   "relations": {},
-  "acls": [ {
+  "acls": [
+    {
       "accessType": "EXECUTE",
       "principalType": "ROLE",
       "principalId": "$everyone",
@@ -146,6 +147,14 @@
       "principalId": "$everyone",
       "permission": "ALLOW",
       "property": "findOne"
-    }],
+    },
+    {
+      "accessType": "EXECUTE",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "ALLOW",
+      "property": "search"
+    }
+  ],
   "methods": {}
 }
