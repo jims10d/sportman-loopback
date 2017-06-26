@@ -31,6 +31,20 @@ module.exports = function(Team) {
 				});
 	};
 
+	Team.search = function(input,cb){
+		var TeamMember = Team.app.models.user;
+		var memberResult = [];
+		TeamMember.find({where: {username: {like: input}}},
+			function (err,instance){
+				if(instance===null){
+					cb(null,null);
+				}else{
+					memberResult = instance;
+					cb(null,memberResult);
+				}
+			})	;
+	};
+
 	Team.remoteMethod(
 		'addTeam',
 		{
@@ -40,6 +54,17 @@ module.exports = function(Team) {
 					],
 			http: {path: '/addTeam', verb: 'post', source: 'query'},
 			description: "Adding a team"
+		}
+	);
+
+	Team.remoteMethod(
+		'search',
+		{
+			http: {path: '/search', verb: 'get', source: 'query'},
+			accepts: {arg: 'input', type: 'string'},
+			returns: [
+					{arg: 'people', type: 'string'} ]
+					
 		}
 	);
 
