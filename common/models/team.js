@@ -32,7 +32,7 @@ module.exports = function(Team) {
 	};
 
 	Team.search = function(input,cb){
-		Team.find({where: {team_abrName: {like: input}}}, 
+		Team.find({where: {team_name: {like: input}}}, 
 			function (err,instance){
 				if (instance===null){
 					cb(null,null);
