@@ -1,13 +1,11 @@
-'use strict';
-
 var loopback = require('loopback');
 var boot = require('loopback-boot');
 
 var app = module.exports = loopback();
+app.models.user.settings.acls = require('./user.json');
 
 app.start = function() {
   // start the web server
-  app.models.user.settings.acls = require('./user.json');
   return app.listen(function() {
     app.emit('started');
     var baseUrl = app.get('url').replace(/\/$/, '');
