@@ -87,7 +87,8 @@ module.exports = function(Team) {
 			http: {path: '/search', verb: 'get', source: 'query'},
 			accepts: {arg: 'input', type: 'string'},
 			returns: [
-					{arg: 'team', type: 'string'}
+					{arg: 'team', type: 'string'},
+					{arg: 'member', type: 'string'}
 					 ]
 					
 		}
