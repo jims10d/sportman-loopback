@@ -71,7 +71,7 @@
     "$promise": {},
     "$resolved": true
   },
-   "Team": {
+   "team": {
     "dataSource": "SportmanDb",
     "public": true,
     "$promise": {},
