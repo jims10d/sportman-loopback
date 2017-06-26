@@ -45,7 +45,7 @@ module.exports = function(Team) {
 	// };
 
 	Team.search = function(input,cb){
-		var TeamMember = Team.app.models.User;
+		var TeamMember = Team.app.models.user;
 		Team.find({where: {team_name: {like: input}}}, 
 			function (err,instance){
 				if (instance===null){
