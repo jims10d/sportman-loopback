@@ -16,10 +16,6 @@
       "type": "string",
       "required": true
     },
-    "username": {
-      "type": "string",
-      "required": true
-    },
     "role": {
       "type": "string",
       "required": true
