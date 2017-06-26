@@ -21,7 +21,7 @@
     "public": false
   },
   "ACL": {
-    "dataSource": "db",
+    "dataSource": "SportmanDb",
     "public": false
   },
   "RoleMapping": {
