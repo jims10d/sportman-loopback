@@ -683,6 +683,19 @@ module.exports = function(User) {
 
 	};
 
+	User.search = function(input,cb){
+		User.find({where: {username: {like: input}}}, 
+			function (err,instance){
+				if (instance===null){
+					cb(null,null);
+				} else {
+					var userResult = instance;
+					cb(null,userResult);
+				}
+			}
+		);
+	};
+
 	// User.getDevices = function (UserId,cb){
 	// 	var http = require('https');
 	// 	var headers = {
@@ -922,6 +935,18 @@ module.exports = function(User) {
 		    ],
 		    returns: {arg: 'passwordChange', type: 'boolean'}
 		  }
+	);
+
+	User.remoteMethod(
+		'search',
+		{
+			http: {path: '/search', verb: 'get', source: 'query'},
+			accepts: {arg: 'input', type: 'string'},
+			returns: [
+					{arg: 'user', type: 'string'}
+					 ]
+					
+		}
 	);
 
 	// User.remoteMethod(
