@@ -943,7 +943,7 @@ module.exports = function(User) {
 			http: {path: '/search', verb: 'get', source: 'query'},
 			accepts: {arg: 'input', type: 'string'},
 			returns: [
-					{arg: 'user', type: 'string'}
+					{arg: 'people', type: 'string'}
 					 ]
 					
 		}
