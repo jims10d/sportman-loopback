@@ -3,9 +3,6 @@
   "base": "User",
   "strict": false,
   "idInjection": false,
-  "mixins": {
-    "ClearBaseAcls": true
-  },
   "options": {
     "validateUpsert": true
   },
@@ -135,6 +132,13 @@
       "principalId": "$everyone",
       "permission": "ALLOW",
       "property": "getDevices"
+    },
+    {
+      "accessType": "EXECUTE",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "ALLOW",
+      "property": "search"
     },
     {
       "accessType": "EXECUTE",
