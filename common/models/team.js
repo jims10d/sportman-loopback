@@ -31,15 +31,39 @@ module.exports = function(Team) {
 				});
 	};
 
+	// Team.search = function(input,cb){
+	// 	Team.find({where: {team_name: {like: input}}}, 
+	// 		function (err,instance){
+	// 			if (instance===null){
+	// 				cb(null,null);
+	// 			} else {
+	// 				var teamResult = instance;
+	// 				cb(null,teamResult);
+	// 			}
+	// 		}
+	// 	);
+	// };
+
 	Team.search = function(input,cb){
-		var TeamMember = Team.app.models.user;
-		TeamMember.find({where: {username: {like: input}}}, 
+		var TeamMember = Team.app.models.User;
+		Team.find({where: {team_name: {like: input}}}, 
 			function (err,instance){
 				if (instance===null){
 					cb(null,null);
 				} else {
-					var teamResult = instance;
-					cb(null,teamResult);
+					var teamResult = [];
+					teamResult = instance;
+					var memberResult = [];
+					TeamMember.find({where: {username: {like: input}}},
+						function (err,instance){
+							if (instance===null){
+								cb(null,null);
+							} else {
+								memberResult = instance;
+								cb(null,teamResult,memberResult);
+							}
+						}
+					);
 				}
 			}
 		);
@@ -63,7 +87,7 @@ module.exports = function(Team) {
 			http: {path: '/search', verb: 'get', source: 'query'},
 			accepts: {arg: 'input', type: 'string'},
 			returns: [
-					{arg: 'member', type: 'string'}
+					{arg: 'team', type: 'string'}
 					 ]
 					
 		}
