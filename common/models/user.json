@@ -142,6 +142,20 @@
       "principalId": "$everyone",
       "permission": "ALLOW",
       "property": "search"
+    },
+    {
+      "accessType": "EXECUTE",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "ALLOW",
+      "property": "search"
+    },
+    {
+      "accessType": "EXECUTE",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "ALLOW",
+      "property": "search"
     }
   ],
   "methods": {}
