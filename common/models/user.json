@@ -2,7 +2,7 @@
   "name": "user",
   "base": "User",
   "strict": false,
-  "idInjection": false,
+  "idInjection": true,
   "options": {
     "validateUpsert": true
   },
@@ -12,7 +12,19 @@
       "id": true,
       "idInjection": true
     },
+    "username": {
+      "type": "string",
+      "required": true
+    },
     "fullname": {
+      "type": "string",
+      "required": true
+    },
+    "password": {
+      "type": "string",
+      "required": true
+    },
+    "email": {
       "type": "string",
       "required": true
     },
