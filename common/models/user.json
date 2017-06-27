@@ -2,8 +2,8 @@
   "name": "user",
   "base": "User",
   "strict": false,
-  "idInjection": true,
   "options": {
+    "idInjection": true,
     "validateUpsert": true
   },
   "properties": {
