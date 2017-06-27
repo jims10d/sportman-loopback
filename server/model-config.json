@@ -14,14 +14,15 @@
     ]
   },
   "User": {
-    "dataSource": "db"
+    "dataSource": "db",
+    "public": false
   },
   "AccessToken": {
     "dataSource": "db",
     "public": false
   },
   "ACL": {
-    "dataSource": "db",
+    "dataSource": "SportmanDb",
     "public": false
   },
   "RoleMapping": {
