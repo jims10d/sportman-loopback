@@ -1,5 +1,3 @@
-'use strict';
-
 module.exports = function(Team) {
 	Team.addTeam = function(data, cb){
 		Team.create(data,
@@ -29,6 +27,52 @@ module.exports = function(Team) {
 						}	
 				
 				});
+	};
+
+	Team.addInvitedMember = function(Username, TeamId, cb){
+		Team.findOne({where:{id: TeamId}},
+			function(err,instance){
+				if(instance===null){
+					cb(null,null);
+				}else{
+					data = instance['Invited_member']; //get everyone who has like this Competition
+					theMembersNow = data.toString();
+					//if UserId has like this Competition
+					if(theMembersNow.includes(Username)){
+						cb(null,instance);
+					}
+					//if this is the first Competition he see
+					else if(theMembersNow === ''){
+						theMembersNow = Username;
+						Team.updateAll({id: TeamId}, {Invited_member: theMembersNow}, //update
+						function(err,info){
+							Team.findOne({where:{id: TeamId}},
+								function(err,instance){
+									if(instance===null){
+										cb(null,null);
+									}else{
+										cb(null,instance);
+									}
+								});
+						});
+					}
+					//it's only the last Competition he's seen
+					else{
+						theMembersNow = theMembersNow + ',' + Username;
+						Team.updateAll({id: TeamId}, {Invited_member: theMembersNow}, //update
+						function(err,info){
+							Team.findOne({where:{id: TeamId}},
+								function(err,instance){
+									if(instance===null){
+										cb(null,null);
+									}else{
+										cb(null,instance);
+									}
+								});
+						});
+					}
+				}				
+			});
 	};
 
 	// Team.search = function(input,cb){
@@ -91,6 +135,18 @@ module.exports = function(Team) {
 					{arg: 'member', type: 'string'}
 					 ]
 					
+		}
+	);
+
+	Team.remoteMethod(
+		'addInvitedMember',
+		{
+			accepts: [
+					{arg: 'Username', type: 'string'},
+					{arg: 'TeamId', type: 'string'}
+					],
+			returns: {arg: 'Invited_member', type: 'string', root: true},
+			http: {path: '/addInvitedMember', verb: 'put'}
 		}
 	);
 

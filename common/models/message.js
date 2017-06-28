@@ -28,7 +28,7 @@ module.exports = function(Message) {
 
 								allMessages.sort(function(a, b){ // sorting array by date (ascending)
 								    return a.date>b.date;
-								})
+								});
 								// console.log(allMessages);
 								cb(null,allMessages);
 							}
@@ -100,13 +100,13 @@ module.exports = function(Message) {
 								// console.log(instance);
 								cb(null, messageMessage, message);
 							}
-						})
+						});
 
 					
 					
 				}
-			})
-	}
+			});
+	};
 
 	Message.addReader = function(id, receiver, cb){
 		Message.findOne({where:{id:id}},
@@ -123,7 +123,7 @@ module.exports = function(Message) {
 								}else{
 									cb(null,instance);
 								}
-							})
+							});
 					});
 				}
 			});

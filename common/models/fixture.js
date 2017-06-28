@@ -1,5 +1,3 @@
-'use strict';
-
 module.exports = function(Fixture) {
 	Fixture.getMatches = function(fixtureNumber, cb){
 		var FixtureMatches = Fixture.app.models.Match;

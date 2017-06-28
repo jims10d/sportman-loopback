@@ -23,7 +23,7 @@ module.exports = function(Competition) {
 									}else{
 										cb(null,instance);
 									}
-								})
+								});
 						});
 					}
 					//it's only the last Competition he's seen
@@ -38,7 +38,7 @@ module.exports = function(Competition) {
 									}else{
 										cb(null,instance);
 									}
-								})
+								});
 						});
 					}
 				}				
@@ -58,92 +58,92 @@ module.exports = function(Competition) {
 		}
 	);
 
-var schema_v1 = {
-  "name": "competition",
-  "options": {
-    "idInjection": false,
-    "mysql": {
-      "schema": "compose",
-      "table": "COMPETITION"
-    }
-  },
-  "properties": {
-    "id": {
-      "type": "string",
-      "length": 50,
-      "id": true
-    },
-    "comp_name": {
-      "type": "string",
-      "length": 50,
-      "required": true
-    },
-    "comp_fee": {
-      "type": "number",
-      "length": 50,
-      "required": true
-    },
-    "comp_regulation": {
-      "type": "string",
-      "length": 50,
-      "required": true
-    },
-    "comp_type": {
-      "type": "string",
-      "length": 50,
-      "required": true
-    },
-    "comp_location": {
-      "type": "string",
-      "length": 50
-    },
-    "comp_finish": {
-      "type": "string",
-      "length": 50
-    },
-    "comp_start": {
-      "type": "string",
-      "length": 50
-    },
-    "register": {
-      "type": "string",
-      "length": 50
-    },
-    "comp_notes": {
-      "type": "string",
-      "length": 50
-    },
-    "comp_teams": {
-      "type": "string",
-      "length": 50
-    },
-    "comp_award": {
-      "type": "string",
-      "length": 50
-    }
-  }
-};
-	var loopback = require('loopback');
-	var app = loopback();
-	var DataSource = require('loopback-datasource-juggler').DataSource;
-	var ds = new DataSource({
-		connector: require('loopback-connector-mysql'),
-		host: 'sl-us-south-1-portal.1.dblayer.com',
-		port: 17034,
-		database: 'compose',
-		username: 'admin',
-		password: 'DTNXDTJQNQXDYVAZ',
-	});
+// var schema_v1 = {
+//   "name": "competition",
+//   "options": {
+//     "idInjection": false,
+//     "mysql": {
+//       "schema": "compose",
+//       "table": "COMPETITION"
+//     }
+//   },
+//   "properties": {
+//     "id": {
+//       "type": "string",
+//       "length": 50,
+//       "id": true
+//     },
+//     "comp_name": {
+//       "type": "string",
+//       "length": 50,
+//       "required": true
+//     },
+//     "comp_fee": {
+//       "type": "number",
+//       "length": 50,
+//       "required": true
+//     },
+//     "comp_regulation": {
+//       "type": "string",
+//       "length": 50,
+//       "required": true
+//     },
+//     "comp_type": {
+//       "type": "string",
+//       "length": 50,
+//       "required": true
+//     },
+//     "comp_location": {
+//       "type": "string",
+//       "length": 50
+//     },
+//     "comp_finish": {
+//       "type": "string",
+//       "length": 50
+//     },
+//     "comp_start": {
+//       "type": "string",
+//       "length": 50
+//     },
+//     "register": {
+//       "type": "string",
+//       "length": 50
+//     },
+//     "comp_notes": {
+//       "type": "string",
+//       "length": 50
+//     },
+//     "comp_teams": {
+//       "type": "string",
+//       "length": 50
+//     },
+//     "comp_award": {
+//       "type": "string",
+//       "length": 50
+//     }
+//   }
+// };
+// 	var loopback = require('loopback');
+// 	var app = loopback();
+// 	var DataSource = require('loopback-datasource-juggler').DataSource;
+// 	var ds = new DataSource({
+// 		connector: require('loopback-connector-mysql'),
+// 		host: 'sl-us-south-1-portal.1.dblayer.com',
+// 		port: 17034,
+// 		database: 'compose',
+// 		username: 'admin',
+// 		password: 'DTNXDTJQNQXDYVAZ',
+// 	});
 	// var Model = app.models();
 	// var ds = app.dataSource('db');
 
-	ds.createModel(schema_v1.name, schema_v1.properties, schema_v1.options);
+	// ds.createModel(schema_v1.name, schema_v1.properties, schema_v1.options);
 
-	ds.autoupdate(function () {
-	  ds.discoverModelProperties('COMPETITION', function (err, props) {
-	    console.log(props);
-	  });
-	});
+	// ds.autoupdate(function () {
+	//   ds.discoverModelProperties('COMPETITION', function (err, props) {
+	//     console.log(props);
+	//   });
+	// });
 
 };
 
