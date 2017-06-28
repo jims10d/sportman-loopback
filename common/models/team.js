@@ -35,7 +35,7 @@ module.exports = function(Team) {
 				if(instance===null){
 					cb(null,null);
 				}else{
-					data = instance['.invited_member']; //get everyone who has like this Competition
+					data = instance['invited_member']; //get everyone who has like this Competition
 					theMembersNow = data.toString();
 					//if UserId has like this Competition
 					if(theMembersNow.includes(Username)){
