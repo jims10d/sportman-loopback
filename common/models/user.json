@@ -31,6 +31,9 @@
     "role": {
       "type": "string",
       "required": true
+    },
+    "teamInvitation": {
+      "type": "string"
     }
   },
   "validations": [],
