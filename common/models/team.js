@@ -35,7 +35,7 @@ module.exports = function(Team) {
 				if(instance===null){
 					cb(null,null);
 				}else{
-					data = instance['Invited_member']; //get everyone who has like this Competition
+					data = instance['.invited_member']; //get everyone who has like this Competition
 					theMembersNow = data.toString();
 					//if UserId has like this Competition
 					if(theMembersNow.includes(Username)){
@@ -44,7 +44,7 @@ module.exports = function(Team) {
 					//if this is the first Competition he see
 					else if(theMembersNow === ''){
 						theMembersNow = Username;
-						Team.updateAll({id: TeamId}, {Invited_member: theMembersNow}, //update
+						Team.updateAll({id: TeamId}, {invited_member: theMembersNow}, //update
 						function(err,info){
 							Team.findOne({where:{id: TeamId}},
 								function(err,instance){
@@ -59,7 +59,7 @@ module.exports = function(Team) {
 					//it's only the last Competition he's seen
 					else{
 						theMembersNow = theMembersNow + ',' + Username;
-						Team.updateAll({id: TeamId}, {Invited_member: theMembersNow}, //update
+						Team.updateAll({id: TeamId}, {invited_member: theMembersNow}, //update
 						function(err,info){
 							Team.findOne({where:{id: TeamId}},
 								function(err,instance){
