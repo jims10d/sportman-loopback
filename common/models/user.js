@@ -696,6 +696,52 @@ module.exports = function(User) {
 		);
 	};
 
+	User.addTeamInvitation = function(TeamName, UserId, cb){
+		User.findOne({where:{id: UserId}},
+			function(err,instance){
+				if(instance===null){
+					cb(null,null);
+				}else{
+					data = instance['teamInvitation']; //get everyone who has like this Competition
+					theTeamsNow = data.toString();
+					//if UserId has like this Competition
+					if(theTeamsNow.includes(TeamName)){
+						cb(null,instance);
+					}
+					//if this is the first Competition he see
+					else if(theTeamsNow === ''){
+						theTeamsNow = TeamName;
+						User.updateAll({id: UserId}, {teamInvitation: theTeamsNow}, //update
+						function(err,info){
+							User.findOne({where:{id: UserId}},
+								function(err,instance){
+									if(instance===null){
+										cb(null,null);
+									}else{
+										cb(null,instance);
+									}
+								});
+						});
+					}
+					//it's only the last Competition he's seen
+					else{
+						theTeamsNow = theTeamsNow + ',' + TeamName;
+						User.updateAll({id: UserId}, {teamInvitation: theTeamsNow}, //update
+						function(err,info){
+							User.findOne({where:{id: UserId}},
+								function(err,instance){
+									if(instance===null){
+										cb(null,null);
+									}else{
+										cb(null,instance);
+									}
+								});
+						});
+					}
+				}				
+			});
+	};
+
 	// User.getDevices = function (UserId,cb){
 	// 	var http = require('https');
 	// 	var headers = {
@@ -946,6 +992,18 @@ module.exports = function(User) {
 					{arg: 'people', type: 'string'}
 					 ]
 					
+		}
+	);
+
+	User.remoteMethod(
+		'addTeamInvitation',
+		{
+			accepts: [
+					{arg: 'TeamName', type: 'string'},
+					{arg: 'UserId', type: 'string'}
+					],
+			returns: {arg: 'teamInvitation', type: 'string', root: true},
+			http: {path: '/addTeamInvitation', verb: 'put'}
 		}
 	);
 
