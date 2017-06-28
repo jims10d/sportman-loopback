@@ -47,6 +47,9 @@
     "coach_id": {
       "type": "string"
     },
+    "invited_member": {
+      "type": "string"
+    },
     "team_squad": {
       "type": [
         "string"
