@@ -36,13 +36,9 @@ module.exports = function(Team) {
 					cb(null,null);
 				}else{
 					data = instance['invited_member']; //get everyone who has like this Competition
-					theMembersNow = data.toString();
-					//if UserId has like this Competition
-					if(theMembersNow.includes(Username)){
-						cb(null,instance);
-					}
-					//if this is the first Competition he see
-					else if(theMembersNow === ''){
+					if(data === null){
+						//if this is the first Competition he see
+						console.log("tes");
 						theMembersNow = Username;
 						Team.updateAll({id: TeamId}, {invited_member: theMembersNow}, //update
 						function(err,info){
@@ -55,22 +51,28 @@ module.exports = function(Team) {
 									}
 								});
 						});
+					} else {
+						theMembersNow = data.toString();
+						//if UserId has like this Competition
+						if(theMembersNow.includes(Username)){
+							cb(null,instance);
+						}else{
+							//it's only the last Competition he's seen
+							theMembersNow = theMembersNow + ',' + Username;
+							Team.updateAll({id: TeamId}, {invited_member: theMembersNow}, //update
+							function(err,info){
+								Team.findOne({where:{id: TeamId}},
+									function(err,instance){
+										if(instance===null){
+											cb(null,null);
+										}else{
+											cb(null,instance);
+										}
+									});
+							});
+						}
 					}
-					//it's only the last Competition he's seen
-					else{
-						theMembersNow = theMembersNow + ',' + Username;
-						Team.updateAll({id: TeamId}, {invited_member: theMembersNow}, //update
-						function(err,info){
-							Team.findOne({where:{id: TeamId}},
-								function(err,instance){
-									if(instance===null){
-										cb(null,null);
-									}else{
-										cb(null,instance);
-									}
-								});
-						});
-					}
+					
 				}				
 			});
 	};
