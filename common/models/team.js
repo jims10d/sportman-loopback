@@ -88,6 +88,54 @@ module.exports = function(Team) {
 			});
 	};
 
+	Team.addMemberByName = function(Member, TeamName, cb){
+		Team.findOne({where:{team_name: TeamName}},
+			function(err,instance){
+				if(instance===null){
+					cb(null,null);
+				}else{
+					data = instance['team_squad']; //get everyone who has like this Competition
+					if(data === null){
+						//if this is the first Competition he see
+						console.log("tes");
+						theMembersNow = Member;
+						Team.updateAll({team_name: TeamName}, {team_squad: theMembersNow}, //update
+						function(err,info){
+							Team.findOne({where:{team_name: TeamName}},
+								function(err,instance){
+									if(instance===null){
+										cb(null,null);
+									}else{
+										cb(null,instance);
+									}
+								});
+						});
+					} else {
+						theMembersNow = data.toString();
+						//if UserId has like this Competition
+						if(theMembersNow.includes(Member)){
+							cb(null,instance);
+						}else{
+							//it's only the last Competition he's seen
+							theMembersNow = theMembersNow + ',' + Member;
+							Team.updateAll({team_name: TeamName}, {team_squad: theMembersNow}, //update
+							function(err,info){
+								Team.findOne({where:{team_name: TeamName}},
+									function(err,instance){
+										if(instance===null){
+											cb(null,null);
+										}else{
+											cb(null,instance);
+										}
+									});
+							});
+						}
+					}
+					
+				}				
+			});
+	};
+
 	// Team.search = function(input,cb){
 	// 	Team.find({where: {team_name: {like: input}}}, 
 	// 		function (err,instance){
@@ -170,6 +218,18 @@ module.exports = function(Team) {
 					],
 			returns: {arg: 'Invited_member', type: 'string', root: true},
 			http: {path: '/addInvitedMember', verb: 'put'}
+		}
+	);
+
+	Team.remoteMethod(
+		'addMemberByName',
+		{
+			accepts: [
+					{arg: 'Member', type: 'string'},
+					{arg: 'TeamName', type: 'string'}
+					],
+			returns: {arg: 'Team_squad', type: 'string', root: true},
+			http: {path: '/addMemberByName', verb: 'put'}
 		}
 	);
 
