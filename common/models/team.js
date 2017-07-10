@@ -1,4 +1,15 @@
 module.exports = function(Team) {
+	Team.getTeamByName = function(teamName, cb){
+		Team.findOne({fields: {id: false}, where:{team_name:teamName}},
+			function(err,instance){
+				if(instance===null){
+					cb(null,null);
+				}else{
+					cb(null,instance);
+				}
+			});
+	};
+
 	Team.addTeam = function(data, cb){
 		Team.create(data,
 			function(err, instance){
@@ -114,6 +125,16 @@ module.exports = function(Team) {
 			}
 		);
 	};
+
+	Team.remoteMethod(
+		'getTeamByName',
+		{
+			accepts: {arg: 'teamName', type: 'string'},
+			returns: {arg: 'id', type: 'string', root: true},
+			http: {path: '/getTeamByName', verb: 'get', source: 'query'},
+			description: "Get Team instance by team name"
+		}
+	);
 
 	Team.remoteMethod(
 		'addTeam',
