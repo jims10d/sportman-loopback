@@ -51,9 +51,7 @@
       "type": "string"
     },
     "team_squad": {
-      "type": [
-        "string"
-      ]
+      "type": "string"
     }
   },
   "validations": [],
