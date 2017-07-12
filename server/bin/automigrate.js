@@ -2,13 +2,13 @@ var app = require('../server');
 
 var users = [ // kecils
   {
-    id: 'U017',
-    username: 'usor',
-    fullname: 'usorlando',
-    password: 'usorr',
-    email: 'usorr@gmail.com',
+    id: 'U018',
+    username: 'brook',
+    fullname: 'brook',
+    password: 'brook',
+    email: 'brook@gmail.com',
     role: 'player',
-    teamInvitation: '',
+    teamInvitation: 'onepiece',
     team: 'blacker'
   }
 ];
