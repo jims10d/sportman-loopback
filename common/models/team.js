@@ -136,6 +136,41 @@ module.exports = function(Team) {
 			});
 	};
 
+	Team.delInvitedMember = function(TeamName , userInvited, cb){
+		Team.findOne({where:{team_name: TeamName}},
+			function(err,instance){
+				if(instance===null){
+					cb(null,null);
+				}else{
+					InvitedMember = instance['invited_member']; //get every posts he has liked
+					InvitedMemberNow = InvitedMember.toString(); //store all post he has liked now to string
+					//if the postId is in mid
+					if(InvitedMemberNow.includes(userInvited + ',')){
+						InvitedMemberNow = InvitedMemberNow.replace(userInvited + ',','');
+					}
+					//if the postId at the last
+					else if(InvitedMemberNow.includes(',' + userInvited)){
+						InvitedMemberNow = InvitedMemberNow.replace(',' + userInvited,'');
+					}
+					//postId is at the first
+					else {						
+						InvitedMemberNow = InvitedMemberNow.replace(userInvited,'');
+					}
+					Team.updateAll({team_name: TeamName}, {invited_member: InvitedMemberNow}, //update
+					function(err,info){
+						Team.findOne({where:{team_name: TeamName}},
+							function(err,instance){
+								if(instance===null){
+									cb(null,null);
+								}else{
+									cb(null,instance);
+								}
+							});
+					});
+				}				
+			});
+	};
+
 	// Team.search = function(input,cb){
 	// 	Team.find({where: {team_name: {like: input}}}, 
 	// 		function (err,instance){
@@ -230,6 +265,18 @@ module.exports = function(Team) {
 					],
 			returns: {arg: 'Team_squad', type: 'string', root: true},
 			http: {path: '/addMemberByName', verb: 'put'}
+		}
+	);
+
+	Team.remoteMethod(
+		'delInvitedMember',
+		{
+			accepts: [
+					{arg: 'TeamName', type: 'string'},
+					{arg: 'userInvited', type: 'string'}
+					],
+			returns: {arg: 'invited_member', type: 'string', root: true},
+			http: {path: '/delInvitedMember', verb: 'put'}
 		}
 	);
 
