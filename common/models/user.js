@@ -744,6 +744,41 @@ module.exports = function(User) {
 			});
 	};
 
+	User.delTeamInvitation = function(UserName , teamInvite, cb){
+		User.findOne({where:{username: UserName}},
+			function(err,instance){
+				if(instance===null){
+					cb(null,null);
+				}else{
+					TeamInvitation = instance['teamInvitation']; //get every posts he has liked
+					TeamInvitationNow = TeamInvitation.toString(); //store all post he has liked now to string
+					//if the postId is in mid
+					if(TeamInvitationNow.includes(teamInvite + ',')){
+						TeamInvitationNow = TeamInvitationNow.replace(teamInvite + ',','');
+					}
+					//if the postId at the last
+					else if(TeamInvitationNow.includes(',' + teamInvite)){
+						TeamInvitationNow = TeamInvitationNow.replace(',' + teamInvite,'');
+					}
+					//postId is at the first
+					else {						
+						TeamInvitationNow = TeamInvitationNow.replace(teamInvite,'');
+					}
+					User.updateAll({username: UserName}, {teamInvitation: TeamInvitationNow}, //update
+					function(err,info){
+						User.findOne({where:{username: UserName}},
+							function(err,instance){
+								if(instance===null){
+									cb(null,null);
+								}else{
+									cb(null,instance);
+								}
+							})
+					});
+				}				
+			});
+	};
+
 	// User.getDevices = function (UserId,cb){
 	// 	var http = require('https');
 	// 	var headers = {
@@ -1006,6 +1041,18 @@ module.exports = function(User) {
 					],
 			returns: {arg: 'teamInvitation', type: 'string', root: true},
 			http: {path: '/addTeamInvitation', verb: 'put'}
+		}
+	);
+
+	User.remoteMethod(
+		'delTeamInvitation',
+		{
+			accepts: [
+					{arg: 'UserName', type: 'string'},
+					{arg: 'teamInvite', type: 'string'}
+					],
+			returns: {arg: 'teamInvitation', type: 'string', root: true},
+			http: {path: '/delTeamInvitation', verb: 'put'}
 		}
 	);
 
