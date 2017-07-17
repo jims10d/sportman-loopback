@@ -744,6 +744,54 @@ module.exports = function(User) {
 			});
 	};
 
+	User.addRequestedTeam = function(TeamName, UserId, cb){
+		User.findOne({where:{id: UserId}},
+			function(err,instance){
+				if(instance===null){
+					cb(null,null);
+				}else{
+					data = instance['teamRequested']; //get everyone who has like this Competition
+					if(data === null || data === ''){
+						//if this is the first Competition he see
+						console.log("tes");
+						theTeamsNow = TeamName;
+						User.updateAll({id: UserId}, {teamRequested: theTeamsNow}, //update
+						function(err,info){
+							User.findOne({where:{id: UserId}},
+								function(err,instance){
+									if(instance===null){
+										cb(null,null);
+									}else{
+										cb(null,instance);
+									}
+								});
+						});
+					} else {
+						theTeamsNow = data.toString();
+						//if UserId has like this Competition
+						if(theTeamsNow.includes(TeamName)){
+							cb(null,instance);
+						}else{
+							//it's only the last Competition he's seen
+							theTeamsNow = theTeamsNow + ',' + TeamName;
+							User.updateAll({id: UserId}, {teamRequested: theTeamsNow}, //update
+							function(err,info){
+								User.findOne({where:{id: UserId}},
+									function(err,instance){
+										if(instance===null){
+											cb(null,null);
+										}else{
+											cb(null,instance);
+										}
+									});
+							});
+						}
+					}
+					
+				}				
+			});
+	};
+
 	User.delTeamInvitation = function(UserName , teamInvite, cb){
 		User.findOne({where:{username: UserName}},
 			function(err,instance){
@@ -1088,6 +1136,18 @@ module.exports = function(User) {
 					],
 			returns: {arg: 'teamInvitation', type: 'string', root: true},
 			http: {path: '/addTeamInvitation', verb: 'put'}
+		}
+	);
+
+	User.remoteMethod(
+		'addRequestedTeam',
+		{
+			accepts: [
+					{arg: 'TeamName', type: 'string'},
+					{arg: 'UserId', type: 'string'}
+					],
+			returns: {arg: 'teamRequested', type: 'string', root: true},
+			http: {path: '/addRequestedTeam', verb: 'put'}
 		}
 	);
 
