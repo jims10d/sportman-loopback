@@ -37,6 +37,9 @@
     },
     "team": {
       "type": "string"
+    },
+    "teamRequested": {
+      "type": "string"
     }
   },
   "validations": [],
