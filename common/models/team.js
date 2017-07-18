@@ -219,6 +219,88 @@ module.exports = function(Team) {
 			});
 	};
 
+	Team.addMember = function(Username, TeamId, cb){
+		Team.findOne({where:{id: TeamId}},
+			function(err,instance){
+				if(instance===null){
+					cb(null,null);
+				}else{
+					data = instance['team_squad']; //get everyone who has like this Competition
+					if(data === null){
+						//if this is the first Competition he see
+						console.log("tes");
+						theTeamsNow = Username;
+						Team.updateAll({id: TeamId}, {team_squad: theTeamsNow}, //update
+						function(err,info){
+							Team.findOne({where:{id: TeamId}},
+								function(err,instance){
+									if(instance===null){
+										cb(null,null);
+									}else{
+										cb(null,instance);
+									}
+								});
+						});
+					} else {
+						theTeamsNow = data.toString();
+						//if UserId has like this Competition
+						if(theTeamsNow.includes(Username)){
+							cb(null,instance);
+						}else{
+							//it's only the last Competition he's seen
+							theTeamsNow = theTeamsNow + ',' + Username;
+							Team.updateAll({id: TeamId}, {team_squad: theTeamsNow}, //update
+							function(err,info){
+								Team.findOne({where:{id: TeamId}},
+									function(err,instance){
+										if(instance===null){
+											cb(null,null);
+										}else{
+											cb(null,instance);
+										}
+									});
+							});
+						}
+					}
+					
+				}				
+			});
+	};
+
+	Team.delUserRequest = function(TeamName , userRequest, cb){
+		Team.findOne({where:{team_name: TeamName}},
+			function(err,instance){
+				if(instance===null){
+					cb(null,null);
+				}else{
+					UserRequest = instance['user_request']; //get every posts he has liked
+					UserRequestNow = UserRequest.toString(); //store all post he has liked now to string
+					//if the postId is in mid
+					if(UserRequestNow.includes(userRequest + ',')){
+						UserRequestNow = UserRequestNow.replace(userRequest + ',','');
+					}
+					//if the postId at the last
+					else if(UserRequestNow.includes(',' + userRequest)){
+						UserRequestNow = UserRequestNow.replace(',' + userRequest,'');
+					}
+					//postId is at the first
+					else {						
+						UserRequestNow = UserRequestNow.replace(userRequest,'');
+					}
+					Team.updateAll({team_name: TeamName}, {user_request: UserRequestNow}, //update
+					function(err,info){
+						Team.findOne({where:{team_name: TeamName}},
+							function(err,instance){
+								if(instance===null){
+									cb(null,null);
+								}else{
+									cb(null,instance);
+								}
+							});
+					});
+				}				
+			});
+	};
 	// Team.search = function(input,cb){
 	// 	Team.find({where: {team_name: {like: input}}}, 
 	// 		function (err,instance){
@@ -337,6 +419,30 @@ module.exports = function(Team) {
 					],
 			returns: {arg: 'invited_member', type: 'string', root: true},
 			http: {path: '/delInvitedMember', verb: 'put'}
+		}
+	);
+
+	Team.remoteMethod(
+		'addMember',
+		{
+			accepts: [
+					{arg: 'Username', type: 'string'},
+					{arg: 'TeamId', type: 'string'}
+					],
+			returns: {arg: 'team_squad', type: 'string', root: true},
+			http: {path: '/addMember', verb: 'put'}
+		}
+	);
+
+	Team.remoteMethod(
+		'delUserRequest',
+		{
+			accepts: [
+					{arg: 'TeamName', type: 'string'},
+					{arg: 'userRequest', type: 'string'}
+					],
+			returns: {arg: 'user_request', type: 'string', root: true},
+			http: {path: '/delUserRequest', verb: 'put'}
 		}
 	);
 
