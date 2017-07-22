@@ -17,8 +17,7 @@ var teams = [ // kecils
     coach_id: 'C004',
     invited_member: 'shanks',
     team_squad: {id:71,username:'james'},
-    user_request: '',
-    id: 'T001',
+    user_request: ''
   }
 ];
  
