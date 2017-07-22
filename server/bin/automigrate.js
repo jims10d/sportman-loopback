@@ -2,10 +2,10 @@ var app = require('../server');
 
 var teams = [ // kecils
   {
-    team_abrName: 'Ars',
-    team_name: 'Arsenal FC',
+    team_abrName: 'MCI',
+    team_name: 'Man City FC',
     team_logo: '',
-    team_coach: 'Arsene Wenger',
+    team_coach: 'Pep Guardiola',
     team_position: '1',
     team_play: '10',
     team_point: '30',
