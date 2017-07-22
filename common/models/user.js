@@ -1,6 +1,6 @@
 module.exports = function(User) {
 	User.getUser = function(username, cb){
-		User.findOne({fields: {id: false}, where:{username:username}},
+		User.findOne({where:{username:username}},
 			function(err,instance){
 				if(instance===null){
 					cb(null,null);
