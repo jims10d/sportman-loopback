@@ -16,11 +16,9 @@ var teams = [ // kecils
     team_goalAgainst: '0',
     coach_id: 'C004',
     invited_member: 'shanks',
-    team_squad: [
-      {id:81,username:'jamie'},
-      {id:21,username:'jaes'},
-    ],  
-    user_request: ''
+    team_squad: {id:71,username:'james'},
+    user_request: '',
+    id: 'T001',
   }
 ];
  
