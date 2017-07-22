@@ -51,7 +51,9 @@
       "type": "string"
     },
     "team_squad": {
-      "type": "string"
+      "type": [
+        "object"
+      ]
     },
     "user_request": {
       "type": "string"

@@ -2,10 +2,10 @@ var app = require('../server');
 
 var teams = [ // kecils
   {
-    team_abrName: 'SFC',
-    team_name: 'Spirit FC',
+    team_abrName: 'Ars',
+    team_name: 'Arsenal FC',
     team_logo: '',
-    team_coach: 'Spirit Walker',
+    team_coach: 'Arsene Wenger',
     team_position: '1',
     team_play: '10',
     team_point: '30',
@@ -14,10 +14,10 @@ var teams = [ // kecils
     team_lose: '0',
     team_goalFor: '30',
     team_goalAgainst: '0',
-    coach_id: 'C011',
+    coach_id: 'C004',
     invited_member: 'shanks',
-    team_squad: 'ace',
-    user_request: 'luffy'
+    team_squad: {id:71,username:'james'},
+    user_request: ''
   }
 ];
  
