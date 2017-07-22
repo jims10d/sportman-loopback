@@ -50,9 +50,9 @@
     "invited_member": {
       "type": "string"
     },
-    "team_squad": [{
-      "type": "object"
-    }],
+    "team_squad": {
+      "type": "string"
+    },
     "user_request": {
       "type": "string"
     }
