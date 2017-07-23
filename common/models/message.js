@@ -38,7 +38,7 @@ module.exports = function(Message) {
 	};
 
 	Message.addMessage = function(data, cb){
-		var User = Message.app.models.User;
+		var User = Message.app.models.user;
 		Message.create(data,
 			function(err, instance){
 				if(instance===null){
