@@ -22,7 +22,7 @@ module.exports = function(User) {
 	};
 
 	User.getTeamSquad = function(teamName, cb){
-		User.find({where:{team:teamName}, order: 'username asc' },
+		User.find({where:{team:{like:teamName}}, order: 'username asc' },
 			function(err,instance){
 				if(instance===null){
 					cb(null,null);
