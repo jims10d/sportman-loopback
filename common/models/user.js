@@ -21,8 +21,8 @@ module.exports = function(User) {
 			});
 	};
 
-	User.getContacts = function(cb){
-		User.find({fields: {id:true, username: true, name: true, division:true, photo:true}, order: 'name asc'},
+	User.getTeamSquad = function(teamName, cb){
+		User.find({where:{team:teamName}, order: 'username asc' },
 			function(err,instance){
 				if(instance===null){
 					cb(null,null);
@@ -1057,11 +1057,11 @@ module.exports = function(User) {
 
 
 	User.remoteMethod(
-		'getContacts',
+		'getTeamSquad',
 		{
 			// accepts: {arg: 'id', type: 'string'},
 			returns: {arg: 'id', type: 'string', root: true},
-			http: {path: '/getContacts', verb: 'get', source: 'query'},
+			http: {path: '/getTeamSquad', verb: 'get', source: 'query'},
 			// description: "G"
 		}
 	);
