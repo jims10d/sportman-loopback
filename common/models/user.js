@@ -1059,7 +1059,7 @@ module.exports = function(User) {
 	User.remoteMethod(
 		'getTeamSquad',
 		{
-			// accepts: {arg: 'id', type: 'string'},
+			accepts: {arg: 'team', type: 'string'},
 			returns: {arg: 'id', type: 'string', root: true},
 			http: {path: '/getTeamSquad', verb: 'get', source: 'query'},
 			// description: "G"

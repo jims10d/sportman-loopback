@@ -99,7 +99,7 @@
       "principalType": "ROLE",
       "principalId": "$authenticated",
       "permission": "ALLOW",
-      "property": "getContacts"
+      "property": "getTeamSquad"
     },
     {
       "accessType": "EXECUTE",
