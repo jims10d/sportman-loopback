@@ -38,7 +38,7 @@ module.exports = function(Message) {
 	};
 
 	Message.addMessage = function(data, cb){
-		var Employee = Message.app.models.Employee;
+		var User = Message.app.models.User;
 		Message.create(data,
 			function(err, instance){
 				if(instance===null){
@@ -49,7 +49,7 @@ module.exports = function(Message) {
 					// var receiver_name = instance['receiver_name'];
 					var messageId = instance['id'];
 					var messageContent = instance['content'];
-					Employee.findOne({fields: {id: false}, where: {username: receiver}},
+					User.findOne({fields: {id: false}, where: {username: receiver}},
 						function(err, info){
 							if(info===null){
 								cb(null, null);
