@@ -1,23 +1,16 @@
 var app = require('../server');
 
-var teams = [ // kecils
+var matches = [ // kecils
   {
-    team_abrName: 'SFC',
-    team_name: 'Spirit FC',
-    team_logo: '',
-    team_coach: 'Spirit Walker',
-    team_position: '1',
-    team_play: '10',
-    team_point: '30',
-    team_win: '10',
-    team_draw: '0',
-    team_lose: '0',
-    team_goalFor: '30',
-    team_goalAgainst: '0',
-    coach_id: 'C011',
-    invited_member: 'shanks',
-    team_squad: 'ace',
-    user_request: 'luffy'
+    match_name: 'SFC',
+    match_venue: 'Spirit FC',
+    match_time: '08:00',
+    match_date: '29 Juli 2017',
+    match_referee: 'sdfsfs',
+    match_homeTeam: 'qwerty',
+    match_awayTeam: 'asdfg',
+    match_fixture: '10',
+    match_started: 'false',
   }
 ];
  
@@ -25,15 +18,15 @@ var teams = [ // kecils
 var dataSource = app.dataSources.SportmanDb;
  
 // this automigrates the Account model 
-dataSource.autoupdate('team', function(err) { // kecil
+dataSource.autoupdate('match', function(err) { // kecil
   if (err) throw err;
  
   // this loads the Account model from ~/common/models/Account.json
-  var Team = app.models.Team; // besar
-  var count = teams.length; // kecils
-  teams.forEach(function(team) { // kecils kecil
+  var Match = app.models.Match; // besar
+  var count = matches.length; // kecils
+  matches.forEach(function(match) { // kecils kecil
      // insert new records into the Account table
-     Team.create(team, function(err, record) { // besar kecil
+     Match.create(match, function(err, record) { // besar kecil
       if (err) return console.log(err);
  
       console.log('Record created:', record);

@@ -30,6 +30,9 @@
     },
     "match_fixture": {
       "type": "string"
+    },
+    "match_started": {
+      "type": "string"
     }
   },
   "validations": [],
