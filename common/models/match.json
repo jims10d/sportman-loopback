@@ -32,7 +32,8 @@
       "type": "string"
     },
     "match_started": {
-      "type": "string"
+      "type": "boolean",
+      "default": "false"
     }
   },
   "validations": [],
