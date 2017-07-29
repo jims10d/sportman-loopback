@@ -11,6 +11,8 @@ var matches = [ // kecils
     match_awayTeam: 'asdfg',
     match_fixture: '10',
     match_started: 'false',
+    match_homeScore: '2',
+    match_awayScore: '1',
   }
 ];
  

@@ -32,8 +32,13 @@
       "type": "string"
     },
     "match_started": {
-      "type": "boolean",
-      "default": "false"
+      "type": "string"
+    },
+    "match_homeScore": {
+      "type": "number"
+    },
+    "match_awayScore": {
+      "type": "number"
     }
   },
   "validations": [],
