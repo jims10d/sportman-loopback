@@ -192,7 +192,28 @@ module.exports = function(Message) {
 				}
 			}
 		);
-	}
+	};
+
+	Message.delMessage = function(senderName, cb){
+		Message.destroy({where:{sender:senderName}},
+			function(err,instance){
+				if(instance===null){
+					cb(null,null);
+				}else{
+					cb(null,instance);
+				}
+			});
+	};
+
+	Message.remoteMethod(
+		'delMessage',
+		{
+			accepts: {arg: 'senderName', type: 'string'},
+			returns: {arg: 'id', type: 'string', root: true},
+			http: {path: '/delMessage', verb: 'delete', source: 'query'},
+			description: "Get Team instance by team name"
+		}
+	);
 
 	Message.remoteMethod(
 		'recentChats',
