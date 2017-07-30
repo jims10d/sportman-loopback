@@ -7,11 +7,6 @@
     "validateUpsert": true
   },
   "properties": {
-    "id": {
-      "type": "string",
-      "id": true,
-      "idInjection": true
-    },
     "date": {
       "type": "date",
       "required": false
@@ -30,6 +25,11 @@
     },
     "receiver_name": {
       "type": "string",
+      "required": true
+    },
+    "id": {
+      "type": "string",
+      "id": true,
       "required": true
     },
     "content": {
