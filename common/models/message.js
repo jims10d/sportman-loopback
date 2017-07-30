@@ -1,6 +1,6 @@
 module.exports = function(Message) {
 	Message.getMessage = function(sender, receiver, cb){
-		Message.find({fields: {id:false}, where:{sender: sender, receiver: receiver}}, // get all data except id from database
+		Message.find({where:{sender: sender, receiver: receiver}}, // get all data except id from database
 			function(err,instance){
 				if(instance===null){
 					cb(null,null);
