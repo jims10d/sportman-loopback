@@ -40,6 +40,10 @@
       "type": "string",
       "required": false
     },
+    "readStatus": {
+      "type": "string",
+      "required": false
+    },
     "photo": {
       "type": "string",
       "required": false
