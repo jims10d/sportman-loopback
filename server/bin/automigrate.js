@@ -10,7 +10,8 @@ var messages = [ // kecils
     content: 'hello luffy',
     read: '',
     readStatus: 'false',
-    photo: ''
+    photo: '',
+    id: '23423423'
   }
 ];
  
