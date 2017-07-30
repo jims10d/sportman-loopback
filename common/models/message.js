@@ -14,7 +14,7 @@ module.exports = function(Message) {
 					  allMessages.push(parsed[x]); // push senderMessage to allMessages
 					}
 
-					Message.find({fields: {id:false}, where:{sender: receiver, receiver: sender}},
+					Message.find({where:{sender: receiver, receiver: sender}},
 						function(err,instance){
 							if(instance===null){
 								cb(null,null);
@@ -49,7 +49,7 @@ module.exports = function(Message) {
 					// var receiver_name = instance['receiver_name'];
 					var messageId = instance['id'];
 					var messageContent = instance['content'];
-					User.findOne({fields: {id: false}, where: {username: receiver}},
+					User.findOne({where: {username: receiver}},
 						function(err, info){
 							if(info===null){
 								cb(null, null);
