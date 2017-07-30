@@ -14,7 +14,7 @@ module.exports = function(Message) {
 					  allMessages.push(parsed[x]); // push senderMessage to allMessages
 					}
 
-					Message.find({where:{sender: receiver, receiver: sender}},
+					Message.find({fields: {id:false}, where:{sender: receiver, receiver: sender}},
 						function(err,instance){
 							if(instance===null){
 								cb(null,null);

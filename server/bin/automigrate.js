@@ -7,6 +7,7 @@ var messages = [ // kecils
     receiver: 'luffy',
     sender_name: 'jimmy',
     receiver_name: 'luffy',
+    id: 'm007',
     content: 'hello luffy',
     read: '',
     readStatus: 'false',

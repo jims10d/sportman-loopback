@@ -30,7 +30,7 @@
     "id": {
       "type": "string",
       "id": true,
-      "required": true
+      "required": false
     },
     "content": {
       "type": "string",
