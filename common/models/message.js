@@ -49,7 +49,7 @@ module.exports = function(Message) {
 					// var receiver_name = instance['receiver_name'];
 					var messageId = instance['id'];
 					var messageContent = instance['content'];
-					User.findOne({where: {username: receiver}},
+					User.findOne({fields: {id: false}, where: {username: receiver}},
 						function(err, info){
 							if(info===null){
 								cb(null, null);
