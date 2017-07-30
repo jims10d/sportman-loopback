@@ -195,7 +195,7 @@ module.exports = function(Message) {
 	};
 
 	Message.delMessage = function(senderName, cb){
-		Message.destroy({where:{sender:senderName}},
+		Message.destroyAll({where:{sender:senderName}},
 			function(err,instance){
 				if(instance===null){
 					cb(null,null);
