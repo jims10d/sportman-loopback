@@ -15,7 +15,11 @@ var matches = [ // kecils
     match_awayScore: '0',
     timer: '0',
     halfTime: false,
-    fullTime: false
+    fullTime: false,
+    goalHome: {
+      scorer: 'jims',
+      time: '7'
+    }
   }
 ];
  

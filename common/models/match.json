@@ -53,6 +53,15 @@
     "fullTime": {
       "type": "boolean",
       "default": false
+    },
+    "goalHome": {
+      "type": "object",
+      "scorer": {
+        "type": "string"
+      },
+      "time": {
+        "type": "number"
+      }
     }
   },
   "validations": [],
