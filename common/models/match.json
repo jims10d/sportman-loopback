@@ -62,6 +62,93 @@
       "time": {
         "type": "number"
       }
+    },
+    "goalAway": {
+      "type": "object",
+      "scorer": {
+        "type": "string"
+      },
+      "time": {
+        "type": "number"
+      }
+    },
+    "assistHome": {
+      "type": "object",
+      "assister": {
+        "type": "string"
+      },
+      "time": {
+        "type": "number"
+      }
+    },
+    "assistAway": {
+      "type": "object",
+      "assister": {
+        "type": "string"
+      },
+      "time": {
+        "type": "number"
+      }
+    },
+    "yellowCardHome": {
+      "type": "object",
+      "player": {
+        "type": "string"
+      },
+      "time": {
+        "type": "number"
+      }
+    },
+    "yellowCardAway": {
+      "type": "object",
+      "player": {
+        "type": "string"
+      },
+      "time": {
+        "type": "number"
+      }
+    },
+    "redCardHome": {
+      "type": "object",
+      "player": {
+        "type": "string"
+      },
+      "time": {
+        "type": "number"
+      }
+    },
+    "redCardAway": {
+      "type": "object",
+      "player": {
+        "type": "string"
+      },
+      "time": {
+        "type": "number"
+      }
+    },
+    "substituteHome": {
+      "type": "object",
+      "in": {
+        "type": "string"
+      },
+      "out": {
+        "type": "string"
+      },
+      "time": {
+        "type": "number"
+      }
+    },
+    "substituteAway": {
+      "type": "object",
+      "in": {
+        "type": "string"
+      },
+      "out": {
+        "type": "string"
+      },
+      "time": {
+        "type": "number"
+      }
     }
   },
   "validations": [],

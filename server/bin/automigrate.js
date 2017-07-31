@@ -19,6 +19,44 @@ var matches = [ // kecils
     goalHome: {
       scorer: 'jims',
       time: '7'
+    },
+    goalAway: {
+      scorer: 'jims',
+      time: '7'
+    },
+    assistHome: {
+      assister: 'jims',
+      time: '7'
+    },
+    assistAway: {
+      assister: 'jims',
+      time: '7'
+    },
+    yellowCardHome: {
+      player: 'jims',
+      time: '7'
+    },
+    yellowCardAway: {
+      player: 'jims',
+      time: '7'
+    },
+    redCardHome: {
+      player: 'jims',
+      time: '7'
+    },
+    redCardAway: {
+      player: 'jims',
+      time: '7'
+    },
+    substituteHome: {
+      in: 'jims',
+      out: 'zoro',
+      time: '7'
+    },
+    substituteAway: {
+      in: 'jims',
+      out: 'zoro',
+      time: '7'
     }
   }
 ];
