@@ -1,17 +1,21 @@
 var app = require('../server');
 
-var messages = [ // kecils
+var matches = [ // kecils
   {
-    date: '29 Juli 2017',
-    sender: 'jimmy',
-    receiver: 'luffy',
-    sender_name: 'jimmy',
-    receiver_name: 'luffy',
-    id: 'm007',
-    content: 'hello luffy',
-    read: '',
-    readStatus: 'false',
-    photo: ''
+    match_name: 'howay',
+    match_venue: 'sdfs fg',
+    match_time: '11:30',
+    match_date: '07/31/2017',
+    match_referee: 'luffy',
+    match_homeTeam: 'home',
+    match_awayTeam: 'away',
+    match_fixture: '10',
+    match_started: false,
+    match_homeScore: '0',
+    match_awayScore: '0',
+    timer: '0',
+    halfTime: false,
+    fullTime: false
   }
 ];
  
@@ -19,15 +23,15 @@ var messages = [ // kecils
 var dataSource = app.dataSources.SportmanDb;
  
 // this automigrates the Account model 
-dataSource.autoupdate('message', function(err) { // kecil
+dataSource.autoupdate('match', function(err) { // kecil
   if (err) throw err;
  
   // this loads the Account model from ~/common/models/Account.json
-  var Message = app.models.Message; // besar
-  var count = messages.length; // kecils
-  messages.forEach(function(message) { // kecils kecil
+  var Match = app.models.Match; // besar
+  var count = matches.length; // kecils
+  matches.forEach(function(match) { // kecils kecil
      // insert new records into the Account table
-     Message.create(message, function(err, record) { // besar kecil
+     Match.create(match, function(err, record) { // besar kecil
       if (err) return console.log(err);
  
       console.log('Record created:', record);

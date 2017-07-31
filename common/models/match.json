@@ -35,10 +35,24 @@
       "type": "string"
     },
     "match_homeScore": {
-      "type": "number"
+      "type": "number",
+      "default": 0
     },
     "match_awayScore": {
-      "type": "number"
+      "type": "number",
+      "default": 0
+    },
+    "timer": {
+      "type": "number",
+      "default": 0
+    },
+    "halfTime": {
+      "type": "boolean",
+      "default": false
+    },
+    "fullTime": {
+      "type": "boolean",
+      "default": false
     }
   },
   "validations": [],
