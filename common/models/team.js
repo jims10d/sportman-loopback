@@ -1,6 +1,6 @@
 module.exports = function(Team) {
 	Team.getTeamByName = function(teamName, cb){
-		Team.findOne({fields: {id: false}, where:{team_name:teamName}},
+		Team.findOne({where:{team_name:teamName}},
 			function(err,instance){
 				if(instance===null){
 					cb(null,null);
