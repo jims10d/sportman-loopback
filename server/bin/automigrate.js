@@ -5,6 +5,8 @@ var matches = [ // kecils
     match_name: 'howay',
     match_venue: 'sdfs fg',
     match_time: '11:30',
+    match_length: '50',
+    match_break: '5',
     match_date: '07/31/2017',
     match_referee: 'luffy',
     match_homeTeam: 'home',
