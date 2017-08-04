@@ -16,6 +16,14 @@
     "match_time": {
       "type": "string"
     },
+    "match_length": {
+      "type": "number",
+      "default": 0
+    },
+    "match_break": {
+      "type": "number",
+      "default": 0
+    },
     "match_date": {
       "type": "string"
     },
