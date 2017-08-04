@@ -42,6 +42,9 @@
     "match_started": {
       "type": "string"
     },
+    "timer_status": {
+      "type": "string"
+    },
     "match_homeScore": {
       "type": "number",
       "default": 0

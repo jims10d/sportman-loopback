@@ -13,6 +13,7 @@ var matches = [ // kecils
     match_awayTeam: 'away',
     match_fixture: '10',
     match_started: false,
+    timer_status: '',
     match_homeScore: '0',
     match_awayScore: '0',
     timer: '0',
