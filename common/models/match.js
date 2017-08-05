@@ -17,15 +17,16 @@ module.exports = function(Match) {
 					cb(null,null);
 				}else{
 					matchData = instance;
-					goalHome = instance['goalHome'];
-					goalAway = instance['goalAway'];
+					console.log(matchData);
+					goalHome = instance['goalHome.scorer'];
+					goalAway = instance['goalAway.scorer'];
 					goalData = [];
 					goalData.push(goalHome);
 					goalData.push(goalAway);
 
-					goalData.sort(function(a,b){
-						return a.time>b.time;
-					});
+					// goalData.sort(function(a,b){
+					// 	return a.time>b.time;
+					// });
 				
 					cb(null,goalData);
 							
