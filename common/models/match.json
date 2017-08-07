@@ -72,6 +72,12 @@
       },
       "time": {
         "type": "number"
+      },
+      "scoreHome": {
+        "type": "number"
+      },
+      "scoreAway": {
+        "type": "number"
       }
     },
     "goalAway": {
@@ -80,6 +86,12 @@
         "type": "string"
       },
       "time": {
+        "type": "number"
+      },
+      "scoreHome": {
+        "type": "number"
+      },
+      "scoreAway": {
         "type": "number"
       }
     },
