@@ -19,17 +19,15 @@ var matches = [ // kecils
     timer: '0',
     halfTime: false,
     fullTime: false,
+    homeScore: '0',
+    awayScore: '0',
     goalHome: {
       scorer: 'jims',
-      time: '7',
-      scoreHome: '1',
-      scoreAway: '0'
+      time: '7'
     },
     goalAway: {
       scorer: 'jims',
-      time: '8',
-      scoreHome: '1',
-      scoreAway: '1'
+      time: '8'
     },
     assistHome: {
       assister: 'jims',
