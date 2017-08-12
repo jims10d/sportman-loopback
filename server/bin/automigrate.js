@@ -17,6 +17,8 @@ var matches = [ // kecils
     match_homeScore: '0',
     match_awayScore: '0',
     timer: '0',
+    countDownTimer: '60',
+    countDownStarted: false,
     halfTime: false,
     fullTime: false,
     goalHome: {

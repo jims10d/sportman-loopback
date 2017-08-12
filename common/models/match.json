@@ -57,6 +57,13 @@
       "type": "number",
       "default": 0
     },
+    "countDownTimer": {
+      "type": "number",
+      "default": 60
+    },
+    "countDownStarted": {
+      "type": "string"
+    },
     "halfTime": {
       "type": "boolean",
       "default": false
