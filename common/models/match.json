@@ -16,6 +16,9 @@
     "match_time": {
       "type": "string"
     },
+    "match_countDown": {
+      "type": "string"
+    },
     "match_length": {
       "type": "number",
       "default": 0
