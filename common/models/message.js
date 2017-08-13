@@ -38,7 +38,7 @@ module.exports = function(Message) {
 	};
 
 	Message.getUnreadMessage = function(receiver, cb){
-		Message.findOne({where: {read: "false", receiver: receiver}},
+		Message.findOne({where: {read: 'false', receiver: receiver}},
 			function(err,instance){
 				if(instance===null){
 					cb(null,null);
