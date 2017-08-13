@@ -43,8 +43,8 @@ module.exports = function(Message) {
 				if(instance===null){
 					cb(null,null);
 				}else {
-					data = instance.length;
-					cb(null,data);
+					data = instance;
+					cb(null,data.length);
 				}
 			});
 	};
