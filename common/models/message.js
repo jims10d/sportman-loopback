@@ -37,14 +37,14 @@ module.exports = function(Message) {
 			});
 	};
 
-	Message.getUnreadMessage = function(receiver, cb){
-		Message.findOne({where: {read: 'false', receiver: receiver}},
+	Message.getUnreadMessage = function(read, receiver, cb){
+		Message.findOne({where: {read: read, receiver: receiver}},
 			function(err,instance){
 				if(instance===null){
 					cb(null,null);
 				}else {
-					data = instance;
-					cb(null,data.length);
+					data = instance.length;
+					cb(null,data);
 				}
 			});
 	};
@@ -276,7 +276,10 @@ module.exports = function(Message) {
 	Message.remoteMethod(
 		'getUnreadMessage',
 		{
-			accepts: {arg: 'receiver', type: 'string'},
+			accepts: [
+						{arg : 'read', type: 'string'},
+						{arg : 'receiver', type: 'string'}
+					],
 			returns: {arg: 'count', type: 'number'},
 			http: {path: '/getUnreadMessage', verb: 'get', source: 'query'},
 			description: "Get how many unread message"
