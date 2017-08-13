@@ -71,7 +71,7 @@
       "principalType": "ROLE",
       "principalId": "$everyone",
       "permission": "ALLOW",
-      "property": "count"
+      "property": "getUnreadMessage"
     }
   ],
   "methods": {}

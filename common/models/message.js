@@ -37,6 +37,18 @@ module.exports = function(Message) {
 			});
 	};
 
+	Message.getUnreadMessage = function(receiver, cb){
+		Message.findOne({where: {read: false, receiver: receiver}},
+			function(err,instance){
+				if(instance===null){
+					cb(null,null);
+				}else {
+					data = instance.length;
+					cb(null,data);
+				}
+			});
+	};
+
 	Message.addMessage = function(data, cb){
 		var User = Message.app.models.user;
 		Message.create(data,
@@ -258,6 +270,16 @@ module.exports = function(Message) {
 					],
 			returns: {arg: 'status', type: 'string', root: true},
 			http: {path: '/addReader', verb: 'get', source: 'query'}
+		}
+	);
+
+	Message.remoteMethod(
+		'getUnreadMessage',
+		{
+			accepts: {arg: 'receiver', type: 'string'},
+			returns: {arg: 'count', type: 'number'},
+			http: {path: '/getUnreadMessage', verb: 'get', source: 'query'},
+			description: "Get how many unread message"
 		}
 	);
 };
