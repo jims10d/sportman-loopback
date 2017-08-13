@@ -279,7 +279,7 @@ module.exports = function(Message) {
 						{arg : 'read', type: 'string'},
 						{arg : 'receiver', type: 'string'}
 					],
-			returns: {arg: 'count', type: 'string'},
+			returns: {arg: 'count', type: 'string', root: true},
 			http: {path: '/getUnreadMessage', verb: 'get', source: 'query'},
 			description: "Get how many unread message"
 		}
