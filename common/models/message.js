@@ -43,8 +43,7 @@ module.exports = function(Message) {
 				if(instance===null){
 					cb(null,null);
 				}else {
-					data = instance.length;
-					cb(null,data);
+					cb(null,instance);
 				}
 			});
 	};
@@ -280,7 +279,7 @@ module.exports = function(Message) {
 						{arg : 'read', type: 'string'},
 						{arg : 'receiver', type: 'string'}
 					],
-			returns: {arg: 'count', type: 'number'},
+			returns: {arg: 'count', type: 'string'},
 			http: {path: '/getUnreadMessage', verb: 'get', source: 'query'},
 			description: "Get how many unread message"
 		}
