@@ -43,7 +43,7 @@ module.exports = function(Message) {
 				if(instance===null){
 					cb(null,null);
 				}else {
-					cb(null,instance);
+					cb(null,instance.length);
 				}
 			});
 	};
