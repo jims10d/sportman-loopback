@@ -9,8 +9,7 @@
   "properties": {
     "id": {
       "type": "string",
-      "id": true,
-      "idInjection": true
+      "id": true
     },
     "comp_name": {
       "type": "string",
