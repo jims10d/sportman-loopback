@@ -18,7 +18,7 @@
     },
     "comp_fee": {
       "type": "number",
-      "required": true
+      "default": "0"
     },
     "comp_regulation": {
       "type": "string",
