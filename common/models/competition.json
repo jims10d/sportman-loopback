@@ -33,10 +33,10 @@
       "type": "string"
     },
     "comp_finish": {
-      "type": "date"
+      "type": "string"
     },
     "comp_start": {
-      "type": "date"
+      "type": "string"
     },
     "register": {
       "type": "string"
