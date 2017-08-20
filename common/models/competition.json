@@ -42,14 +42,14 @@
     "comp_start": {
       "type": "string"
     },
-    "register": {
+    "registeredTeam": {
       "type": "string"
     },
     "comp_notes": {
       "type": "string"
     },
-    "comp_teams": {
-      "type": "string"
+    "comp_numOfTeam": {
+      "type": "number"
     },
     "comp_award": {
       "type": "string"

@@ -2,7 +2,7 @@ var app = require('../server');
 
 var competitions = [ // kecils
   {
-    id: 'C1210hdkfh',
+    id: 'C1210hdkfhdds',
     organizer: 'Organizer',
     comp_name: 'Sporto Cup',
     comp_fee: '500.000',
@@ -13,7 +13,7 @@ var competitions = [ // kecils
     comp_start: '08/25/2017',
     registeredTeam: 'redcat',
     comp_notes: 'asdad',
-    comp_numOfTeams: '16',
+    comp_numOfTeam: '16',
     comp_award: '1 juta',
   }
 ];
