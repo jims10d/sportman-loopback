@@ -12,6 +12,10 @@
       "id": true,
       "idInjection": true
     },
+    "organizer": {
+      "type": "string",
+      "required": true
+    },
     "comp_name": {
       "type": "string",
       "required": true
