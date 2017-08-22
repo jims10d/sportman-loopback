@@ -1,20 +1,23 @@
 var app = require('../server');
 
-var competitions = [ // kecils
+var users = [ // kecils
   {
-    id: 'C1210hdkfhdds',
-    organizer: 'Organizer',
-    comp_name: 'Sporto Cup',
-    comp_fee: '500.000',
-    comp_regulation: 'afsjdfhk h',
-    comp_type: 'fsfd',
-    comp_location: 'Tangkas Sport',
-    comp_finish: '08/20/2017',
-    comp_start: '08/25/2017',
-    registeredTeam: 'redcat',
-    comp_notes: 'asdad',
-    comp_numOfTeam: '16',
-    comp_award: '1 juta',
+    id: 'U1210hdkfhdds',
+    username: 'vinsmoke',
+    fullname: 'vinsmoke',
+    password: 'vinsmoke',
+    email: 'vinsmoke@sportman.com',
+    role: 'Player',
+    teamInvitation: '',
+    team: '',
+    teamRequested: '',
+    age: '20',
+    address: 'lebak bulus',
+    position: 'Striker,Defender',
+    hp: '089420312340',
+    bio: 'I am using sportman',
+    profileCompleted: 'false',
+
   }
 ];
  
@@ -22,15 +25,15 @@ var competitions = [ // kecils
 var dataSource = app.dataSources.SportmanDb;
  
 // this automigrates the Account model 
-dataSource.autoupdate('competition', function(err) { // kecil
+dataSource.autoupdate('user', function(err) { // kecil
   if (err) throw err;
  
   // this loads the Account model from ~/common/models/Account.json
-  var Competition = app.models.Competition; // besar
+  var User = app.models.User; // besar
   var count = competitions.length; // kecils
-  competitions.forEach(function(competition) { // kecils kecil
+  users.forEach(function(user) { // kecils kecil
      // insert new records into the Account table
-     Competition.create(competition, function(err, record) { // besar kecil
+     User.create(user, function(err, record) { // besar kecil
       if (err) return console.log(err);
  
       console.log('Record created:', record);

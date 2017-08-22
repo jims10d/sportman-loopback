@@ -40,6 +40,24 @@
     },
     "teamRequested": {
       "type": "string"
+    },
+    "age": {
+      "type": "string"
+    },
+    "address": {
+      "type": "string"
+    },
+    "position": {
+      "type": "string"
+    },
+    "hp": {
+      "type": "string"
+    },
+    "bio": {
+      "type": "string"
+    }, 
+    "profileCompleted": {
+      "type": "boolean"
     }
   },
   "validations": [],
