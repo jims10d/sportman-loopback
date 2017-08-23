@@ -30,7 +30,7 @@ dataSource.autoupdate('user', function(err) { // kecil
  
   // this loads the Account model from ~/common/models/Account.json
   var User = app.models.User; // besar
-  var count = competitions.length; // kecils
+  var count = users.length; // kecils
   users.forEach(function(user) { // kecils kecil
      // insert new records into the Account table
      User.create(user, function(err, record) { // besar kecil
