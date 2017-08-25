@@ -66,6 +66,11 @@
       "type": "hasMany",
       "model": "fixture",
       "foreignKey": ""
+    },
+    "matches": {
+      "type": "hasMany",
+      "model": "match",
+      "foreignKey": "competition_id"
     }
   },
   "acls": [
