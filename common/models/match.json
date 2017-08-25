@@ -56,6 +56,9 @@
       "type": "number",
       "default": 0
     },
+    "schedule_status": {
+      "type": "string"
+    },
     "timer": {
       "type": "number",
       "default": 0
