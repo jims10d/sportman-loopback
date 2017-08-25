@@ -53,6 +53,9 @@
     },
     "comp_award": {
       "type": "string"
+    },
+    "schedule_status": {
+      "type": "string"
     }
   },
   "validations": [],
