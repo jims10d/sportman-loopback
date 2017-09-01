@@ -4,6 +4,7 @@ var fixtures = [ // kecils
   {
     fixture_number: '40',
     fixture_matches: 'qwe',
+    fixture_status: '',
     allMatchFilled: 'false'
   }
 ];

@@ -13,6 +13,9 @@
     "fixture_matches": {
       "type": "string"
     },
+    "fixture_status": {
+      "type": "string"
+    },
     "allMatchFilled": {
       "type": "boolean",
       "default": false
