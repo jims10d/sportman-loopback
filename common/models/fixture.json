@@ -8,7 +8,7 @@
   },
   "properties": {
     "fixture_number": {
-      "type": "string"
+      "type": "number"
     },
     "fixture_matches": {
       "type": "string"
