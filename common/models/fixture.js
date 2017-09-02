@@ -25,6 +25,17 @@ module.exports = function(Fixture) {
 			});
 	};
 
+	Fixture.delFixture = function(competitionId, cb){
+		Fixture.destroyAll({where:{competitionId:competitionId}},
+			function(err,instance){
+				if(instance===null){
+					cb(null,null);
+				}else{
+					cb(null,instance);
+				}
+			});
+	};
+
 	Fixture.remoteMethod(
 		'getMatches',
 		{
@@ -47,6 +58,17 @@ module.exports = function(Fixture) {
 			description: "Get Fixture instance by competition id and fixture number"
 		}
 	);
+
+	Fixture.remoteMethod(
+		'delFixture',
+		{
+			accepts: {arg: 'competitionId', type: 'string'},
+			returns: {arg: 'id', type: 'string', root: true},
+			http: {path: '/delFixture', verb: 'delete', source: 'query'},
+			description: "Delete fixture instance by competition id"
+		}
+	);
+
 };
 
 
