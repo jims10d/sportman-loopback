@@ -14,6 +14,17 @@ module.exports = function(Fixture) {
 
 	};
 
+	Fixture.getFixture = function(competitionId, fixtureNumber, cb){
+		Fixture.findOne({where:{competitionId:competitionId,fixture_number:fixtureNumber}},
+			function(err,instance){
+				if(instance===null){
+					cb(null,null);
+				}else{
+					cb(null,instance);
+				}
+			});
+	};
+
 	Fixture.remoteMethod(
 		'getMatches',
 		{
@@ -21,6 +32,19 @@ module.exports = function(Fixture) {
 			returns: {arg: 'matches', type: 'string', root: true},
 			http: {path: '/getMatches', verb: 'get', source: 'query'},
 			description: "Get matches instance by fixture number"
+		}
+	);
+
+	Fixture.remoteMethod(
+		'getFixture',
+		{
+			accepts: [
+					 {arg: 'competitionId', type: 'string'},
+					 {arg: 'fixtureNumber', type: 'string'}
+					 ],
+			returns: {arg: 'fixture', type: 'string', root: true},
+			http: {path: '/getFixture', verb: 'get', source: 'query'},
+			description: "Get Fixture instance by competition id and fixture number"
 		}
 	);
 };
