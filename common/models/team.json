@@ -58,7 +58,13 @@
     }
   },
   "validations": [],
-  "relations": {},
+  "relations": {
+      "competitions": {
+      "type": "hasMany",
+      "model": "competitions",
+      "foreignKey": ""
+    }
+  },
   "acls": [],
   "methods": {}
 }
