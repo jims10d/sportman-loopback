@@ -56,6 +56,15 @@
       "type": "number",
       "default": 0
     },
+    "winner": {
+      "type": "string"
+    },
+    "loser": {
+      "type": "string"
+    },
+    "match_status": {
+      "type": "string"
+    },
     "timer": {
       "type": "number",
       "default": 0
