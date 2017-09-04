@@ -10,7 +10,8 @@ var classements = [ // kecils
     draw: '20',
     lose: '12',
     goalDifference: '12',
-    points: '12'
+    points: '12',
+    status: ''
   }
 ];
  
