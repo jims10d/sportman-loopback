@@ -1,0 +1,46 @@
+{
+  "name": "classement",
+  "base": "PersistedModel",
+  "strict": false,
+  "idInjection": false,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "id": {
+      "type": "string",
+      "id": true,
+      "idInjection": true
+    },
+    "position": {
+      "type": "string"
+    },
+    "team": {
+      "type": "string"
+    },
+    "play": {
+      "type": "string"
+    },
+    "win": {
+      "type": "number",
+      "default": 0
+    },
+    "draw": {
+      "type": "number",
+      "default": 0
+    },
+    "lose": {
+      "type": "string"
+    },
+    "goalDifference": {
+      "type": "string"
+    },
+    "points": {
+      "type": "string"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

@@ -60,6 +60,12 @@
     "$promise": {},
     "$resolved": true
   },
+  "classement": {
+    "dataSource": "SportmanDb",
+    "public": true,
+    "$promise": {},
+    "$resolved": true
+  },
   "message": {
     "dataSource": "SportmanDb",
     "public": true,

@@ -74,6 +74,11 @@
       "type": "hasMany",
       "model": "match",
       "foreignKey": "competition_id"
+    },
+    "classements": {
+      "type": "hasOne",
+      "model": "classement",
+      "foreignKey": "competition_id"
     }
   },
   "acls": [
