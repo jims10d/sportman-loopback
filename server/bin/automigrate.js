@@ -2,7 +2,7 @@ var app = require('../server');
 
 var classements = [ // kecils
   {
-    id: 'CLqqwe',
+    id: 'CLqqsdsdwe',
     position: '12',
     team: 'asdads',
     play: '1',
