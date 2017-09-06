@@ -55,6 +55,9 @@
     },
     "schedule_status": {
       "type": "string"
+    },
+    "register_status": {
+      "type": "string"
     }
   },
   "validations": [],

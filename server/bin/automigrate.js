@@ -1,17 +1,22 @@
 var app = require('../server');
 
-var classements = [ // kecils
+var competitions = [ // kecils
   {
-    id: 'CLqqsdsdwe',
-    position: '12',
-    team: 'asdads',
-    play: '1',
-    win: '40',
-    draw: '20',
-    lose: '12',
-    goalDifference: '12',
-    points: '12',
-    status: ''
+    id: 'COqqsdsdwe',
+    organizer: '12',
+    comp_name: 'asdads',
+    comp_fee: '1',
+    comp_regulation: '40',
+    comp_type: '20',
+    comp_location: '12',
+    comp_finish: '12',
+    comp_start: '12',
+    registeredTeam: '',
+    comp_notes: '12',
+    comp_numOfTeam: '',
+    comp_award: '12',
+    schedule_status: '',
+    register_status: ''
   }
 ];
  
@@ -19,15 +24,15 @@ var classements = [ // kecils
 var dataSource = app.dataSources.SportmanDb;
  
 // this automigrates the Account model 
-dataSource.autoupdate('classement', function(err) { // kecil
+dataSource.autoupdate('competition', function(err) { // kecil
   if (err) throw err;
  
   // this loads the Account model from ~/common/models/Account.json
-  var Classement = app.models.Classement; // besar
-  var count = classements.length; // kecils
-  classements.forEach(function(classement) { // kecils kecil
+  var Competition = app.models.Competition; // besar
+  var count = competitions.length; // kecils
+  competitions.forEach(function(competition) { // kecils kecil
      // insert new records into the Account table
-     Classement.create(classement, function(err, record) { // besar kecil
+     Competition.create(competition, function(err, record) { // besar kecil
       if (err) return console.log(err);
  
       console.log('Record created:', record);
