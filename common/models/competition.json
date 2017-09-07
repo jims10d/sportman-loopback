@@ -86,7 +86,7 @@
       "type": "hasMany",
       "model": "training",
       "foreignKey": "competition_id"
-    },
+    }
   },
   "acls": [
    {
