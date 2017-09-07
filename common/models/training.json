@@ -1,0 +1,52 @@
+{
+  "name": "training",
+  "base": "PersistedModel",
+  "strict": false,
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "id": {
+      "type": "string",
+      "id": true,
+      "idInjection": true
+    },
+    "coach": {
+      "type": "string",
+      "required": true
+    },
+    "training_name": {
+      "type": "string",
+      "required": false
+    },
+    "training_location": {
+      "type": "string"
+    },
+    "training_date": {
+      "type": "date"
+    },
+    "training_time": {
+      "type": "string"
+    },
+    "acceptedPlayer": {
+      "type": "string"
+    },
+    "deniedPlayer": {
+      "type": "string"
+    }
+  },
+  "validations": [],
+  "relations": {
+  },
+  "acls": [
+   {
+      "accessType": "EXECUTE",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "ALLOW",
+      "property": "addAcceptedPlayer"
+    }
+  ],
+  "methods": {}
+}
