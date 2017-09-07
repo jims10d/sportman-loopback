@@ -66,6 +66,12 @@
     "$promise": {},
     "$resolved": true
   },
+  "training": {
+    "dataSource": "SportmanDb",
+    "public": true,
+    "$promise": {},
+    "$resolved": true
+  },
   "message": {
     "dataSource": "SportmanDb",
     "public": true,
