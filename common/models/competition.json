@@ -58,6 +58,9 @@
     },
     "register_status": {
       "type": "string"
+    },
+    "comp_status": {
+      "type": "string"
     }
   },
   "validations": [],
