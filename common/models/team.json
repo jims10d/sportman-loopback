@@ -17,6 +17,9 @@
     "team_logo": {
       "type": "string"
     },
+    "team_manager": {
+      "type": "string"
+    },
     "team_coach": {
       "type": "string"
     },
