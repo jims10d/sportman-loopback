@@ -71,7 +71,7 @@
       "type": "hasMany",
       "model": "match",
       "foreignKey": "team_name"
-    },
+    }
   },
   "acls": [],
   "methods": {}
