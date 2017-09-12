@@ -30,7 +30,7 @@
       "type": "string"
     },
     "team_point": {
-      "type": "string"
+      "type": "strictring"
     },
     "team_win": {
       "type": "string"
@@ -62,11 +62,16 @@
   },
   "validations": [],
   "relations": {
-      "competitions": {
+    "competitions": {
       "type": "hasMany",
       "model": "competitions",
       "foreignKey": ""
-    }
+    },
+    "matches": {
+      "type": "hasMany",
+      "model": "match",
+      "foreignKey": "team_name"
+    },
   },
   "acls": [],
   "methods": {}
