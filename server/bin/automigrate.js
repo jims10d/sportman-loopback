@@ -2,11 +2,11 @@ var app = require('../server');
 
 var users = [ // kecils
   {
-    id: 'U129173',
-    username: 'Mangelo',
-    fullname: 'Mangelo ajw',
-    password: 'Angely',
-    email: 'Angelo@gmail.com',
+    id: 'U129173dfdf  ',
+    username: 'Mangeloqw',
+    fullname: 'Mangelo ajwqwqw',
+    password: 'Angelyqwqw',
+    email: 'Angeloqwqwq@gmail.com',
     role: 'player',
     teamInvitation: '',
     team: '',
