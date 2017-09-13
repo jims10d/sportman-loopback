@@ -58,6 +58,21 @@
     }, 
     "profileCompleted": {
       "type": "boolean"
+    },
+    "play": {
+      "type": "number"
+    },
+    "goal": {
+      "type": "number"
+    },
+    "assist": {
+      "type": "number"
+    },
+    "yellow_card": {
+      "type": "number"
+    },
+    "redCard": {
+      "type": "number"
     }
   },
   "validations": [],
