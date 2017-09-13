@@ -68,7 +68,7 @@
     "assist": {
       "type": "number"
     },
-    "yellow_card": {
+    "yellowCard": {
       "type": "number"
     },
     "redCard": {

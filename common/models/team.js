@@ -1,4 +1,50 @@
 module.exports = function(Team) {
+	Team.addCompetition = function(CompId, TeamId, cb){
+		Team.findOne({where:{id: TeamId}},
+			function(err,instance){
+				if(instance===null){
+					cb(null,null);
+				}else{
+					data = instance['competitionId']; //get everyone who has like this Competition
+					theRegistersNow = data.toString();
+					//if UserId has like this Competition
+					if(theRegistersNow.includes(CompId)){
+						cb(null,instance);
+					}
+					//if this is the first Competition he see
+					else if(theRegistersNow === ''){
+						theRegistersNow = CompId;
+						Team.updateAll({id: TeamId}, {competitionId: theRegistersNow}, //update
+						function(err,info){
+							Team.findOne({where:{id: TeamId}},
+								function(err,instance){
+									if(instance===null){
+										cb(null,null);
+									}else{
+										cb(null,instance);
+									}
+								});
+						});
+					}
+					//it's only the last Competition he's seen
+					else{
+						theRegistersNow = theRegistersNow + ',' + CompId;
+						Team.updateAll({id: TeamId}, {competitionId: theRegistersNow}, //update
+						function(err,info){
+							Team.findOne({where:{id: TeamId}},
+								function(err,instance){
+									if(instance===null){
+										cb(null,null);
+									}else{
+										cb(null,instance);
+									}
+								});
+						});
+					}
+				}				
+			});
+	};
+
 	Team.getTeamByName = function(teamName, cb){
 		Team.findOne({where:{team_name:teamName}},
 			function(err,instance){
@@ -338,6 +384,19 @@ module.exports = function(Team) {
 			}
 		);
 	};
+
+
+	Team.remoteMethod(
+		'addCompetition',
+		{
+			accepts: [
+					{arg: 'CompId', type: 'string'},
+					{arg: 'TeamId', type: 'string'}
+					],
+			returns: {arg: 'registeredCompetition', type: 'string', root: true},
+			http: {path: '/addCompetition', verb: 'put'}
+		}
+	);
 
 	Team.remoteMethod(
 		'getTeamByName',
