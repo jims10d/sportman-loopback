@@ -87,6 +87,9 @@
       "type": "boolean",
       "default": false
     },
+    "referee_status": {
+      "type": "string"
+    },
     "goalHome": {
       "type": "object",
       "scorer": {
