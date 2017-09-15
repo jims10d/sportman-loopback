@@ -2,11 +2,11 @@ var app = require('../server');
 
 var users = [ // kecils
   {
-    id: 'U129173dfdfsdf',
-    username: 'Mangeloqwsd',
-    fullname: 'Mangelo ajwqwqwsdf',
-    password: 'Angelyqwqwsdf',
-    email: 'Angeloqwqsdfwq@gmail.com',
+    id: 'U129173dfdfsdfdfd',
+    username: 'Mangeloqwsddf',
+    fullname: 'Mangelo ajwqwqwsdfdf',
+    password: 'Angelyqwqwsdfdf',
+    email: 'Angeloqwqsdfwdfq@gmail.com',
     role: 'player',
     photo: '',
     teamInvitation: '',
@@ -22,7 +22,10 @@ var users = [ // kecils
     goal: '',
     assist: '',
     yellowCard: '',
-    redCard: ''
+    redCard: '',
+    redCardGiven: '',
+    yellowCardGiven: '',
+    matchManaged: ''
   }
 ];
  

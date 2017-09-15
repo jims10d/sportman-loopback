@@ -76,6 +76,15 @@
     },
     "redCard": {
       "type": "number"
+    },
+    "redCardGiven": {
+      "type": "number"
+    },
+    "yellowCardGiven": {
+      "type": "number"
+    },
+    "matchManaged": {
+      "type": "number"
     }
   },
   "validations": [],
