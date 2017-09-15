@@ -1,31 +1,25 @@
 var app = require('../server');
 
-var users = [ // kecils
+var teams = [ // kecils
   {
-    id: 'U129173dfdfsdfdfd',
-    username: 'Mangeloqwsddf',
-    fullname: 'Mangelo ajwqwqwsdfdf',
-    password: 'Angelyqwqwsdfdf',
-    email: 'Angeloqwqsdfwdfq@gmail.com',
-    role: 'player',
-    photo: '',
-    teamInvitation: '',
-    team: '',
-    teamRequested: '',
-    age: '',
-    address: '',
-    position: '',
-    hp: '',
-    bio: '',
-    profileCompleted: '',
-    play: '',
-    goal: '',
-    assist: '',
-    yellowCard: '',
-    redCard: '',
-    redCardGiven: '',
-    yellowCardGiven: '',
-    matchManaged: ''
+    team_abrName: 'T129173dfdfsdfdfd',
+    team_name: 'Mangeloqwsddf',
+    team_logo: 'Mangelo ajwqwqwsdfdf',
+    team_manager: 'Angelyqwqwsdfdf',
+    team_coach: 'Angeloqwqsdfwdfq@gmail.com',
+    team_position: 'player',
+    team_play: '',
+    team_point: '',
+    team_win: '',
+    team_draw: '',
+    team_lose: '',
+    team_goalFor: '',
+    team_goalAgainst: '',
+    coach_id: '',
+    invited_member: '',
+    team_squad: '',
+    player_request: '',
+    coach_request: ''
   }
 ];
  
@@ -33,15 +27,15 @@ var users = [ // kecils
 var dataSource = app.dataSources.SportmanDb;
  
 // this automigrates the Account model 
-dataSource.autoupdate('user', function(err) { // kecil
+dataSource.autoupdate('team', function(err) { // kecil
   if (err) throw err;
  
   // this loads the Account model from ~/common/models/Account.json
-  var User = app.models.User; // besar
-  var count = users.length; // kecils
-  users.forEach(function(user) { // kecils kecil
+  var Team = app.models.Team; // besar
+  var count = teams.length; // kecils
+  teams.forEach(function(team) { // kecils kecil
      // insert new records into the Account table
-     User.create(user, function(err, record) { // besar kecil
+     Team.create(team, function(err, record) { // besar kecil
       if (err) return console.log(err);
  
       console.log('Record created:', record);

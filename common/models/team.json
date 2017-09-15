@@ -30,7 +30,7 @@
       "type": "string"
     },
     "team_point": {
-      "type": "strictring"
+      "type": "string"
     },
     "team_win": {
       "type": "string"
@@ -56,7 +56,10 @@
     "team_squad": {
       "type": "string"
     },
-    "user_request": {
+    "player_request": {
+      "type": "string"
+    },
+    "coach_request": {
       "type": "string"
     }
   },
