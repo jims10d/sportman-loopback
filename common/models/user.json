@@ -32,6 +32,9 @@
       "type": "string",
       "required": true
     },
+    "photo": {
+      "type": "string"
+    },
     "teamInvitation": {
       "type": "string"
     },
