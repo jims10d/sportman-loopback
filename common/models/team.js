@@ -134,18 +134,18 @@ module.exports = function(Team) {
 			});
 	};
 
-	Team.addUserRequest = function(Username, TeamId, cb){
+	Team.addPlayerRequest = function(Username, TeamId, cb){
 		Team.findOne({where:{id: TeamId}},
 			function(err,instance){
 				if(instance===null){
 					cb(null,null);
 				}else{
-					data = instance['user_request']; //get everyone who has like this Competition
+					data = instance['player_request']; //get everyone who has like this Competition
 					if(data === null || data === ''){
 						//if this is the first Competition he see
 						console.log("tes");
 						theMembersNow = Username;
-						Team.updateAll({id: TeamId}, {user_request: theMembersNow}, //update
+						Team.updateAll({id: TeamId}, {player_request: theMembersNow}, //update
 						function(err,info){
 							Team.findOne({where:{id: TeamId}},
 								function(err,instance){
@@ -164,7 +164,55 @@ module.exports = function(Team) {
 						}else{
 							//it's only the last Competition he's seen
 							theMembersNow = theMembersNow + ',' + Username;
-							Team.updateAll({id: TeamId}, {user_request: theMembersNow}, //update
+							Team.updateAll({id: TeamId}, {player_request: theMembersNow}, //update
+							function(err,info){
+								Team.findOne({where:{id: TeamId}},
+									function(err,instance){
+										if(instance===null){
+											cb(null,null);
+										}else{
+											cb(null,instance);
+										}
+									});
+							});
+						}
+					}
+					
+				}				
+			});
+	};
+
+		Team.addCoachRequest = function(Username, TeamId, cb){
+		Team.findOne({where:{id: TeamId}},
+			function(err,instance){
+				if(instance===null){
+					cb(null,null);
+				}else{
+					data = instance['coach_request']; //get everyone who has like this Competition
+					if(data === null || data === ''){
+						//if this is the first Competition he see
+						console.log("tes");
+						theMembersNow = Username;
+						Team.updateAll({id: TeamId}, {coach_request: theMembersNow}, //update
+						function(err,info){
+							Team.findOne({where:{id: TeamId}},
+								function(err,instance){
+									if(instance===null){
+										cb(null,null);
+									}else{
+										cb(null,instance);
+									}
+								});
+						});
+					} else {
+						theMembersNow = data.toString();
+						//if UserId has like this Competition
+						if(theMembersNow.includes(Username)){
+							cb(null,instance);
+						}else{
+							//it's only the last Competition he's seen
+							theMembersNow = theMembersNow + ',' + Username;
+							Team.updateAll({id: TeamId}, {coach_request: theMembersNow}, //update
 							function(err,info){
 								Team.findOne({where:{id: TeamId}},
 									function(err,instance){
@@ -446,14 +494,26 @@ module.exports = function(Team) {
 	);
 
 	Team.remoteMethod(
-		'addUserRequest',
+		'addPlayerRequest',
 		{
 			accepts: [
 					{arg: 'Username', type: 'string'},
 					{arg: 'TeamId', type: 'string'}
 					],
-			returns: {arg: 'User_request', type: 'string', root: true},
-			http: {path: '/addUserRequest', verb: 'put'}
+			returns: {arg: 'Player_request', type: 'string', root: true},
+			http: {path: '/addPlayerRequest', verb: 'put'}
+		}
+	);
+
+	Team.remoteMethod(
+		'addCoachRequest',
+		{
+			accepts: [
+					{arg: 'Username', type: 'string'},
+					{arg: 'TeamId', type: 'string'}
+					],
+			returns: {arg: 'Coach_request', type: 'string', root: true},
+			http: {path: '/addCoachRequest', verb: 'put'}
 		}
 	);
 
@@ -494,14 +554,26 @@ module.exports = function(Team) {
 	);
 
 	Team.remoteMethod(
-		'delUserRequest',
+		'delPlayerRequest',
 		{
 			accepts: [
 					{arg: 'TeamName', type: 'string'},
-					{arg: 'userRequest', type: 'string'}
+					{arg: 'playerRequest', type: 'string'}
 					],
-			returns: {arg: 'user_request', type: 'string', root: true},
-			http: {path: '/delUserRequest', verb: 'put'}
+			returns: {arg: 'player_request', type: 'string', root: true},
+			http: {path: '/delPlayerRequest', verb: 'put'}
+		}
+	);
+
+	Team.remoteMethod(
+		'delCoachRequest',
+		{
+			accepts: [
+					{arg: 'TeamName', type: 'string'},
+					{arg: 'coachRequest', type: 'string'}
+					],
+			returns: {arg: 'coach_request', type: 'string', root: true},
+			http: {path: '/delCoachRequest', verb: 'put'}
 		}
 	);
 
