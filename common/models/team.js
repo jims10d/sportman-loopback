@@ -417,14 +417,24 @@ module.exports = function(Team) {
 				} else {
 					var teamResult = [];
 					teamResult = instance;
-					var memberResult = [];
-					TeamMember.find({where: {username: {like: input}}},
+					var playerResult = [];
+					TeamMember.find({where: {username: {like: input}, role: 'Player'}},
 						function (err,instance){
 							if (instance===null){
 								cb(null,null);
 							} else {
-								memberResult = instance;
-								cb(null,teamResult,memberResult);
+								playerResult = instance;
+								var coachResult = [];
+								TeamMember.find({where: {username: {like: input}, role: 'Coach'}},
+									function (err,instance){
+										if (instance===null){
+											cb(null,null);
+										} else {
+											coachResult = instance;
+											cb(null,teamResult,playerResult,coachResult);
+										}
+									}
+								);
 							}
 						}
 					);
@@ -475,7 +485,8 @@ module.exports = function(Team) {
 			accepts: {arg: 'input', type: 'string'},
 			returns: [
 					{arg: 'team', type: 'string'},
-					{arg: 'member', type: 'string'}
+					{arg: 'player', type: 'string'},
+					{arg: 'coach', type: 'string'}
 					 ]
 					
 		}
