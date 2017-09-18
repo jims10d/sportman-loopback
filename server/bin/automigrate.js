@@ -1,25 +1,18 @@
 var app = require('../server');
 
-var teams = [ // kecils
+var messages = [ // kecils
   {
-    team_abrName: 'T129173dfdfsdfdfd',
-    team_name: 'Mangeloqwsddf',
-    team_logo: 'Mangelo ajwqwqwsdfdf',
-    team_manager: 'Angelyqwqwsdfdf',
-    team_coach: 'Angeloqwqsdfwdfq@gmail.com',
-    team_position: 'player',
-    team_play: '',
-    team_point: '',
-    team_win: '',
-    team_draw: '',
-    team_lose: '',
-    team_goalFor: '',
-    team_goalAgainst: '',
-    coach_id: '',
-    invited_member: '',
-    team_squad: '',
-    player_request: '',
-    coach_request: ''
+    date: '16 aug 2017',
+    sender: 'Mangeloqwsddf',
+    receiver: 'Mangelo ajwqwqwsdfdf',
+    sender_name: 'Angelyqwqwsdfdf',
+    receiver_name: 'Angeloqwqsdfwdfq@gmail.com',
+    sender_photo: 'player',
+    receiver_photo: '',
+    id: 'M12312738912 ',
+    content: 'qweqwe',
+    read: '',
+    readStatus: ''
   }
 ];
  
@@ -27,15 +20,15 @@ var teams = [ // kecils
 var dataSource = app.dataSources.SportmanDb;
  
 // this automigrates the Account model 
-dataSource.autoupdate('team', function(err) { // kecil
+dataSource.autoupdate('message', function(err) { // kecil
   if (err) throw err;
  
   // this loads the Account model from ~/common/models/Account.json
-  var Team = app.models.Team; // besar
-  var count = teams.length; // kecils
-  teams.forEach(function(team) { // kecils kecil
+  var Message = app.models.Message; // besar
+  var count = messages.length; // kecils
+  messages.forEach(function(message) { // kecils kecil
      // insert new records into the Account table
-     Team.create(team, function(err, record) { // besar kecil
+     Message.create(message, function(err, record) { // besar kecil
       if (err) return console.log(err);
  
       console.log('Record created:', record);
