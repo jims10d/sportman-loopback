@@ -463,7 +463,7 @@ module.exports = function(Team) {
 					else {						
 						coachRequestNow = coachRequestNow.replace(CoachRequest,'');
 					}
-					Team.updateAll({team_name: TeamName}, {invited_member: coachRequestNow}, //update
+					Team.updateAll({team_name: TeamName}, {coach_request: coachRequestNow}, //update
 					function(err,info){
 						Team.findOne({where:{team_name: TeamName}},
 							function(err,instance){
