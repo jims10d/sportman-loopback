@@ -443,6 +443,41 @@ module.exports = function(Team) {
 		);
 	};
 
+	Team.delCoachRequest = function(TeamName , CoachRequest, cb){
+		Team.findOne({where:{team_name: TeamName}},
+			function(err,instance){
+				if(instance===null){
+					cb(null,null);
+				}else{
+					coachRequest = instance['coach_request']; //get every posts he has liked
+					coachRequestNow = coachRequest.toString(); //store all post he has liked now to string
+					//if the postId is in mid
+					if(coachRequestNow.includes(CoachRequest + ',')){
+						coachRequestNow = coachRequestNow.replace(CoachRequest + ',','');
+					}
+					//if the postId at the last
+					else if(coachRequestNow.includes(',' + CoachRequest)){
+						coachRequestNow = coachRequestNow.replace(',' + CoachRequest,'');
+					}
+					//postId is at the first
+					else {						
+						coachRequestNow = coachRequestNow.replace(CoachRequest,'');
+					}
+					Team.updateAll({team_name: TeamName}, {invited_member: coachRequestNow}, //update
+					function(err,info){
+						Team.findOne({where:{team_name: TeamName}},
+							function(err,instance){
+								if(instance===null){
+									cb(null,null);
+								}else{
+									cb(null,instance);
+								}
+							});
+					});
+				}				
+			});
+	};
+
 
 	Team.remoteMethod(
 		'addCompetition',
