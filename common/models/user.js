@@ -247,7 +247,7 @@ module.exports = function(User) {
 					cb(null,null);
 				}else{
 					data = instance['team']; //get everyone who has like this Competition
-					if(data === null){
+					if(data === null || data === ''){
 						//if this is the first Competition he see
 						console.log("tes");
 						theTeamsNow = TeamName;
