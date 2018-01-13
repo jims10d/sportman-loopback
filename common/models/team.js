@@ -93,7 +93,7 @@ module.exports = function(Team) {
 					cb(null,null);
 				}else{
 					data = instance['invited_member']; //get everyone who has like this Competition
-					if(data === null){
+					if(data === null || data === ''){
 						//if this is the first Competition he see
 						console.log("tes");
 						theMembersNow = Username;
