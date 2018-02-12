@@ -16,7 +16,7 @@ var teams = [ // kecils
     team_goalFor: '50',
     team_goalAgainst: '0',
     coach_id: 'Cqweoqwoieu1',
-    invited_member: '[{"username":"jims", "date":"12/08/2018"}]',
+    invited_member: '{"username":"jims", "date":"12/08/2018"}',
     team_squad: 'a,b,c,d,e',
     player_request: '',
     coach_request: ''
