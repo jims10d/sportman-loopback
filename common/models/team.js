@@ -115,7 +115,7 @@ module.exports = function(Team) {
 							cb(null,instance);
 						}else{
 							//it's only the last Competition he's seen
-							theMembersNow = theMembersNow + ',' + Username;
+							theMembersNow = Username + ',' + theMembersNow;
 							Team.updateAll({id: TeamId}, {invited_member: theMembersNow}, //update
 							function(err,info){
 								Team.findOne({where:{id: TeamId}},
