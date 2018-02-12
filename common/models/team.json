@@ -51,7 +51,7 @@
       "type": "string"
     },
     "invited_member": {
-      "type": "json"
+      "type": "string"
     },
     "team_squad": {
       "type": "string"

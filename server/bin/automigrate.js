@@ -1,25 +1,18 @@
 var app = require('../server');
 
-var teams = [ // kecils
+var messages = [ // kecils
   {
-    team_abrName: 'UFC',
-    team_name: 'Unbeaten',
-    team_logo: '',
-    team_manager: 'Unbeatman',
-    team_coach: 'Unbeater',
-    team_position: '1',
-    team_play: '10',
-    team_point: '30',
-    team_win: '10',
-    team_draw: '0',
-    team_lose: '0',
-    team_goalFor: '50',
-    team_goalAgainst: '0',
-    coach_id: 'Cqweoqwoieu1',
-    invited_member: '{"username":"jims", "date":"12/08/2018"}',
-    team_squad: 'a,b,c,d,e',
-    player_request: '',
-    coach_request: ''
+    date: '16 aug 2017',
+    sender: 'Mangeloqwsddf',
+    receiver: 'Mangelo ajwqwqwsdfdf',
+    sender_name: 'Angelyqwqwsdfdf',
+    receiver_name: 'Angeloqwqsdfwdfq@gmail.com',
+    sender_photo: 'player',
+    receiver_photo: '',
+    id: 'M12312738912 ',
+    content: 'qweqwe',
+    read: '',
+    readStatus: ''
   }
 ];
  
@@ -27,15 +20,15 @@ var teams = [ // kecils
 var dataSource = app.dataSources.SportmanDb;
  
 // this automigrates the Account model 
-dataSource.autoupdate('team', function(err) { // kecil
+dataSource.autoupdate('message', function(err) { // kecil
   if (err) throw err;
  
   // this loads the Account model from ~/common/models/Account.json
-  var Team = app.models.Team; // besar
-  var count = teams.length; // kecils
-  teams.forEach(function(team) { // kecils kecil
+  var Message = app.models.Message; // besar
+  var count = messages.length; // kecils
+  messages.forEach(function(message) { // kecils kecil
      // insert new records into the Account table
-     Team.create(team, function(err, record) { // besar kecil
+     Message.create(message, function(err, record) { // besar kecil
       if (err) return console.log(err);
  
       console.log('Record created:', record);
@@ -118,26 +111,3 @@ dataSource.autoupdate('team', function(err) { // kecil
 //     });
 //   });
 // });
-
-// var teams = [ // kecils
-//   {
-//     team_abrName: 'UFC',
-//     team_name: 'Unbeaten',
-//     team_logo: '',
-//     team_manager: 'Unbeatman',
-//     team_coach: 'Unbeater',
-//     team_position: '1',
-//     team_play: '10',
-//     team_point: '30',
-//     team_win: '10',
-//     team_draw: '0',
-//     team_lose: '0',
-//     team_goalFor: '50',
-//     team_goalAgainst: '0',
-//     coach_id: 'Cqweoqwoieu1',
-//     invited_member: '[{username:jims, date:12/08/2018}]',
-//     team_squad: 'a,b,c,d,e',
-//     player_request: '',
-//     coach_request: ''
-//   }
-// ];

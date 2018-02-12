@@ -93,12 +93,11 @@ module.exports = function(Team) {
 					cb(null,null);
 				}else{
 					data = instance['invited_member']; //get everyone who has like this Competition
-					date = new Date();
-					dateJSON = date.toJSON();
-					if(data.toString() === "[{}]"){
+					if(data === null || data === ''){
 						//if this is the first Competition he see
-						newInvitedMember = '{"invited_member": "'+Username+'", "date": "'+dateJSON+'"}';
-						Team.updateAll({id: TeamId}, {invited_member: '['+newInvitedMember+']'}, //update
+						console.log("tes");
+						theMembersNow = Username;
+						Team.updateAll({id: TeamId}, {invited_member: theMembersNow}, //update
 						function(err,info){
 							Team.findOne({where:{id: TeamId}},
 								function(err,instance){
@@ -110,11 +109,14 @@ module.exports = function(Team) {
 								});
 						});
 					} else {
-						newInvitedMember = '{"invited_member": "'+Username+'", "date": "'+dateJSON+'"}';
-						data.push(JSON.parse(newInvitedMember));
-						InvitedMemberNow = data.toString();
+						theMembersNow = data.toString();
 						//if UserId has like this Competition
-							Team.updateAll({id: TeamId}, {invited_member: InvitedMemberNow}, //update
+						if(theMembersNow.includes(Username)){
+							cb(null,instance);
+						}else{
+							//it's only the last Competition he's seen
+							theMembersNow = Username + ',' + theMembersNow;
+							Team.updateAll({id: TeamId}, {invited_member: theMembersNow}, //update
 							function(err,info){
 								Team.findOne({where:{id: TeamId}},
 									function(err,instance){
