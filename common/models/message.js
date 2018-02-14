@@ -213,7 +213,7 @@ module.exports = function(Message) {
 		);
 	};
 
-	Message.newMessageCounter = function(read, receiver, sender, cb){
+	Message.newMessageCounter = function(receiver, sender, cb){
 		Message.find({where: {read: false, receiver: receiver, sender: sender}},
 			function(err,instance){
 				if(instance===null){
