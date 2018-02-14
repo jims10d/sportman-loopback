@@ -37,8 +37,8 @@ module.exports = function(Message) {
 			});
 	};
 
-	Message.getUnreadMessage = function(read, receiver, sender, cb){
-		Message.find({where: {read: read, receiver: receiver, sender: sender}},
+	Message.getUnreadMessage = function(read, receiver, cb){
+		Message.find({where: {read: read, receiver: receiver}},
 			function(err,instance){
 				if(instance===null){
 					cb(null,null);
