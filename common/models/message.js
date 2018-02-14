@@ -222,6 +222,27 @@ module.exports = function(Message) {
 					var senderName = sender;
 					cb(null,instance.length,senderName);
 				}
+		});
+	};
+
+	Message.readMessage = function(receiver, sender, cb){
+		Message.find({where: {read: false, receiver: receiver, sender: sender}},
+			function(err,instance){
+				if(instance===null){
+					cb(null,null);
+				}else{
+					Message.updateAll({read: true}, //update
+					function(err,info){
+						Message.find({where: {read: false, receiver: receiver, sender: sender}},
+							function(err,instance){
+								if(instance===null){
+									cb(null,null);
+								}else{
+									cb(null,instance);
+								}
+							});
+					});
+				}				
 			});
 	};
 
@@ -318,6 +339,18 @@ module.exports = function(Message) {
 			],	
 			http: {path: '/newMessageCounter', verb: 'get', source: 'query'},
 			description: "Get how many new message"
+		}
+	);
+
+	Message.remoteMethod(
+		'readMessage',
+		{
+			accepts: [
+					{arg: 'receiver', type: 'string'},
+					{arg: 'sender', type: 'string'}
+					],
+			returns: {arg: 'message', type: 'string', root: true},
+			http: {path: '/readMessage', verb: 'put'}
 		}
 	);
 };
