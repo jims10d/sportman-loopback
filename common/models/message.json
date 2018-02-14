@@ -51,6 +51,10 @@
     "receiver_photo": {
       "type": "string",
       "required": false
+    },
+    "newMsgCount": {
+      "type": "number",
+      "required": false
     }
   },
   "validations": [],

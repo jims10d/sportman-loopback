@@ -32,7 +32,7 @@ module.exports = function(Message) {
 								// console.log(allMessages);
 								cb(null,allMessages);
 							}
-						});
+					});
 				}
 			});
 	};
@@ -213,6 +213,17 @@ module.exports = function(Message) {
 		);
 	};
 
+	Message.newMessageCounter = function(receiver, sender, cb){
+		Message.find({fields: {read: false}, where: {receiver: receiver, sender: sender}},
+			function(err,instance){
+				if(instance===null){
+					cb(null,null);
+				}else {
+					cb(null,instance.length);
+				}
+			});
+	};
+
 	Message.delMessage = function(senderName, cb){
 		Message.destroyAll({where:{sender:senderName}},
 			function(err,instance){
@@ -290,6 +301,19 @@ module.exports = function(Message) {
 			returns: {arg: 'count', type: 'string', root: true},
 			http: {path: '/getUnreadMessage', verb: 'get', source: 'query'},
 			description: "Get how many unread message"
+		}
+	);
+
+	Message.remoteMethod(
+		'newMessageCounter',
+		{
+			accepts : [
+				{arg : 'receiver', type: 'string'},
+				{arg : 'sender', type: 'string'}
+			],
+			returns: {arg: 'count', type: 'number'},
+			http: {path: '/newMessageCounter', verb: 'get', source: 'query'},
+			description: "Get how many new message"
 		}
 	);
 };
