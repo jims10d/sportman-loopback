@@ -217,9 +217,10 @@ module.exports = function(Message) {
 		Message.find({where: {read: false, receiver: receiver, sender: sender}},
 			function(err,instance){
 				if(instance===null){
-					cb(null,null);
+					cb(null,null,null);
 				}else {
-					cb(null,instance.length);
+					var senderName = sender;
+					cb(null,instance.length,senderName);
 				}
 			});
 	};
@@ -311,7 +312,10 @@ module.exports = function(Message) {
 				{arg : 'receiver', type: 'string'},
 				{arg : 'sender', type: 'string'}
 			],
-			returns: {arg: 'count', type: 'number'},
+			returns: [
+				{arg: 'count', type: 'number'},
+				{arg: 'sender', type: 'string'}
+			],	
 			http: {path: '/newMessageCounter', verb: 'get', source: 'query'},
 			description: "Get how many new message"
 		}
