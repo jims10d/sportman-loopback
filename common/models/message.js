@@ -37,13 +37,21 @@ module.exports = function(Message) {
 			});
 	};
 
-	Message.getUnreadMessage = function(read, receiver, cb){
-		Message.find({where: {read: read, receiver: receiver}},
+	Message.getUnreadMessage = function(read, receiver, sender, cb){
+		Message.find({where: {read: read, receiver: receiver, sender: sender}},
 			function(err,instance){
 				if(instance===null){
 					cb(null,null);
 				}else {
-					cb(null,instance.length);
+					unreadMessage = JSON.stringify(instance); // converts a JavaScript value to a JSON string
+					var parsed = JSON.parse(unreadMessage);// parsing string
+
+					var allUnreadMessages = []; // array of string, this variabel combines senderMessage & receiverMessage
+
+					for(var x in parsed){
+						allUnreadMessages.push(parsed[x]); // push senderMessage to allMessages
+					}
+					cb(null,allUnreadMessages);
 				}
 			});
 	};
