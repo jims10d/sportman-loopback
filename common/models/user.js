@@ -43,6 +43,32 @@ module.exports = function(User) {
 			});
 	};
 
+	User.getTopPlayer = function(cb){
+		User.find({where:{role:'Player'}},
+			function(err,instance){
+				if(instance===null){
+					cb(null,null);
+				}else{
+					var topPlayerData = [];
+					var highestPoint = 0;
+					var index = 0;
+
+					while(instance.length != 0){
+						for(var i = 0; i < instance.length; i++){
+							if(parseInt(instance[i].goals) + parseInt(instance[i].assist) > highestPoint){
+								highestPoint = parseInt(instance[i].goals) + parseInt(instance[i].assist);
+								index = i;
+							}
+						}
+						topPlayerData.push(instance[index]);
+						instance.splice(index,1);
+						highestPoint = 0;
+					}
+					cb(null,topPlayerData);
+				}
+			});
+	};
+
 	User.getTeamSquad = function(teamName, cb){
 		User.find({where:{team:{like:teamName}}, order: 'username asc' },
 			function(err,instance){
@@ -408,6 +434,15 @@ module.exports = function(User) {
 			returns: {arg: 'id', type: 'string', root: true},
 			http: {path: '/getAttackerByTeam', verb: 'get', source: 'query'},
 			description: "Get attacker instance by team name"
+		}
+	);
+
+	User.remoteMethod(
+		'getTopPlayer',
+		{
+			returns: {arg: 'id', type: 'string', root: true},
+			http: {path: '/getTopPlayer', verb: 'get', source: 'query'},
+			description: "Get top player instance by team name"
 		}
 	);
 
