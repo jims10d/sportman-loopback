@@ -27,7 +27,7 @@ module.exports = function(Message) {
 								}
 
 								allMessages.sort(function(a, b){ // sorting array by date (ascending)
-								    return a.date>b.date;
+								    return a.date.getTime() - b.date.getTime();
 								});
 								// console.log(allMessages);
 								cb(null,allMessages);
