@@ -52,7 +52,7 @@
       "type": "string",
       "required": false
     },
-    "newMsgCount": {
+    "msgOrder": {
       "type": "number",
       "required": false
     }
