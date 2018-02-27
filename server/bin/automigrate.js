@@ -9,11 +9,11 @@ var messages = [ // kecils
     receiver_name: 'Angeloqwqsdfwdfq@gmail.com',
     sender_photo: 'player',
     receiver_photo: '',
-    id: 'dfdff ',
+    id: 'dfdffefe ',
     content: 'qweqwe',
     read: '',
     readStatus: '',
-    newMsgCount: '1'
+    msgOrder: '1'
   }
 ];
  
