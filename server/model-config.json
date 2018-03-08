@@ -89,5 +89,11 @@
     "public": true,
     "$promise": {},
     "$resolved": true
+  },
+  "rating": {
+    "dataSource": "SportmanDb",
+    "public": true,
+    "$promise": {},
+    "$resolved": true
   }
 }

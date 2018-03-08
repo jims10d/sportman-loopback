@@ -1,19 +1,16 @@
+'use strict';
+
 var app = require('../server');
 
-var messages = [ // kecils
+var ratings = [ // kecils
   {
-    date: '16 aug 2017',
-    sender: 'Mangeloqwsddf',
-    receiver: 'Mangelo ajwqwqwsdfdf',
-    sender_name: 'Angelyqwqwsdfdf',
-    receiver_name: 'Angeloqwqsdfwdfq@gmail.com',
-    sender_photo: 'player',
-    receiver_photo: '',
-    id: 'dfdff ',
-    content: 'qweqwe',
-    read: '',
-    readStatus: '',
-    newMsgCount: '1'
+    id: 'R120jsfhsdfsajf',
+    id_competition: 'C103jsdfijsdkf',
+    id_match: 'M12093iqodnadkfnsd',
+    id_user: 'Uaskjfs12312312sdfs',
+    fairness: '5',
+    discipline: '5',
+    decision: '5'
   }
 ];
  
@@ -21,15 +18,15 @@ var messages = [ // kecils
 var dataSource = app.dataSources.SportmanDb;
  
 // this automigrates the Account model 
-dataSource.autoupdate('message', function(err) { // kecil
+dataSource.autoupdate('rating', function(err) { // kecil
   if (err) throw err;
  
   // this loads the Account model from ~/common/models/Account.json
-  var Message = app.models.Message; // besar
-  var count = messages.length; // kecils
-  messages.forEach(function(message) { // kecils kecil
+  var Rating = app.models.Rating; // besar
+  var count = ratings.length; // kecils
+  ratings.forEach(function(rating) { // kecils kecil
      // insert new records into the Account table
-     Message.create(message, function(err, record) { // besar kecil
+     Rating.create(rating, function(err, record) { // besar kecil
       if (err) return console.log(err);
  
       console.log('Record created:', record);
