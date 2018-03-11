@@ -12,7 +12,7 @@ module.exports = function(Team) {
 						cb(null,instance);
 					}
 					//if this is the first Competition he see
-					else if(theRegistersNow === ''){
+					else if(theRegistersNow === '' || theRegistersNow === null){
 						theRegistersNow = CompId;
 						Team.updateAll({id: TeamId}, {competitionId: theRegistersNow}, //update
 						function(err,info){
