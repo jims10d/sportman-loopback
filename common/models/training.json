@@ -24,7 +24,7 @@
       "type": "string"
     },
     "training_date": {
-      "type": "string"
+      "type": "date"
     },
     "training_time": {
       "type": "string"
