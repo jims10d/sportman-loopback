@@ -29,10 +29,19 @@
     "training_time": {
       "type": "string"
     },
-    "acceptedPlayer": {
+    "team_name": {
       "type": "string"
     },
-    "deniedPlayer": {
+    "team_id": {
+      "type": "string"
+    },
+    "coming": {
+      "type": "string"
+    },
+    "not_coming": {
+      "type": "string"
+    },
+    "unconfirmed": {
       "type": "string"
     }
   },

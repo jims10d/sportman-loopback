@@ -2,15 +2,19 @@
 
 var app = require('../server');
 
-var ratings = [ // kecils
+var trainings = [ // kecils
   {
-    id: 'R120jsfhsdfsajf',
-    id_competition: 'C103jsdfijsdkf',
-    id_match: 'M12093iqodnadkfnsd',
-    id_user: 'Uaskjfs12312312sdfs',
-    fairness: '5',
-    discipline: '5',
-    decision: '5'
+    id: 'T1sdfs20jsfhsdfsajf',
+    coach: 'C103jsdfijdsfssdkf',
+    training_name: 'M12093iqodnadkfnsd',
+    training_location: 'Uaskjfs12312312sdfs',
+    training_date: '',
+    training_time: '',
+    team_name: 'sdfsdfsdf',
+    team_id: 'sdfsdfsdfs5',
+    coming: '5',
+    not_coming: '5',
+    unconfirmed: '5'
   }
 ];
  
@@ -18,15 +22,15 @@ var ratings = [ // kecils
 var dataSource = app.dataSources.SportmanDb;
  
 // this automigrates the Account model 
-dataSource.autoupdate('rating', function(err) { // kecil
+dataSource.autoupdate('training', function(err) { // kecil
   if (err) throw err;
  
   // this loads the Account model from ~/common/models/Account.json
-  var Rating = app.models.Rating; // besar
-  var count = ratings.length; // kecils
-  ratings.forEach(function(rating) { // kecils kecil
+  var Training = app.models.Training; // besar
+  var count = trainings.length; // kecils
+  trainings.forEach(function(training) { // kecils kecil
      // insert new records into the Account table
-     Rating.create(rating, function(err, record) { // besar kecil
+     Training.create(training, function(err, record) { // besar kecil
       if (err) return console.log(err);
  
       console.log('Record created:', record);
