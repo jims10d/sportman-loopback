@@ -4,7 +4,7 @@ var app = require('../server');
 
 var trainings = [ // kecils
   {
-    id: 'T1sdfs20jsfhsdfsajf',
+    id: 'T1sdfs20jsfhsdfssdfsdfajf',
     coach: 'C103jsdfijdsfssdkf',
     training_name: 'M12093iqodnadkfnsd',
     training_location: 'Uaskjfs12312312sdfs',
