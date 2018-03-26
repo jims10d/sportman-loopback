@@ -14,7 +14,7 @@
     ]
   },
   "User": {
-    "dataSource": "SportmanDb",
+    "dataSource": "db",
     "public": false
   },
   "AccessToken": {
