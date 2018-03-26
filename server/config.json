@@ -11,14 +11,14 @@
     },
     "json": {
       "strict": false,
-      "limit": "50mb"
+      "limit": "100kb"
     },
     "urlencoded": {
       "extended": true,
-      "limit": "50mb"
+      "limit": "100kb"
     },
     "cors": false
   },
   "legacyExplorer": false,
-  "logoutSessionsOnSensitiveChanges": false
+  "logoutSessionsOnSensitiveChanges": true
 }
