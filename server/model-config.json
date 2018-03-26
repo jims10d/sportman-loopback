@@ -18,7 +18,7 @@
     "public": false
   },
   "AccessToken": {
-    "dataSource": "SportmanDb",
+    "dataSource": "db",
     "public": false
   },
   "ACL": {
@@ -26,14 +26,14 @@
     "public": false
   },
   "RoleMapping": {
-    "dataSource": "SportmanDb",
+    "dataSource": "db",
     "public": false,
     "options": {
       "strictObjectIDCoercion": true
     }
   },
   "Role": {
-    "dataSource": "SportmanDb",
+    "dataSource": "db",
     "public": false
   },
   "user": {
