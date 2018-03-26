@@ -19,6 +19,6 @@
     },
     "cors": false
   },
-  "legacyExplorer": false
-  // "logoutSessionsOnSensitiveChanges": true
+  "legacyExplorer": false,
+  "logoutSessionsOnSensitiveChanges": false
 }
