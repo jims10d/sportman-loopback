@@ -1,4 +1,42 @@
 module.exports = function(User) {
+
+	User.loginUser = function(username, password, cb){
+
+		var UserModel = User.app.models.User;
+		var loginInfo = {};
+
+		//parse user credentials from request body
+		const userCredentials = {
+			"username": username,
+			"password": password
+		}
+
+		UserModel.login(userCredentials, 'user', function (err, result) {			
+			if (err) {
+				//custom logger
+				Log.error(err);
+				res.status(401).json({"error": "login failed"});
+				return;
+			}
+
+			Log.info({
+				"username": userCredentials.username,
+				"timestamp": new Date.getTime(),
+				"action": "login"
+			});
+
+			//transform response to only return the token and ttl
+			res.json({
+				"token": result.id,
+				"ttl": result.ttl
+			});
+			loginInfo.token = result.id;
+			loginInfo.ttl = result.ttl;
+
+			cb(null,loginInfo);
+		});
+	};
+
 	User.getUser = function(username, cb){
 		User.findOne({where:{username:username}},
 			function(err,instance){
@@ -553,6 +591,18 @@ module.exports = function(User) {
 					],
 			returns: {arg: 'teamRequested', type: 'string', root: true},
 			http: {path: '/delRequestedTeam', verb: 'put'}
+		}
+	);
+
+	User.remoteMethod(
+		'loginUser',
+		{
+			accepts: [
+					{arg: 'username', type: 'string'},
+					{arg: 'password', type: 'string'}
+					],
+			returns: {arg: 'loginInfo', type: 'string', root: true},
+			http: {path: '/loginUser', verb: 'post'}
 		}
 	);
 };
