@@ -1,40 +1,14 @@
 module.exports = function(User) {
 
-	User.loginUser = function(req, res){
+	User.loginUser = function(username, password, cb){
 
 		var UserModel = User.app.models.User;
 		// var loginInfo = {};
 
-		//parse user credentials from request body
-		const userCredentials = {
-			"username": req.body.username,
-			"password": req.body.password
-		}
-
-		UserModel.login(userCredentials, 'user', function (err, result) {			
-			if (err) {
-				//custom logger
-				Log.error(err);
-				res.status(401).json({"error": "login failed"});
-				return;
-			}
-
-			Log.info({
-				"username": userCredentials.username,
-				"timestamp": new Date.getTime(),
-				"action": "login"
-			});
-
-			//transform response to only return the token and ttl
-			res.json({
-				"token": result.id,
-				"ttl": result.ttl
-			});
-			// loginInfo.token = result.id;
-			// loginInfo.ttl = result.ttl;
-
-			// cb(null,loginInfo);
-		});
+		 UserModel.login({username: username, password: password}, function (err, token) {
+		 	console.log(token.id);
+		 	cb(null, cb);
+		 });
 	};
 
 	User.getUser = function(username, cb){
