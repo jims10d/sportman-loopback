@@ -6,11 +6,13 @@ module.exports = function(User) {
 		var loginInfo = {};
 		loginInfo.id = "";
 	 	loginInfo.ttl = "";
+	 	loginInfo.created = "";
 	 	loginInfo.userId= "";
 
 		 UserModel.login({username: username, password: password}, function (err, token) {
 		 	loginInfo.id = token.id;
 		 	loginInfo.ttl = token.ttl;
+		 	loginInfo.created = token.created;
 		 	loginInfo.userId= token.userId;
 
 		 	cb(null, loginInfo);
