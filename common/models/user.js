@@ -1,14 +1,14 @@
 module.exports = function(User) {
 
-	User.loginUser = function(username, password, cb){
+	User.loginUser = function(req, res){
 
 		var UserModel = User.app.models.User;
-		var loginInfo = {};
+		// var loginInfo = {};
 
 		//parse user credentials from request body
 		const userCredentials = {
-			"username": username,
-			"password": password
+			"username": req.body.username,
+			"password": req.body.password
 		}
 
 		UserModel.login(userCredentials, 'user', function (err, result) {			
@@ -30,10 +30,10 @@ module.exports = function(User) {
 				"token": result.id,
 				"ttl": result.ttl
 			});
-			loginInfo.token = result.id;
-			loginInfo.ttl = result.ttl;
+			// loginInfo.token = result.id;
+			// loginInfo.ttl = result.ttl;
 
-			cb(null,loginInfo);
+			// cb(null,loginInfo);
 		});
 	};
 
