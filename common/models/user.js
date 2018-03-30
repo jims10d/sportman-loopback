@@ -6,8 +6,8 @@ module.exports = function(User) {
 		// var loginInfo = {};
 
 		 UserModel.login({username: username, password: password}, function (err, token) {
-		 	console.log(token.id);
-		 	cb(null, token.id);
+		 	console.log(token);
+		 	cb(null, token);
 		 });
 	};
 
@@ -575,7 +575,7 @@ module.exports = function(User) {
 					{arg: 'username', type: 'string'},
 					{arg: 'password', type: 'string'}
 					],
-			returns: {arg: 'token', type: 'string', root: true},
+			returns: {arg: 'token', type: 'object', root: true},
 			http: {path: '/loginUser', verb: 'post'}
 		}
 	);
