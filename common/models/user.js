@@ -7,7 +7,7 @@ module.exports = function(User) {
 
 		 UserModel.login({username: username, password: password}, function (err, token) {
 		 	console.log(token.id);
-		 	cb(null, token);
+		 	cb(null, token.id);
 		 });
 	};
 
