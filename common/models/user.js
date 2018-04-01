@@ -457,6 +457,16 @@ module.exports = function(User) {
 	);
 
 	User.remoteMethod(
+		'getMidfielderByTeam',
+		{
+			accepts: {arg: 'teamName', type: 'string'},
+			returns: {arg: 'id', type: 'string', root: true},
+			http: {path: '/getMidfielderByTeam', verb: 'get', source: 'query'},
+			description: "Get midfielder instance by team name"
+		}
+	);
+
+	User.remoteMethod(
 		'getAttackerByTeam',
 		{
 			accepts: {arg: 'teamName', type: 'string'},
