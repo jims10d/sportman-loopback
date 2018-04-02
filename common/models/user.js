@@ -28,6 +28,17 @@ module.exports = function(User) {
 			});
 	};
 
+	User.getUserById = function(userId, cb){
+		User.findOne({where:{id:userId}},
+			function(err,instance){
+				if(instance===null){
+					cb(null,null);
+				}else{
+					cb(null,instance);
+				}
+			});
+	};
+
 	User.getGoalKeeperByTeam = function(teamName, cb){
 		User.find({where:{team:teamName,position:'Goalkeeper'}},
 			function(err,instance){
@@ -433,6 +444,16 @@ module.exports = function(User) {
 			returns: {arg: 'id', type: 'string', root: true},
 			http: {path: '/getUser', verb: 'get', source: 'query'},
 			description: "Get User instance by username"
+		}
+	);
+
+	User.remoteMethod(
+		'getUserById',
+		{
+			accepts: {arg: 'userId', type: 'string'},
+			returns: {arg: 'id', type: 'string', root: true},
+			http: {path: '/getUserById', verb: 'get', source: 'query'},
+			description: "Get User instance by user id"
 		}
 	);
 
