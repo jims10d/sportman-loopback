@@ -18,7 +18,7 @@
     "public": false
   },
   "AccessToken": {
-    "dataSource": "SportmanDb",
+    "dataSource": "db",
     "public": false
   },
   "ACL": {
