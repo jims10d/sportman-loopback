@@ -34,10 +34,42 @@
       "type": "string"
     },
     "match_homeTeam": {
-      "type": "string"
+      "type": "object",
+        "team_name": {
+          "type": "string"
+        },
+        "score": {
+          "type": "number",
+          "default": 0
+        },
+        "lineup": {
+          "type": "string"
+        },
+        "sub": {
+          "type": "string"
+        },
+        "player": {
+          "type": "string"
+        }
     },
     "match_awayTeam": {
-      "type": "string"
+      "type": "object",
+        "team_name": {
+          "type": "string"
+        },
+        "score": {
+          "type": "number",
+          "default": 0
+        },
+        "lineup": {
+          "type": "string"
+        },
+        "sub": {
+          "type": "string"
+        },
+        "player": {
+          "type": "string"
+        }
     },
     "match_fixture": {
       "type": "string"
@@ -50,14 +82,6 @@
     },
     "timer_status": {
       "type": "string"
-    },
-    "match_homeScore": {
-      "type": "number",
-      "default": 0
-    },
-    "match_awayScore": {
-      "type": "number",
-      "default": 0
     },
     "winner": {
       "type": "string"
@@ -92,27 +116,33 @@
     },
     "goalHome": {
       "type": "object",
-      "scorer": {
-        "type": "string"
-      },
-      "time": {
-        "type": "number"
-      },
-      "scoreHome": {
-        "type": "number"
-      },
-      "scoreAway": {
-        "type": "number"
-      }
+        "scorer": {
+          "type": "string"
+        },
+        "time": {
+          "type": "number"
+        },
+        "scoreHome": {
+          "type": "number"
+        },
+        "scoreAway": {
+          "type": "number"
+        }
     },
     "goalAway": {
       "type": "object",
-      "scorer": {
-        "type": "string"
-      },
-      "time": {
-        "type": "number"
-      }
+        "scorer": {
+          "type": "string"
+        },
+        "time": {
+          "type": "number"
+        },
+        "scoreHome": {
+          "type": "number"
+        },
+        "scoreAway": {
+          "type": "number"
+        }
     },
     "assistHome": {
       "type": "object",
