@@ -1,4 +1,5 @@
 module.exports = function(Match) {
+
 	Match.delMatch = function(fixNumber, cb){
 		Match.destroyAll({where:{fixture_number:fixNumber}},
 			function(err,instance){
@@ -34,6 +35,17 @@ module.exports = function(Match) {
 			});
 	};
 
+	Match.getMatchByTeam = function(team, cb){
+		Match.find({where:{or:[{match_homeTeam.team_name:team},{match_awayTeam.team_name:team}]}}, // get all data except id from database
+			function(err,instance){
+				if(instance===null){
+					cb(null,null);
+				}else{	
+					cb(null,instance);			
+				}
+			});
+	};
+
 	Match.remoteMethod(
 		'delMatch',
 		{
@@ -50,6 +62,16 @@ module.exports = function(Match) {
 			accepts : {arg : 'id', type: 'string'},
 			returns: {arg: 'id', type: 'string', root: true},
 			http: {path: '/getMatch', verb: 'get', source: 'query'}
+		}
+	);
+
+	Match.remoteMethod(
+		'getMatchByTeam',
+		{
+			accepts: {arg : 'team', type: 'string'},
+			returns: {arg: 'match', type: 'string', root: true},
+			http: {path: '/getMatchByTeam', verb: 'get', source: 'query'},
+			description: "Get match instance by team name"
 		}
 	);
 
