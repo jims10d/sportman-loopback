@@ -27,9 +27,9 @@ module.exports = function(Message) {
 								}
 
 								allMessages.sort(function(a, b){ // sorting array by date (ascending)
-								    return a.date.getTime() - b.date.getTime();
+								    return a.date.getDate() - b.date.getDate();
 								});
-								// console.log(allMessages);
+								console.log(allMessages);
 								cb(null,allMessages);
 							}
 					});
