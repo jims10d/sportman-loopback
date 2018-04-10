@@ -49,8 +49,8 @@ var app = require('../server');
 
 var matches = [ // kecils
   {
-    match_name: 'Mqqfdfgdfgsddfsdfsdwe',
-    match_venue: 'asdasdasd',
+    match_name: 'Mqqfdfeergdfgsddfsdfsdwe',
+    match_venue: 'asdaerersdasd',
     match_time: '',
     match_countDown: '',
     match_length: '',
@@ -59,6 +59,8 @@ var matches = [ // kecils
     match_referee: '',
     match_homeTeam: '',
     match_awayTeam: '',
+    match_homeTeamObj: '',
+    match_awayTeamObj: '',
     match_fixture: '',
     match_number: '',
     match_started: '',

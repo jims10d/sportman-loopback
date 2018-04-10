@@ -34,6 +34,12 @@
       "type": "string"
     },
     "match_homeTeam": {
+      "type": "string"
+    },
+    "match_awayTeam": {
+      "type": "string"
+    },
+    "match_homeTeamObj": {
       "type": "object",
         "team_name": {
           "type": "string"
@@ -52,7 +58,7 @@
           "type": "string"
         }
     },
-    "match_awayTeam": {
+    "match_awayTeamObj": {
       "type": "object",
         "team_name": {
           "type": "string"
