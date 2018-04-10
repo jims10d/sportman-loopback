@@ -37,6 +37,20 @@ module.exports = function(Message) {
 			});
 	};
 
+	Message.getMessageBySenderAndReceiver = function(sender, receiver, cb){
+		Message.find({where: {or: [{sender: sender, receiver: receiver}, {sender: receiver, receiver: sender}]}},
+			function(err,instance){
+				if(instance===null){
+					cb(null,null);
+				}else{
+					instance.sort(function(a, b){ // sorting array by date (ascending)
+					    return a.date.getTime() - b.date.getTime();
+					});
+					cb(null,instance);		
+				}
+			});
+	};
+
 	Message.getUnreadMessage = function(read, receiver, cb){
 		Message.find({where: {read: read, receiver: receiver}},
 			function(err,instance){
@@ -285,6 +299,18 @@ module.exports = function(Message) {
 					],
 			returns: {arg: 'id', type: 'string', root: true},
 			http: {path: '/getMessage', verb: 'get', source: 'query'}
+		}
+	);
+
+	Message.remoteMethod(
+		'getMessageBySenderAndReceiver',
+		{
+			accepts : [
+						{arg : 'sender', type: 'string'},
+						{arg : 'receiver', type: 'string'}
+					],
+			returns: {arg: 'messages', type: 'string', root: true},
+			http: {path: '/getMessageBySenderAndReceiver', verb: 'get', source: 'query'}
 		}
 	);
 
