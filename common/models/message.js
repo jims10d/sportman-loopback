@@ -2,7 +2,7 @@ module.exports = function(Message) {
 
 	Message.getMessage = function(sender, receiver, cb){
 
-		Message.find({where:{sender: sender, receiver: receiver}}, // get all data except id from database
+		Message.find({where:{sender: receiver, receiver: sender}}, // get all data except id from database
 			function(err,instance){
 				if(instance===null){
 					cb(null,null);
@@ -16,7 +16,7 @@ module.exports = function(Message) {
 					}
 
 
-					Message.find({where:{sender: receiver, receiver: sender}},
+					Message.find({where:{sender: sender, receiver: receiver}},
 						function(err,instance){
 							if(instance===null){
 								cb(null,null);
@@ -31,7 +31,7 @@ module.exports = function(Message) {
 								allMessages.sort(function(a, b){ // sorting array by date (ascending)
 								    return a.date.getDate() - b.date.getDate();
 								});
-								console.log(allMessages);
+								// console.log(allMessages);
 								cb(null,allMessages);
 
 							}
