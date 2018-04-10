@@ -43,9 +43,6 @@ module.exports = function(Message) {
 				if(instance===null){
 					cb(null,null);
 				}else{
-					instance.sort(function(a, b){ // sorting array by date (ascending)
-					    return a.date.getTime() - b.date.getTime();
-					});
 					cb(null,instance);		
 				}
 			});
