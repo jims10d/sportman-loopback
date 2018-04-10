@@ -35,7 +35,7 @@ module.exports = function(Match) {
 	};
 
 	Match.getMatchByTeam = function(team, cb){
-		Match.find({where:{match_homeTeam.team_name: team}}, // get all data except id from database
+		Match.find({where:{match_homeTeam:{team_name: team}}}, // get all data except id from database
 			function(err,instance){
 				if(instance===null){
 					cb(null,null);
