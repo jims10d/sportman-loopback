@@ -32,6 +32,10 @@
       "id": true,
       "required": false
     },
+    "room_id": {
+      "type": "string",
+      "required": false
+    },
     "content": {
       "type": "string",
       "required": true
