@@ -22,23 +22,20 @@
         "type": "object",
           "referee_rating": {
             "type": "object",
-              "referees": {
-                "type": "object",
-                  "referee_name": {
-                    "type": "string"
-                  },
-                  "fairness": {
-                    "type": "number",
-                    "default": 0
-                  },
-                  "discipline": {
-                    "type": "number",
-                    "default": 0
-                  },
-                  "decision": {
-                    "type": "number",
-                    "default": 0
-                  }
+              "referee_name": {
+                "type": "string"
+              },
+              "fairness": {
+                "type": "number",
+                "default": 0
+              },
+              "discipline": {
+                "type": "number",
+                "default": 0
+              },
+              "decision": {
+                "type": "number",
+                "default": 0
               },
           },
           "player_rating": {
@@ -59,23 +56,20 @@
         "type": "object",
           "referee_rating": {
             "type": "object",
-              "referees": {
-                "type": "object",
-                  "referee_name": {
-                    "type": "string"
-                  },
-                  "fairness": {
-                    "type": "number",
-                    "default": 0
-                  },
-                  "discipline": {
-                    "type": "number",
-                    "default": 0
-                  },
-                  "decision": {
-                    "type": "number",
-                    "default": 0
-                  }
+              "referee_name": {
+                "type": "string"
+              },
+              "fairness": {
+                "type": "number",
+                "default": 0
+              },
+              "discipline": {
+                "type": "number",
+                "default": 0
+              },
+              "decision": {
+                "type": "number",
+                "default": 0
               },
           },
           "player_rating": {

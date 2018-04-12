@@ -80,15 +80,15 @@ var ratings = [ // kecils
 var dataSource = app.dataSources.SportmanDb;
  
 // this automigrates the Account model 
-dataSource.autoupdate('match', function(err) { // kecil
+dataSource.autoupdate('rating', function(err) { // kecil
   if (err) throw err;
  
   // this loads the Account model from ~/common/models/Account.json
-  var Match = app.models.Match; // besar
-  var count = matches.length; // kecils
-  matches.forEach(function(match) { // kecils kecil
+  var Rating = app.models.Rating; // besar
+  var count = ratings.length; // kecils
+  ratings.forEach(function(rating) { // kecils kecil
      // insert new records into the Account table
-     Match.create(match, function(err, record) { // besar kecil
+     Rating.create(rating, function(err, record) { // besar kecil
       if (err) return console.log(err);
  
       console.log('Record created:', record);
