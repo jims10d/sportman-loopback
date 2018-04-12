@@ -49,43 +49,30 @@
 
 var app = require('../server');
 
-var matches = [ // kecils
+var ratings = [ // kecils
   {
-    match_name: 'Mqqfdfeergdfffdfgsddfsdfsdwe',
-    match_venue: 'asdaerersddfgdfgasd',
-    match_time: '',
-    match_countDown: '',
-    match_length: '',
-    match_break: '',
-    match_date: '',
-    match_referee: '',
-    match_homeTeam: '',
-    match_awayTeam: '',
-    match_homeTeamObj: '',
-    match_awayTeamObj: '',
-    match_fixture: '',
-    match_number: '',
-    match_started: '',
-    timer_status: '',
-    winner: '',
-    loser: '',
-    match_status: '',
-    timer: '',
-    countDownTimer: '',
-    countDownStarted: '',
-    halfTime: '',
-    fullTime: '',
-    referee_status: '',
-    goalHome: '',
-    goalAway: '',
-    assistHome: '',
-    assistAway: '',
-    yellowCardHome: '',
-    yellowCardAway: '',
-    redCardHome: '',
-    redCardAway: '',
-    substituteHome: '',
-    substituteAway: ''
+    id: 'Mqqfdfeergdfffdfgsddfsdfsdwe',
+    id_competition: 'asdaerersddfgdfgasd',
+    id_match: '',
+    home_teamObj: {
+      referee_rating: {
+        referee_name: 'refs111',
+        fairness: 5,
+        discipline: 4,
+        decision: 2
+      },
+      player_rating: {
+        players: {
+          player_name: 'player121',
+          player_rating: 8
+        },
+        players: {
+          player_name: 'player1dfd21',
+          player_rating: 9
+        }
+      }
+    },
+    away_teamObj: ''
   }
 ];
  
