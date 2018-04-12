@@ -62,14 +62,8 @@ var ratings = [ // kecils
         decision: 2
       },
       player_rating: {
-        players: {
-          player_name: 'player121',
-          player_rating: 8
-        },
-        players: {
-          player_name: 'player1dfd21',
-          player_rating: 9
-        }
+        player_name: 'player121,player234',
+        player_rating: '10,8'
       }
     },
     away_teamObj: ''

@@ -40,15 +40,11 @@
           },
           "player_rating": {
             "type": "object",
-              "players": {
-                "type": "object",
-                  "player_name": {
-                    "type": "string"
-                  },
-                  "player_rating": {
-                    "type": "number",
-                    "default": 0
-                  }
+              "player_name": {
+                "type": "string"
+              },
+              "player_rating": {
+                "type": "string"
               }
           }
       },
@@ -74,15 +70,11 @@
           },
           "player_rating": {
             "type": "object",
-              "players": {
-                "type": "object",
-                  "player_name": {
-                    "type": "string"
-                  },
-                  "player_rating": {
-                    "type": "number",
-                    "default": 0
-                  }
+              "player_name": {
+                "type": "string"
+              },
+              "player_rating": {
+                "type": "string"
               }
           }
       },
