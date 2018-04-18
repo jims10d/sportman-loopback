@@ -44,6 +44,9 @@
     "teamRequested": {
       "type": "string"
     },
+    "ktp": {
+      "type": "string"
+    },
     "age": {
       "type": "string"
     },

@@ -47,26 +47,86 @@
 //   });
 // });
 
+// var app = require('../server');
+
+// var ratings = [ // kecils
+//   {
+//     id: 'Mqqfdfeergdfffdfgsddfsdsdffsdffsdwe',
+//     id_competition: 'asdaerersddfgdfgasd',
+//     id_match: '',
+//     home_teamObj: {
+//       referee_rating: {
+//         referee_name: 'refs111',
+//         fairness: 5,
+//         discipline: 4,
+//         decision: 2
+//       },
+//       player_rating: {
+//         player_name: 'player121,player234',
+//         player_rating: '10,8'
+//       }
+//     },
+//     away_teamObj: ''
+//   }
+// ];
+ 
+// // this loads the accountDb configuration in ~/server/datasources.json
+// var dataSource = app.dataSources.SportmanDb;
+ 
+// // this automigrates the Account model 
+// dataSource.autoupdate('rating', function(err) { // kecil
+//   if (err) throw err;
+ 
+//   // this loads the Account model from ~/common/models/Account.json
+//   var Rating = app.models.Rating; // besar
+//   var count = ratings.length; // kecils
+//   ratings.forEach(function(rating) { // kecils kecil
+//      // insert new records into the Account table
+//      Rating.create(rating, function(err, record) { // besar kecil
+//       if (err) return console.log(err);
+ 
+//       console.log('Record created:', record);
+ 
+//       count--;
+ 
+//       if (count === 0) {
+//         console.log('done');
+//         dataSource.disconnect();
+//       }
+//     });
+//   });
+// });
+
 var app = require('../server');
 
-var ratings = [ // kecils
+var users = [ // kecils
   {
     id: 'Mqqfdfeergdfffdfgsddfsdsdffsdffsdwe',
-    id_competition: 'asdaerersddfgdfgasd',
-    id_match: '',
-    home_teamObj: {
-      referee_rating: {
-        referee_name: 'refs111',
-        fairness: 5,
-        discipline: 4,
-        decision: 2
-      },
-      player_rating: {
-        player_name: 'player121,player234',
-        player_rating: '10,8'
-      }
-    },
-    away_teamObj: ''
+    username: 'tester20',
+    fullname: 'tester20',
+    password:'Tester20',
+    email: 'tester20@gmail.com',
+    role: 'Player',
+    photo: '',
+    teamInvitation:'',
+    team: '',
+    teamRequested: '',
+    ktp: '12391247192476942',
+    age: '',
+    address:'',
+    position: '',
+    hp: '',
+    bio: '',
+    profileCompleted:'',
+    play: '',
+    goal: '',
+    assist: '',
+    yellowCard: '',
+    redCard:'',
+    redCardGiven: '',
+    yellowCardGiven: '',
+    matchManaged: ''
+
   }
 ];
  
@@ -74,15 +134,15 @@ var ratings = [ // kecils
 var dataSource = app.dataSources.SportmanDb;
  
 // this automigrates the Account model 
-dataSource.autoupdate('rating', function(err) { // kecil
+dataSource.autoupdate('user', function(err) { // kecil
   if (err) throw err;
  
   // this loads the Account model from ~/common/models/Account.json
-  var Rating = app.models.Rating; // besar
-  var count = ratings.length; // kecils
-  ratings.forEach(function(rating) { // kecils kecil
+  var User = app.models.User; // besar
+  var count = users.length; // kecils
+  users.forEach(function(user) { // kecils kecil
      // insert new records into the Account table
-     Rating.create(rating, function(err, record) { // besar kecil
+     User.create(user, function(err, record) { // besar kecil
       if (err) return console.log(err);
  
       console.log('Record created:', record);
