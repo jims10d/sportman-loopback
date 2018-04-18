@@ -51,7 +51,7 @@ var app = require('../server');
 
 var ratings = [ // kecils
   {
-    id: 'Mqqfdfeergdfffdfgsddfsdfsdwe',
+    id: 'Mqqfdfeergdfffdfgsddfsdsdffsdffsdwe',
     id_competition: 'asdaerersddfgdfgasd',
     id_match: '',
     home_teamObj: {
