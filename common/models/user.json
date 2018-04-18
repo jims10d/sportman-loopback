@@ -9,7 +9,7 @@
   "indexes":
   {
       "UNIQUE_INDEX":  {
-          "columns": "`column1`",
+          "columns": "`ktp`",
           "kind": "unique"
       }
   },
