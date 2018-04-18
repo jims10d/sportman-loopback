@@ -1,5 +1,7 @@
 module.exports = function(User) {
 
+	User.validatesUniquenessOf('ktp');
+
 	User.loginUser = function(username, password, cb){
 
 		var UserModel = User.app.models.User;
