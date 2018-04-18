@@ -6,13 +6,6 @@
   "options": {
     "validateUpsert": true
   },
-  "indexes":
-  {
-      "UNIQUE_INDEX":  {
-          "columns": "`ktp`",
-          "kind": "unique"
-      }
-  },
   "properties": {
     "id": {
       "type": "string",
