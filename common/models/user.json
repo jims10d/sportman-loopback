@@ -6,6 +6,13 @@
   "options": {
     "validateUpsert": true
   },
+  "indexes":
+  {
+      "UNIQUE_INDEX":  {
+          "columns": "`column1`",
+          "kind": "unique"
+      }
+  },
   "properties": {
     "id": {
       "type": "string",
