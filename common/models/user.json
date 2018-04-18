@@ -45,7 +45,10 @@
       "type": "string"
     },
     "ktp": {
-      "type": "string"
+      "type": "string",
+      "index": {
+        "unique": true
+      }
     },
     "age": {
       "type": "string"
