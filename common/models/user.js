@@ -181,12 +181,11 @@ module.exports = function(User) {
 				if(instance===null){
 					cb(null,null);
 				}else{
-					data = instance['teamInvitation']; //get everyone who has like this Competition
+					data = instance['teamInvitation'];
 					if(data === null || data === ''){
-						//if this is the first Competition he see
 						console.log("tes");
 						theTeamsNow = TeamName;
-						User.updateAll({id: UserId}, {teamInvitation: theTeamsNow}, //update
+						User.updateAll({id: UserId}, {teamInvitation: theTeamsNow}, // update user data
 						function(err,info){
 							User.findOne({where:{id: UserId}},
 								function(err,instance){
@@ -199,13 +198,13 @@ module.exports = function(User) {
 						});
 					} else {
 						theTeamsNow = data.toString();
-						//if UserId has like this Competition
+						
 						if(theTeamsNow.includes(TeamName)){
 							cb(null,instance);
 						}else{
-							//it's only the last Competition he's seen
+							
 							theTeamsNow = theTeamsNow + ',' + TeamName;
-							User.updateAll({id: UserId}, {teamInvitation: theTeamsNow}, //update
+							User.updateAll({id: UserId}, {teamInvitation: theTeamsNow}, // update user data
 							function(err,info){
 								User.findOne({where:{id: UserId}},
 									function(err,instance){
@@ -229,12 +228,11 @@ module.exports = function(User) {
 				if(instance===null){
 					cb(null,null);
 				}else{
-					data = instance['teamRequested']; //get everyone who has like this Competition
+					data = instance['teamRequested']; 
 					if(data === null || data === ''){
-						//if this is the first Competition he see
 						console.log("tes");
 						theTeamsNow = TeamName;
-						User.updateAll({id: UserId}, {teamRequested: theTeamsNow}, //update
+						User.updateAll({id: UserId}, {teamRequested: theTeamsNow}, // update user data
 						function(err,info){
 							User.findOne({where:{id: UserId}},
 								function(err,instance){
@@ -247,13 +245,13 @@ module.exports = function(User) {
 						});
 					} else {
 						theTeamsNow = data.toString();
-						//if UserId has like this Competition
+					
 						if(theTeamsNow.includes(TeamName)){
 							cb(null,instance);
 						}else{
-							//it's only the last Competition he's seen
+							
 							theTeamsNow = theTeamsNow + ',' + TeamName;
-							User.updateAll({id: UserId}, {teamRequested: theTeamsNow}, //update
+							User.updateAll({id: UserId}, {teamRequested: theTeamsNow}, // update user data
 							function(err,info){
 								User.findOne({where:{id: UserId}},
 									function(err,instance){
@@ -277,21 +275,21 @@ module.exports = function(User) {
 				if(instance===null){
 					cb(null,null);
 				}else{
-					TeamInvitation = instance['teamInvitation']; //get every posts he has liked
-					TeamInvitationNow = TeamInvitation.toString(); //store all post he has liked now to string
-					//if the postId is in mid
+					TeamInvitation = instance['teamInvitation']; 
+					TeamInvitationNow = TeamInvitation.toString(); 
+					
 					if(TeamInvitationNow.includes(teamInvite + ',')){
 						TeamInvitationNow = TeamInvitationNow.replace(teamInvite + ',','');
 					}
-					//if the postId at the last
+					
 					else if(TeamInvitationNow.includes(',' + teamInvite)){
 						TeamInvitationNow = TeamInvitationNow.replace(',' + teamInvite,'');
 					}
-					//postId is at the first
+					
 					else {						
 						TeamInvitationNow = TeamInvitationNow.replace(teamInvite,'');
 					}
-					User.updateAll({username: UserName}, {teamInvitation: TeamInvitationNow}, //update
+					User.updateAll({username: UserName}, {teamInvitation: TeamInvitationNow}, // update user data
 					function(err,info){
 						User.findOne({where:{username: UserName}},
 							function(err,instance){
@@ -300,7 +298,7 @@ module.exports = function(User) {
 								}else{
 									cb(null,instance);
 								}
-							})
+							});
 					});
 				}				
 			});
@@ -312,12 +310,10 @@ module.exports = function(User) {
 				if(instance===null){
 					cb(null,null);
 				}else{
-					data = instance['team']; //get everyone who has like this Competition
+					data = instance['team']; 
 					if(data === null || data === ''){
-						//if this is the first Competition he see
-						console.log("tes");
 						theTeamsNow = TeamName;
-						User.updateAll({id: UserId}, {team: theTeamsNow}, //update
+						User.updateAll({id: UserId}, {team: theTeamsNow}, // update user data
 						function(err,info){
 							User.findOne({where:{id: UserId}},
 								function(err,instance){
@@ -329,25 +325,18 @@ module.exports = function(User) {
 								});
 						});
 					} else {
-						theTeamsNow = data.toString();
-						//if UserId has like this Competition
-						if(theTeamsNow.includes(TeamName)){
-							cb(null,instance);
-						}else{
-							//it's only the last Competition he's seen
-							theTeamsNow = theTeamsNow + ',' + TeamName;
-							User.updateAll({id: UserId}, {team: theTeamsNow}, //update
-							function(err,info){
-								User.findOne({where:{id: UserId}},
-									function(err,instance){
-										if(instance===null){
-											cb(null,null);
-										}else{
-											cb(null,instance);
-										}
-									});
-							});
-						}
+						theTeamsNow = TeamName;
+						User.updateAll({id: UserId}, {team: theTeamsNow}, // update user data
+						function(err,info){
+							User.findOne({where:{id: UserId}},
+								function(err,instance){
+									if(instance===null){
+										cb(null,null);
+									}else{
+										cb(null,instance);
+									}
+								});
+						});
 					}
 					
 				}				
@@ -360,12 +349,12 @@ module.exports = function(User) {
 				if(instance===null){
 					cb(null,null);
 				}else{
-					data = instance['team']; //get everyone who has like this Competition
+					data = instance['team'];
 					if(data === null){
-						//if this is the first Competition he see
+			
 						console.log("tes");
 						theTeamsNow = Team;
-						User.updateAll({username: Username}, {team: theTeamsNow}, //update
+						User.updateAll({username: Username}, {team: theTeamsNow}, // update user data
 						function(err,info){
 							User.findOne({where:{username: Username}},
 								function(err,instance){
@@ -378,13 +367,13 @@ module.exports = function(User) {
 						});
 					} else {
 						theTeamsNow = data.toString();
-						//if UserId has like this Competition
+		
 						if(theTeamsNow.includes(Team)){
 							cb(null,instance);
 						}else{
-							//it's only the last Competition he's seen
+
 							theTeamsNow = theTeamsNow + ',' + Team;
-							User.updateAll({username: Username}, {team: theTeamsNow}, //update
+							User.updateAll({username: Username}, {team: theTeamsNow}, // update user data
 							function(err,info){
 								User.findOne({where:{username: Username}},
 									function(err,instance){
@@ -408,21 +397,21 @@ module.exports = function(User) {
 				if(instance===null){
 					cb(null,null);
 				}else{
-					RequestedTeam = instance['teamRequested']; //get every posts he has liked
-					RequestedTeamNow = RequestedTeam.toString(); //store all post he has liked now to string
-					//if the postId is in mid
+					RequestedTeam = instance['teamRequested']; 
+					RequestedTeamNow = RequestedTeam.toString(); 
+
 					if(RequestedTeamNow.includes(teamRequested + ',')){
 						RequestedTeamNow = RequestedTeamNow.replace(teamRequested + ',','');
 					}
-					//if the postId at the last
+					
 					else if(RequestedTeamNow.includes(',' + teamRequested)){
 						RequestedTeamNow = RequestedTeamNow.replace(',' + teamRequested,'');
 					}
-					//postId is at the first
+					
 					else {						
 						RequestedTeamNow = RequestedTeamNow.replace(teamRequested,'');
 					}
-					User.updateAll({username: Username}, {teamRequested: RequestedTeamNow}, //update
+					User.updateAll({username: Username}, {teamRequested: RequestedTeamNow}, // update user data
 					function(err,info){
 						User.findOne({where:{username: Username}},
 							function(err,instance){
