@@ -306,7 +306,7 @@ module.exports = function(User) {
 
 	User.addTeam = function(TeamName, TeamCoach, UserId, TeamId, cb){
 
-		var Team = Message.app.models.team;
+		var Team = User.app.models.team;
 
 		User.findOne({where:{id: UserId}},
 			function(err,instance){
