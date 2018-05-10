@@ -230,7 +230,7 @@ module.exports = function(Team) {
 			});
 	};
 
-	Team.addMemberByName = function(Member, TeamName, cb){
+	Team.addMemberByName = function(Member, TeamName, TeamCoach, cb){
 		Team.findOne({where:{team_name: TeamName}},
 			function(err,instance){
 				if(instance===null){
@@ -241,7 +241,7 @@ module.exports = function(Team) {
 						//if this is the first Competition he see
 						console.log("tes");
 						theMembersNow = Member;
-						Team.updateAll({team_name: TeamName}, {team_squad: theMembersNow}, //update
+						Team.updateAll({team_name: TeamName}, {team_squad: theMembersNow}, {team_coach: TeamCoach}, //update
 						function(err,info){
 							Team.findOne({where:{team_name: TeamName}},
 								function(err,instance){
@@ -260,7 +260,7 @@ module.exports = function(Team) {
 						}else{
 							//it's only the last Competition he's seen
 							theMembersNow = theMembersNow + ',' + Member;
-							Team.updateAll({team_name: TeamName}, {team_squad: theMembersNow}, //update
+							Team.updateAll({team_name: TeamName}, {team_squad: theMembersNow}, {team_coach: TeamCoach}, //update
 							function(err,info){
 								Team.findOne({where:{team_name: TeamName}},
 									function(err,instance){
@@ -568,7 +568,8 @@ module.exports = function(Team) {
 		{
 			accepts: [
 					{arg: 'Member', type: 'string'},
-					{arg: 'TeamName', type: 'string'}
+					{arg: 'TeamName', type: 'string'},
+					{arg: 'TeamCoach', type: 'string'}
 					],
 			returns: {arg: 'Team_squad', type: 'string', root: true},
 			http: {path: '/addMemberByName', verb: 'put'}
