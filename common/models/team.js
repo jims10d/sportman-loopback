@@ -242,7 +242,7 @@ module.exports = function(Team) {
 						console.log("tes");
 						theMembersNow = Member;
 						//TODO fix updateAll function
-						Team.updateAll({team_name: TeamName}, {team_coach: TeamCoach, team_squad: theMembersNow}}, //update
+						Team.updateAll({team_name: TeamName}, {team_coach: TeamCoach, team_squad: theMembersNow}, //update
 						function(err,info){
 							Team.findOne({where:{team_name: TeamName}},
 								function(err,instance){
@@ -262,7 +262,7 @@ module.exports = function(Team) {
 							//it's only the last Competition he's seen
 							theMembersNow = theMembersNow + ',' + Member;
 							//TODO fix updateAll function
-							Team.updateAll({team_name: TeamName}, {team_coach: TeamCoach, team_squad: theMembersNow}}, //update
+							Team.updateAll({team_name: TeamName}, {team_coach: TeamCoach, team_squad: theMembersNow}, //update
 							function(err,info){
 								Team.findOne({where:{team_name: TeamName}},
 									function(err,instance){
