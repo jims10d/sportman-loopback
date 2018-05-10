@@ -241,7 +241,10 @@ module.exports = function(Team) {
 						//if this is the first Competition he see
 						console.log("tes");
 						theMembersNow = Member;
-						Team.updateAll({team_name: TeamName}, {team_squad: theMembersNow}, {team_coach: TeamCoach}, //update
+
+						newCoach = TeamCoach;
+
+						Team.updateAll({team_name: TeamName}, {team_squad: theMembersNow}, {team_coach: newCoach}, //update
 						function(err,info){
 							Team.findOne({where:{team_name: TeamName}},
 								function(err,instance){
@@ -260,7 +263,10 @@ module.exports = function(Team) {
 						}else{
 							//it's only the last Competition he's seen
 							theMembersNow = theMembersNow + ',' + Member;
-							Team.updateAll({team_name: TeamName}, {team_squad: theMembersNow}, {team_coach: TeamCoach}, //update
+
+							newCoach = TeamCoach;
+							
+							Team.updateAll({team_name: TeamName}, {team_squad: theMembersNow}, {team_coach: newCoach}, //update
 							function(err,info){
 								Team.findOne({where:{team_name: TeamName}},
 									function(err,instance){
