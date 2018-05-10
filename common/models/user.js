@@ -621,7 +621,9 @@ module.exports = function(User) {
 		{
 			accepts: [
 					{arg: 'TeamName', type: 'string'},
-					{arg: 'UserId', type: 'string'}
+					{arg: 'TeamCoach', type: 'string'},
+					{arg: 'UserId', type: 'string'},
+					{arg: 'TeamId', type: 'string'}
 					],
 			returns: {arg: 'team', type: 'string', root: true},
 			http: {path: '/addTeam', verb: 'put'}
