@@ -304,7 +304,10 @@ module.exports = function(User) {
 			});
 	};
 
-	User.addTeam = function(TeamName, UserId, cb){
+	User.addTeam = function(TeamName, TeamCoach, UserId, TeamId, cb){
+
+		var Team = Message.app.models.team;
+
 		User.findOne({where:{id: UserId}},
 			function(err,instance){
 				if(instance===null){
@@ -313,6 +316,28 @@ module.exports = function(User) {
 					data = instance['team']; 
 					if(data === null || data === ''){
 						theTeamsNow = TeamName;
+
+						Team.findOne({where:{id: TeamId}},
+							function(err, instance){
+								if(instance === null){
+									cb(null, null);	
+								}else{
+
+									newCoach = TeamCoach;
+									Team.updateAll({id: TeamId}, {team_coach: newCoach}, // update user data
+										function(err,info){
+											Team.findOne({where:{id: TeamId}},
+												function(err,instance){
+													if(instance===null){
+														cb(null,null);
+													}else{
+														cb(null,instance);
+													}
+												});
+										});
+								}
+							});
+
 						User.updateAll({id: UserId}, {team: theTeamsNow}, // update user data
 						function(err,info){
 							User.findOne({where:{id: UserId}},
@@ -325,6 +350,28 @@ module.exports = function(User) {
 								});
 						});
 					} else {
+
+						Team.findOne({where:{id: TeamId}},
+							function(err, instance){
+								if(instance === null){
+									cb(null, null);	
+								}else{
+
+									newCoach = TeamCoach;
+									Team.updateAll({id: TeamId}, {team_coach: newCoach}, // update user data
+										function(err,info){
+											Team.findOne({where:{id: TeamId}},
+												function(err,instance){
+													if(instance===null){
+														cb(null,null);
+													}else{
+														cb(null,instance);
+													}
+												});
+										});
+								}
+							});
+
 						theTeamsNow = TeamName;
 						User.updateAll({id: UserId}, {team: theTeamsNow}, // update user data
 						function(err,info){
