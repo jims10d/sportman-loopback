@@ -6,7 +6,7 @@ module.exports = function(Competition) {
 				if(instance===null){
 					cb(null,null);
 				}else{
-					data = instance['registeredTeam']; //get everyone who has like this Competition
+					data = instance['registeredTeam'];
 					if(data === null || data === ''){
 						theRegistersNow = TeamName;
 						Competition.updateAll({id: CompetitionId}, {registeredTeam: theRegistersNow}, //update
@@ -22,11 +22,11 @@ module.exports = function(Competition) {
 						});
 					}else{
 						theRegistersNow = data.toString();
-						//if UserId has like this Competition
+					
 						if(theRegistersNow.includes(TeamName)){
 							cb(null,instance);
 						}else{
-							//it's only the last Competition he's seen
+			
 							theRegistersNow = theRegistersNow + ',' + TeamName;
 							Competition.updateAll({id: CompetitionId}, {registeredTeam: theRegistersNow}, //update
 							function(err,info){
