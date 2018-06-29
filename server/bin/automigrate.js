@@ -97,36 +97,107 @@
 //   });
 // });
 
+// var app = require('../server');
+
+// var users = [ // kecils
+//   {
+//     id: 'Mqqfdfeergdfffdfgsddfsdsdffsdffsdwe',
+//     username: 'tester20',
+//     fullname: 'tester20',
+//     password:'Tester20',
+//     email: 'tester20@gmail.com',
+//     role: 'Player',
+//     photo: '',
+//     teamInvitation:'',
+//     team: '',
+//     teamRequested: '',
+//     ktp: '12391247192476942',
+//     age: '',
+//     address:'',
+//     position: '',
+//     hp: '',
+//     bio: '',
+//     profileCompleted:'',
+//     play: '',
+//     goal: '',
+//     assist: '',
+//     yellowCard: '',
+//     redCard:'',
+//     redCardGiven: '',
+//     yellowCardGiven: '',
+//     matchManaged: ''
+
+//   }
+// ];
+ 
+// // this loads the accountDb configuration in ~/server/datasources.json
+// var dataSource = app.dataSources.SportmanDb;
+ 
+// // this automigrates the Account model 
+// dataSource.autoupdate('user', function(err) { // kecil
+//   if (err) throw err;
+ 
+//   // this loads the Account model from ~/common/models/Account.json
+//   var User = app.models.User; // besar
+//   var count = users.length; // kecils
+//   users.forEach(function(user) { // kecils kecil
+//      // insert new records into the Account table
+//      User.create(user, function(err, record) { // besar kecil
+//       if (err) return console.log(err);
+ 
+//       console.log('Record created:', record);
+ 
+//       count--;
+ 
+//       if (count === 0) {
+//         console.log('done');
+//         dataSource.disconnect();
+//       }
+//     });
+//   });
+// });
+
 var app = require('../server');
 
-var users = [ // kecils
+var matches = [ // kecils
   {
-    id: 'Mqqfdfeergdfffdfgsddfsdsdffsdffsdwe',
-    username: 'tester20',
-    fullname: 'tester20',
-    password:'Tester20',
-    email: 'tester20@gmail.com',
-    role: 'Player',
-    photo: '',
-    teamInvitation:'',
-    team: '',
-    teamRequested: '',
-    ktp: '12391247192476942',
-    age: '',
-    address:'',
-    position: '',
-    hp: '',
-    bio: '',
-    profileCompleted:'',
-    play: '',
-    goal: '',
-    assist: '',
-    yellowCard: '',
-    redCard:'',
-    redCardGiven: '',
-    yellowCardGiven: '',
-    matchManaged: ''
-
+    match_name: 'QWE',
+    match_venue: 'Planet Futsal',
+    match_time: '15:00',
+    match_countDown:'60',
+    match_length: '50',
+    match_break: '10',
+    match_date: '29/06/2018',
+    match_referee:'Mark Johnson',
+    match_homeTeam: 'Portugal',
+    match_awayTeam: 'Argentina',
+    match_homeTeamObj: '',
+    match_awayTeamObj: '',
+    match_fixture:'3',
+    match_number: '1',
+    match_started: 'true',
+    timer_status: 'false',
+    winner:'',
+    loser: '',
+    match_pair: '',
+    match_group: '',
+    match_status: '',
+    timer:'',
+    countDownTimer: '',
+    countDownStarted: '',
+    halfTime: '',
+    fullTime: '',
+    referee_status: '',
+    goalHome: '',
+    goalAway:'',
+    assistHome: '',
+    assistAway: '',
+    yellowCardHome: '',
+    yellowCardAway: '',
+    redCardHome: '',
+    redCardAway: '',
+    substituteHome: '',
+    substituteAway: ''
   }
 ];
  
@@ -134,15 +205,15 @@ var users = [ // kecils
 var dataSource = app.dataSources.SportmanDb;
  
 // this automigrates the Account model 
-dataSource.autoupdate('user', function(err) { // kecil
+dataSource.autoupdate('match', function(err) { // kecil
   if (err) throw err;
  
   // this loads the Account model from ~/common/models/Account.json
-  var User = app.models.User; // besar
-  var count = users.length; // kecils
-  users.forEach(function(user) { // kecils kecil
+  var Match = app.models.Match; // besar
+  var count = matches.length; // kecils
+  matches.forEach(function(match) { // kecils kecil
      // insert new records into the Account table
-     User.create(user, function(err, record) { // besar kecil
+     Match.create(match, function(err, record) { // besar kecil
       if (err) return console.log(err);
  
       console.log('Record created:', record);

@@ -101,6 +101,12 @@
     "loser": {
       "type": "string"
     },
+    "match_pair": {
+      "type": "string"
+    },
+    "match_group": {
+      "type": "string"
+    },
     "match_status": {
       "type": "string"
     },
