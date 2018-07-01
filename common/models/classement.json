@@ -18,6 +18,9 @@
     "team": {
       "type": "string"
     },
+    "group": {
+      "type": "string"
+    },
     "play": {
       "type": "string"
     },

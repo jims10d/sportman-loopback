@@ -157,47 +157,92 @@
 //   });
 // });
 
+// var app = require('../server');
+
+// var matches = [ // kecils
+//   {
+//     match_name: 'QWE',
+//     match_venue: 'Planet Futsal',
+//     match_time: '15:00',
+//     match_countDown:'60',
+//     match_length: '50',
+//     match_break: '10',
+//     match_date: '29/06/2018',
+//     match_referee:'Mark Johnson',
+//     match_homeTeam: 'Portugal',
+//     match_awayTeam: 'Argentina',
+//     match_homeTeamObj: '',
+//     match_awayTeamObj: '',
+//     match_fixture:'3',
+//     match_number: '1',
+//     match_started: 'true',
+//     timer_status: 'false',
+//     winner:'',
+//     loser: '',
+//     match_pair: '',
+//     match_group: '',
+//     match_status: '',
+//     timer:'',
+//     countDownTimer: '',
+//     countDownStarted: '',
+//     halfTime: '',
+//     fullTime: '',
+//     referee_status: '',
+//     goalHome: '',
+//     goalAway:'',
+//     assistHome: '',
+//     assistAway: '',
+//     yellowCardHome: '',
+//     yellowCardAway: '',
+//     redCardHome: '',
+//     redCardAway: '',
+//     substituteHome: '',
+//     substituteAway: ''
+//   }
+// ];
+ 
+// // this loads the accountDb configuration in ~/server/datasources.json
+// var dataSource = app.dataSources.SportmanDb;
+ 
+// // this automigrates the Account model 
+// dataSource.autoupdate('match', function(err) { // kecil
+//   if (err) throw err;
+ 
+//   // this loads the Account model from ~/common/models/Account.json
+//   var Match = app.models.Match; // besar
+//   var count = matches.length; // kecils
+//   matches.forEach(function(match) { // kecils kecil
+//      // insert new records into the Account table
+//      Match.create(match, function(err, record) { // besar kecil
+//       if (err) return console.log(err);
+ 
+//       console.log('Record created:', record);
+ 
+//       count--;
+ 
+//       if (count === 0) {
+//         console.log('done');
+//         dataSource.disconnect();
+//       }
+//     });
+//   });
+// });
+
 var app = require('../server');
 
-var matches = [ // kecils
+var classements = [ // kecils
   {
-    match_name: 'QWE',
-    match_venue: 'Planet Futsal',
-    match_time: '15:00',
-    match_countDown:'60',
-    match_length: '50',
-    match_break: '10',
-    match_date: '29/06/2018',
-    match_referee:'Mark Johnson',
-    match_homeTeam: 'Portugal',
-    match_awayTeam: 'Argentina',
-    match_homeTeamObj: '',
-    match_awayTeamObj: '',
-    match_fixture:'3',
-    match_number: '1',
-    match_started: 'true',
-    timer_status: 'false',
-    winner:'',
-    loser: '',
-    match_pair: '',
-    match_group: '',
-    match_status: '',
-    timer:'',
-    countDownTimer: '',
-    countDownStarted: '',
-    halfTime: '',
-    fullTime: '',
-    referee_status: '',
-    goalHome: '',
-    goalAway:'',
-    assistHome: '',
-    assistAway: '',
-    yellowCardHome: '',
-    yellowCardAway: '',
-    redCardHome: '',
-    redCardAway: '',
-    substituteHome: '',
-    substituteAway: ''
+    id: 'CL2939ajsdadh123',
+    position: '1',
+    team: 'Argentina',
+    group:'D',
+    play: '3',
+    win: '3',
+    draw: '0',
+    lose:'0',
+    goalDifference: '+10',
+    points: '9',
+    status: 'Winner'
   }
 ];
  
@@ -205,15 +250,15 @@ var matches = [ // kecils
 var dataSource = app.dataSources.SportmanDb;
  
 // this automigrates the Account model 
-dataSource.autoupdate('match', function(err) { // kecil
+dataSource.autoupdate('classement', function(err) { // kecil
   if (err) throw err;
  
   // this loads the Account model from ~/common/models/Account.json
-  var Match = app.models.Match; // besar
-  var count = matches.length; // kecils
-  matches.forEach(function(match) { // kecils kecil
+  var Classement = app.models.Classement; // besar
+  var count = classements.length; // kecils
+  classements.forEach(function(classement) { // kecils kecil
      // insert new records into the Account table
-     Match.create(match, function(err, record) { // besar kecil
+     Classement.create(classement, function(err, record) { // besar kecil
       if (err) return console.log(err);
  
       console.log('Record created:', record);
