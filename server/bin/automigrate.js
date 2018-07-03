@@ -228,21 +228,71 @@
 //   });
 // });
 
+// var app = require('../server');
+
+// var classements = [ // kecils
+//   {
+//     id: 'CL2939ajsdadh123',
+//     position: '1',
+//     team: 'Argentina',
+//     group:'D',
+//     play: '3',
+//     win: '3',
+//     draw: '0',
+//     lose:'0',
+//     goalDifference: '+10',
+//     points: '9',
+//     status: 'Winner'
+//   }
+// ];
+ 
+// // this loads the accountDb configuration in ~/server/datasources.json
+// var dataSource = app.dataSources.SportmanDb;
+ 
+// // this automigrates the Account model 
+// dataSource.autoupdate('classement', function(err) { // kecil
+//   if (err) throw err;
+ 
+//   // this loads the Account model from ~/common/models/Account.json
+//   var Classement = app.models.Classement; // besar
+//   var count = classements.length; // kecils
+//   classements.forEach(function(classement) { // kecils kecil
+//      // insert new records into the Account table
+//      Classement.create(classement, function(err, record) { // besar kecil
+//       if (err) return console.log(err);
+ 
+//       console.log('Record created:', record);
+ 
+//       count--;
+ 
+//       if (count === 0) {
+//         console.log('done');
+//         dataSource.disconnect();
+//       }
+//     });
+//   });
+// });
+
 var app = require('../server');
 
-var classements = [ // kecils
+var competitions = [ // kecils
   {
-    id: 'CL2939ajsdadh123',
-    position: '1',
-    team: 'Argentina',
-    group:'D',
-    play: '3',
-    win: '3',
-    draw: '0',
-    lose:'0',
-    goalDifference: '+10',
-    points: '9',
-    status: 'Winner'
+    id: 'CO2939ajsdadh123',
+    organizer: 'John Stone',
+    comp_name: 'Unknown League',
+    comp_fee:'Free',
+    comp_regulation: '',
+    comp_type: 'GroupStage',
+    comp_location: 'Etihad Stadium',
+    comp_finish:'',
+    comp_start: '',
+    comp_notes: '',
+    comp_numOfTeam: '12',
+    comp_award: '',
+    schedule_status: '',
+    classement_status: '',
+    register_status: '',
+    comp_status: ''
   }
 ];
  
@@ -250,15 +300,15 @@ var classements = [ // kecils
 var dataSource = app.dataSources.SportmanDb;
  
 // this automigrates the Account model 
-dataSource.autoupdate('classement', function(err) { // kecil
+dataSource.autoupdate('competition', function(err) { // kecil
   if (err) throw err;
  
   // this loads the Account model from ~/common/models/Account.json
-  var Classement = app.models.Classement; // besar
-  var count = classements.length; // kecils
-  classements.forEach(function(classement) { // kecils kecil
+  var Competition = app.models.Competition; // besar
+  var count = competitions.length; // kecils
+  competitions.forEach(function(competition) { // kecils kecil
      // insert new records into the Account table
-     Classement.create(classement, function(err, record) { // besar kecil
+     Competition.create(competition, function(err, record) { // besar kecil
       if (err) return console.log(err);
  
       console.log('Record created:', record);

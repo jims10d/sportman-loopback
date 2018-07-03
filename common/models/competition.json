@@ -24,8 +24,7 @@
       "type": "string"
     },
     "comp_regulation": {
-      "type": "string",
-      "required": true
+      "type": "string"
     },
     "comp_type": {
       "type": "string",
@@ -56,6 +55,9 @@
     "schedule_status": {
       "type": "string"
     },
+    "classement_status": {
+      "type": "string"
+    },
     "register_status": {
       "type": "string"
     },
@@ -81,7 +83,7 @@
       "foreignKey": "competition_id"
     },
     "classements": {
-      "type": "hasOne",
+      "type": "hasMany",
       "model": "classement",
       "foreignKey": "competition_id"
     },
