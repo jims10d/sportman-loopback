@@ -273,26 +273,64 @@
 //   });
 // });
 
-var app = require('../server');
+// var app = require('../server');
 
-var competitions = [ // kecils
+// var competitions = [ // kecils
+//   {
+//     id: 'CO2939ajsdadh123',
+//     organizer: 'John Stone',
+//     comp_name: 'Unknown League',
+//     comp_fee:'Free',
+//     comp_regulation: '',
+//     comp_type: 'GroupStage',
+//     comp_location: 'Etihad Stadium',
+//     comp_finish:'',
+//     comp_start: '',
+//     comp_notes: '',
+//     comp_numOfTeam: '12',
+//     comp_award: '',
+//     schedule_status: '',
+//     classement_status: '',
+//     register_status: '',
+//     comp_status: ''
+//   }
+// ];
+ 
+// // this loads the accountDb configuration in ~/server/datasources.json
+// var dataSource = app.dataSources.SportmanDb;
+ 
+// // this automigrates the Account model 
+// dataSource.autoupdate('competition', function(err) { // kecil
+//   if (err) throw err;
+ 
+//   // this loads the Account model from ~/common/models/Account.json
+//   var Competition = app.models.Competition; // besar
+//   var count = competitions.length; // kecils
+//   competitions.forEach(function(competition) { // kecils kecil
+//      // insert new records into the Account table
+//      Competition.create(competition, function(err, record) { // besar kecil
+//       if (err) return console.log(err);
+ 
+//       console.log('Record created:', record);
+ 
+//       count--;
+ 
+//       if (count === 0) {
+//         console.log('done');
+//         dataSource.disconnect();
+//       }
+//     });
+//   });
+// });
+
+var app = require('../server');
+   
+var fixtures = [ // kecils
   {
-    id: 'CO2939ajsdadh123',
-    organizer: 'John Stone',
-    comp_name: 'Unknown League',
-    comp_fee:'Free',
-    comp_regulation: '',
-    comp_type: 'GroupStage',
-    comp_location: 'Etihad Stadium',
-    comp_finish:'',
-    comp_start: '',
-    comp_notes: '',
-    comp_numOfTeam: '12',
-    comp_award: '',
-    schedule_status: '',
-    classement_status: '',
-    register_status: '',
-    comp_status: ''
+    fixture_number: 'Play Off',
+    fixture_matches: '',
+    fixture_status: 'on progress',
+    allMatchFilled: 'false'
   }
 ];
  
@@ -300,15 +338,15 @@ var competitions = [ // kecils
 var dataSource = app.dataSources.SportmanDb;
  
 // this automigrates the Account model 
-dataSource.autoupdate('competition', function(err) { // kecil
+dataSource.autoupdate('fixture', function(err) { // kecil
   if (err) throw err;
  
   // this loads the Account model from ~/common/models/Account.json
-  var Competition = app.models.Competition; // besar
-  var count = competitions.length; // kecils
-  competitions.forEach(function(competition) { // kecils kecil
+  var Fixture = app.models.Fixture; // besar
+  var count = fixtures.length; // kecils
+  fixtures.forEach(function(fixture) { // kecils kecil
      // insert new records into the Account table
-     Competition.create(competition, function(err, record) { // besar kecil
+     Fixture.create(fixture, function(err, record) { // besar kecil
       if (err) return console.log(err);
  
       console.log('Record created:', record);
