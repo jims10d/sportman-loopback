@@ -327,7 +327,7 @@ var app = require('../server');
    
 var fixtures = [ // kecils
   {
-    fixture_number: 'Play Off',
+    fixture_number: '1',
     fixture_matches: '',
     fixture_status: 'on progress',
     allMatchFilled: 'false'
