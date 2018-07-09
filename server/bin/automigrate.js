@@ -97,65 +97,66 @@
 //   });
 // });
 
-// var app = require('../server');
+var app = require('../server');
 
-// var users = [ // kecils
-//   {
-//     id: 'Mqqfdfeergdfffdfgsddfsdsdffsdffsdwe',
-//     username: 'tester20',
-//     fullname: 'tester20',
-//     password:'Tester20',
-//     email: 'tester20@gmail.com',
-//     role: 'Player',
-//     photo: '',
-//     teamInvitation:'',
-//     team: '',
-//     teamRequested: '',
-//     ktp: '12391247192476942',
-//     age: '',
-//     address:'',
-//     position: '',
-//     hp: '',
-//     bio: '',
-//     profileCompleted:'',
-//     play: '',
-//     goal: '',
-//     assist: '',
-//     yellowCard: '',
-//     redCard:'',
-//     redCardGiven: '',
-//     yellowCardGiven: '',
-//     matchManaged: ''
-
-//   }
-// ];
+var users = [ // kecils
+  {
+    id: 'Mqqfdfeergdfffdfgsdderjerikhfsdsdffsdffsdwe',
+    username: 'referee12345',
+    fullname: 'referee12345',
+    password:'Referee12345',
+    email: 'referee12345@gmail.com',
+    role: 'Referee',
+    photo: '',
+    teamInvitation:'',
+    team: '',
+    teamRequested: '',
+    ktp: '12391247192476942',
+    age: '',
+    address:'',
+    position: '',
+    hp: '',
+    bio: '',
+    profileCompleted:'',
+    play: '',
+    goal: '',
+    assist: '',
+    yellowCard: '',
+    redCard:'',
+    redCardGiven: '',
+    yellowCardGiven: '',
+    matchManaged: '',
+    availableDay: '',
+    availableTime: ''
+  }
+];
  
-// // this loads the accountDb configuration in ~/server/datasources.json
-// var dataSource = app.dataSources.SportmanDb;
+// this loads the accountDb configuration in ~/server/datasources.json
+var dataSource = app.dataSources.SportmanDb;
  
-// // this automigrates the Account model 
-// dataSource.autoupdate('user', function(err) { // kecil
-//   if (err) throw err;
+// this automigrates the Account model 
+dataSource.autoupdate('user', function(err) { // kecil
+  if (err) throw err;
  
-//   // this loads the Account model from ~/common/models/Account.json
-//   var User = app.models.User; // besar
-//   var count = users.length; // kecils
-//   users.forEach(function(user) { // kecils kecil
-//      // insert new records into the Account table
-//      User.create(user, function(err, record) { // besar kecil
-//       if (err) return console.log(err);
+  // this loads the Account model from ~/common/models/Account.json
+  var User = app.models.User; // besar
+  var count = users.length; // kecils
+  users.forEach(function(user) { // kecils kecil
+     // insert new records into the Account table
+     User.create(user, function(err, record) { // besar kecil
+      if (err) return console.log(err);
  
-//       console.log('Record created:', record);
+      console.log('Record created:', record);
  
-//       count--;
+      count--;
  
-//       if (count === 0) {
-//         console.log('done');
-//         dataSource.disconnect();
-//       }
-//     });
-//   });
-// });
+      if (count === 0) {
+        console.log('done');
+        dataSource.disconnect();
+      }
+    });
+  });
+});
 
 // var app = require('../server');
 
@@ -323,40 +324,40 @@
 //   });
 // });
 
-var app = require('../server');
+// var app = require('../server');
    
-var fixtures = [ // kecils
-  {
-    fixture_number: '1',
-    fixture_matches: '',
-    fixture_status: 'on progress',
-    allMatchFilled: 'false'
-  }
-];
+// var fixtures = [ // kecils
+//   {
+//     fixture_number: '1',
+//     fixture_matches: '',
+//     fixture_status: 'on progress',
+//     allMatchFilled: 'false'
+//   }
+// ];
  
-// this loads the accountDb configuration in ~/server/datasources.json
-var dataSource = app.dataSources.SportmanDb;
+// // this loads the accountDb configuration in ~/server/datasources.json
+// var dataSource = app.dataSources.SportmanDb;
  
-// this automigrates the Account model 
-dataSource.autoupdate('fixture', function(err) { // kecil
-  if (err) throw err;
+// // this automigrates the Account model 
+// dataSource.autoupdate('fixture', function(err) { // kecil
+//   if (err) throw err;
  
-  // this loads the Account model from ~/common/models/Account.json
-  var Fixture = app.models.Fixture; // besar
-  var count = fixtures.length; // kecils
-  fixtures.forEach(function(fixture) { // kecils kecil
-     // insert new records into the Account table
-     Fixture.create(fixture, function(err, record) { // besar kecil
-      if (err) return console.log(err);
+//   // this loads the Account model from ~/common/models/Account.json
+//   var Fixture = app.models.Fixture; // besar
+//   var count = fixtures.length; // kecils
+//   fixtures.forEach(function(fixture) { // kecils kecil
+//      // insert new records into the Account table
+//      Fixture.create(fixture, function(err, record) { // besar kecil
+//       if (err) return console.log(err);
  
-      console.log('Record created:', record);
+//       console.log('Record created:', record);
  
-      count--;
+//       count--;
  
-      if (count === 0) {
-        console.log('done');
-        dataSource.disconnect();
-      }
-    });
-  });
-});
+//       if (count === 0) {
+//         console.log('done');
+//         dataSource.disconnect();
+//       }
+//     });
+//   });
+// });
