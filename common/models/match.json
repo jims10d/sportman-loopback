@@ -110,6 +110,10 @@
     "match_status": {
       "type": "string"
     },
+    "live_status": {
+      "type": "boolean",
+      "default": false
+    },
     "timer": {
       "type": "number",
       "default": 0
