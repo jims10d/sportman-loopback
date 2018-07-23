@@ -45,6 +45,17 @@ module.exports = function(Competition) {
 			});
 	};
 
+	Competition.getCompetitionName = function(competitionId, cb){
+		Competition.findOne({where:{competition_id:competitionId}},
+			function(err,instance){
+				if(instance===null){
+					cb(null,null);
+				}else{
+					data = instance['comp_name'];
+					cb(null,data);
+				}
+			});
+    };
 
 	Competition.remoteMethod(
 		'addRegister',
@@ -55,6 +66,16 @@ module.exports = function(Competition) {
 					],
 			returns: {arg: 'registeredTeam', type: 'string', root: true},
 			http: {path: '/addRegister', verb: 'put'}
+		}
+	);
+
+	Competition.remoteMethod(
+		'getCompetitionName',
+		{
+			accepts: {arg: 'competitionId', type: 'string'},
+			returns: {arg: 'competitionName', type: 'string', root: true},
+			http: {path: '/getCompetitionName', verb: 'get', source: 'query'},
+			description: "Get competition name by competition id"
 		}
 	);
 };
