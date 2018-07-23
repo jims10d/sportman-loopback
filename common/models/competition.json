@@ -94,12 +94,19 @@
     }
   },
   "acls": [
-   {
+    {
       "accessType": "EXECUTE",
       "principalType": "ROLE",
       "principalId": "$everyone",
       "permission": "ALLOW",
       "property": "addRegister"
+    },
+    {
+      "accessType": "EXECUTE",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "ALLOW",
+      "property": "getCompetitionName"
     }
   ],
   "methods": {}
