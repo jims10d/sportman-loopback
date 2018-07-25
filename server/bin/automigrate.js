@@ -101,11 +101,11 @@ var app = require('../server');
 
 var users = [ // kecils
   {
-    id: 'Mqqqqqwqerjerikhfsdsdffsdffsdwe',
-    username: 'referee12345123',
-    fullname: 'referee12345123',
-    password:'Referee12345123',
-    email: 'referee12345123@gmail.com',
+    id: 'Paoisuoiyaoidffsdwe',
+    username: 'referee51qwe23',
+    fullname: 'referee51qwe23',
+    password:'Referee51qwe23',
+    email: 'referee51qwe23@gmail.com',
     role: 'Referee',
     photo: '',
     teamInvitation:'',
@@ -113,10 +113,11 @@ var users = [ // kecils
     teamRequested: '',
     ktp: '12391247192476942',
     age: '',
+    dateOfBirth: '',
     address:'',
     position: '',
+    shirtNumber: '',
     hp: '',
-    bio: '',
     profileCompleted:'',
     play: '',
     goal: '',
@@ -278,13 +279,14 @@ dataSource.autoupdate('user', function(err) { // kecil
 
 // var competitions = [ // kecils
 //   {
-//     id: 'CO2939ajsdadh123',
+//     id: 'CO2939ajsdadh123asdadasd',
 //     organizer: 'John Stone',
 //     comp_name: 'Unknown League',
 //     comp_fee:'Free',
 //     comp_regulation: '',
 //     comp_type: 'GroupStage',
 //     comp_location: 'Etihad Stadium',
+//     comp_address: '',
 //     comp_finish:'',
 //     comp_start: '',
 //     comp_notes: '',

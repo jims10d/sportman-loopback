@@ -50,18 +50,21 @@
     "age": {
       "type": "string"
     },
+    "dateOfBirth": {
+      "type": "string"
+    },
     "address": {
       "type": "string"
     },
     "position": {
       "type": "string"
     },
+    "shirtNumber": {
+      "type": "number"
+    },
     "hp": {
       "type": "string"
     },
-    "bio": {
-      "type": "string"
-    }, 
     "profileCompleted": {
       "type": "boolean"
     },
