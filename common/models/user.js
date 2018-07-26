@@ -9,11 +9,17 @@ module.exports = function(User) {
 	 	loginInfo.userId= "";
 
 		 UserModel.login({username: username, password: password}, function (err, token) {
-		 	loginInfo.id = token.id;
-		 	loginInfo.ttl = token.ttl;
-		 	loginInfo.userId= token.userId;
+			if(err){
+				cb(err);
+			}else if(token === null){
+				cb(null,null);	
+			}else{
+				loginInfo.id = token.id;
+				loginInfo.ttl = token.ttl;
+				loginInfo.userId= token.userId;
 
-		 	cb(null, loginInfo);
+				cb(null, loginInfo);
+			}
 		 });
 	};
 
