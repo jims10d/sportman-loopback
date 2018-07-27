@@ -55,6 +55,18 @@ module.exports = function(Competition) {
 					cb(null,data);
 				}
 			});
+	};
+	
+	Competition.getCompetitionId = function(competitionName, cb){
+		Competition.findOne({where:{comp_name:competitionName}},
+			function(err,instance){
+				if(instance===null){
+					cb(null,null);
+				}else{
+					data = instance['competition_id'];
+					cb(null,data);
+				}
+			});
     };
 
 	Competition.remoteMethod(
@@ -76,6 +88,16 @@ module.exports = function(Competition) {
 			returns: {arg: 'competitionName', type: 'string', root: true},
 			http: {path: '/getCompetitionName', verb: 'get', source: 'query'},
 			description: "Get competition name by competition id"
+		}
+	);
+
+	Competition.remoteMethod(
+		'getCompetitionId',
+		{
+			accepts: {arg: 'competitionName', type: 'string'},
+			returns: {arg: 'competitionId', type: 'string', root: true},
+			http: {path: '/getCompetitionId', verb: 'get', source: 'query'},
+			description: "Get competition id by competition name"
 		}
 	);
 };

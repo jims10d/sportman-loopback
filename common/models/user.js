@@ -181,53 +181,6 @@ module.exports = function(User) {
 		);
 	};
 
-	User.addActiveCompetition = function(CompName, UserId, cb){
-		User.findOne({where:{id: UserId}},
-			function(err,instance){
-				if(instance===null){
-					cb(null,null);
-				}else{
-					data = instance['createdCompetition.active'];
-					if(data === null || data === ''){
-						console.log("tes");
-						theCompsNow = CompName;
-						User.updateAll({id: UserId}, {createdCompetition.active: theCompsNow}, // update user data
-						function(err,info){
-							User.findOne({where:{id: UserId}},
-								function(err,instance){
-									if(instance===null){
-										cb(null,null);
-									}else{
-										cb(null,instance);
-									}
-								});
-						});
-					} else {
-						theTeamsNow = data.toString();
-						
-						if(theTeamsNow.includes(TeamName)){
-							cb(null,instance);
-						}else{
-							
-							theTeamsNow = theTeamsNow + ',' + TeamName;
-							User.updateAll({id: UserId}, {teamInvitation: theTeamsNow}, // update user data
-							function(err,info){
-								User.findOne({where:{id: UserId}},
-									function(err,instance){
-										if(instance===null){
-											cb(null,null);
-										}else{
-											cb(null,instance);
-										}
-									});
-							});
-						}
-					}
-					
-				}					
-			});
-	};
-
 	User.addTeamInvitation = function(TeamName, UserId, cb){
 		User.findOne({where:{id: UserId}},
 			function(err,instance){
