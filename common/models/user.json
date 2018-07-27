@@ -35,6 +35,15 @@
     "photo": {
       "type": "string"
     },
+    "createdCompetition": {
+      "type": "object",
+        "active": {
+          "type": "string"
+        },
+        "completed": {
+          "type": "string"
+        }
+    },
     "teamInvitation": {
       "type": "string"
     },

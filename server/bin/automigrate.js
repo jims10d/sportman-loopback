@@ -101,13 +101,14 @@ var app = require('../server');
 
 var users = [ // kecils
   {
-    id: 'Paoisuoiyaoidffsdwe',
-    username: 'referee51qwe23',
-    fullname: 'referee51qwe23',
-    password:'Referee51qwe23',
-    email: 'referee51qwe23@gmail.com',
-    role: 'Referee',
+    id: 'U0124oisuoiyaoidffsdwe',
+    username: 'organizer924791857',
+    fullname: 'organizer924791857',
+    password:'Organizer924791857',
+    email: 'organizer924791857@gmail.com',
+    role: 'Organizer',
     photo: '',
+    createdCompetition: '',
     teamInvitation:'',
     team: '',
     teamRequested: '',
