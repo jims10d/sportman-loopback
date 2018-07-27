@@ -63,7 +63,7 @@ module.exports = function(Competition) {
 				if(instance===null){
 					cb(null,null);
 				}else{
-					data = instance['competition_id'];
+					data = instance['id'];
 					cb(null,data);
 				}
 			});
