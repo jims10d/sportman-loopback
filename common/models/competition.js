@@ -46,7 +46,7 @@ module.exports = function(Competition) {
 	};
 
 	Competition.getCompetitionName = function(competitionId, cb){
-		Competition.findOne({where:{competition_id:competitionId}},
+		Competition.findOne({where:{id:competitionId}},
 			function(err,instance){
 				if(instance===null){
 					cb(null,null);
