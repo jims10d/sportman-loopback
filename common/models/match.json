@@ -18,6 +18,9 @@
     "match_venue": {
       "type": "string"
     },
+    "match_field": {
+      "type": "string"
+    },
     "match_time": {
       "type": "string"
     },
@@ -97,13 +100,16 @@
     "match_started": {
       "type": "string"
     },
+    "fixture_break": {
+      "type": "number"
+    },
     "timer_status": {
       "type": "string"
     },
-    "winner": {
+    "match_winner": {
       "type": "string"
     },
-    "loser": {
+    "match_loser": {
       "type": "string"
     },
     "match_pair": {

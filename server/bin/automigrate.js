@@ -163,9 +163,10 @@ var app = require('../server');
 
 var matches = [ // kecils
   {
-    id: 'Ma1247918247sdfsdf',
+    id: 'Mafahffuitaisdfsf',
     match_name: 'QWE122',
     match_venue: 'Planet Futsal',
+    match_field: '1',
     match_time: '15:00',
     match_countDown:'60',
     match_length: '50',
@@ -179,9 +180,10 @@ var matches = [ // kecils
     match_fixture:'3',
     match_number: '1',
     match_started: 'true',
+    fixture_break: '1',
     timer_status: 'false',
-    winner:'',
-    loser: '',
+    match_winner:'',
+    match_loser: '',
     match_pair: '',
     match_group: '',
     match_status: '',
