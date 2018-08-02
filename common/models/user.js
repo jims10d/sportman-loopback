@@ -40,16 +40,7 @@ module.exports = function(User) {
 				if(instance===null){
 					cb(null,null);
 				}else{
-					var availableDayAndTime = [];
-					// var availableRefArr = [];
-					if(day === 'monday'){
-						availableDayAndTime.push(instance['availableDayAndTime.monday']); 
-					}
-					// if(availableDayAndTime.length !== 0){
-					// 	availableRefArr.push(instance);
-					// }
-					
-					cb(null,availableDayAndTime);
+					cb(null,instance);
 				}
 			});
 	};
