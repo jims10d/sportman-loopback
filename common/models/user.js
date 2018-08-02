@@ -456,7 +456,6 @@ module.exports = function(User) {
 	User.remoteMethod(
 		'getAllReferees',
 		{
-			accepts: {arg: 'day', type: 'string'},
 			returns: {arg: 'id', type: 'string', root: true},
 			http: {path: '/getAllReferees', verb: 'get', source: 'query'},
 			description: "Get All Referees"
