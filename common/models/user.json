@@ -129,6 +129,12 @@
   "validations": [],
   "relations": {},
   "acls": [
+    "reset",
+    {
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "ALLOW"
+    },
     {
       "accessType": "EXECUTE",
       "principalType": "ROLE",
