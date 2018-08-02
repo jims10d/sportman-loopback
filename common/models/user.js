@@ -34,13 +34,22 @@ module.exports = function(User) {
 			});
 	};
 
-	User.getAllReferees = function(cb){
+	User.getAllReferees = function(day, cb){
 		User.find({where:{role:'Referee'}},
 			function(err,instance){
 				if(instance===null){
 					cb(null,null);
 				}else{
-					cb(null,instance);
+					var availableDayAndTime = [];
+					var availableRefArr = [];
+					if(day === 'Monday'){
+						availableDayAndTime = instance['availableDayAndTime.monday']; 
+					}
+					if(availableDayAndTime.length !== 0){
+						availableRefArr.push(instance);
+					}
+					
+					cb(null,availableRefArr);
 				}
 			});
 	};
@@ -456,6 +465,7 @@ module.exports = function(User) {
 	User.remoteMethod(
 		'getAllReferees',
 		{
+			accepts: {arg: 'day', type: 'string'},
 			returns: {arg: 'id', type: 'string', root: true},
 			http: {path: '/getAllReferees', verb: 'get', source: 'query'},
 			description: "Get All Referees"
