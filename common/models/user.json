@@ -1,7 +1,6 @@
 {
   "name": "user",
   "base": "User",
-  "acls": "inherit",
   "strict": false,
   "idInjection": false,
   "options": {
@@ -130,11 +129,6 @@
   "validations": [],
   "relations": {},
   "acls": [
-    {
-      "principalType": "ROLE",
-      "principalId": "$everyone",
-      "permission": "ALLOW"
-    },
     {
       "accessType": "EXECUTE",
       "principalType": "ROLE",
