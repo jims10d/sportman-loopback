@@ -34,6 +34,17 @@ module.exports = function(User) {
 			});
 	};
 
+	User.getAllReferees = function(cb){
+		User.find({where:{role:'Referee'}},
+			function(err,instance){
+				if(instance===null){
+					cb(null,null);
+				}else{
+					cb(null,instance);
+				}
+			});
+	};
+
 	User.getUserById = function(userId, cb){
 		User.findOne({where:{id:userId}},
 			function(err,instance){
@@ -439,6 +450,15 @@ module.exports = function(User) {
 			returns: {arg: 'id', type: 'string', root: true},
 			http: {path: '/getUser', verb: 'get', source: 'query'},
 			description: "Get User instance by username"
+		}
+	);
+
+	User.remoteMethod(
+		'getAllReferees',
+		{
+			returns: {arg: 'id', type: 'string', root: true},
+			http: {path: '/getAllReferees', verb: 'get', source: 'query'},
+			description: "Get All Referees"
 		}
 	);
 
