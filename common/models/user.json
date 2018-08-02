@@ -1,6 +1,7 @@
 {
   "name": "user",
   "base": "User",
+  "acls": "inherit",
   "strict": false,
   "idInjection": false,
   "options": {
@@ -129,7 +130,6 @@
   "validations": [],
   "relations": {},
   "acls": [
-    "reset",
     {
       "principalType": "ROLE",
       "principalId": "$everyone",
