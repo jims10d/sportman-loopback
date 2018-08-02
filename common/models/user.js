@@ -43,7 +43,7 @@ module.exports = function(User) {
 					var availableDayAndTime = [];
 					// var availableRefArr = [];
 					if(day === 'monday'){
-						availableDayAndTime = instance['availableDayAndTime.monday']; 
+						availableDayAndTime.push(instance['availableDayAndTime.monday']); 
 					}
 					// if(availableDayAndTime.length !== 0){
 					// 	availableRefArr.push(instance);
