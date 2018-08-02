@@ -16,8 +16,6 @@ app.start = function() {
   });
 };
 
-app.models.User.settings.acls = require('./user-acls.json');
-
 // app.use(function(req, res, next) {
 //    res.header("Access-Control-Allow-Origin", "*");
 //    res.header('Access-Control-Allow-Methods', 'DELETE, PUT, POST');
