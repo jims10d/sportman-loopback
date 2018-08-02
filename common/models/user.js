@@ -34,7 +34,7 @@ module.exports = function(User) {
 			});
 	};
 
-	User.getAllReferees = function(day, cb){
+	User.getAllReferees = function(cb){
 		User.find({where:{role:'Referee'}},
 			function(err,instance){
 				if(instance===null){
