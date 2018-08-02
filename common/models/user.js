@@ -41,15 +41,15 @@ module.exports = function(User) {
 					cb(null,null);
 				}else{
 					var availableDayAndTime = [];
-					var availableRefArr = [];
-					if(day === 'Monday'){
+					// var availableRefArr = [];
+					if(day === 'monday'){
 						availableDayAndTime = instance['availableDayAndTime.monday']; 
 					}
-					if(availableDayAndTime.length !== 0){
-						availableRefArr.push(instance);
-					}
+					// if(availableDayAndTime.length !== 0){
+					// 	availableRefArr.push(instance);
+					// }
 					
-					cb(null,availableRefArr);
+					cb(null,availableDayAndTime);
 				}
 			});
 	};
