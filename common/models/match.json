@@ -163,6 +163,9 @@
         },
         "goalStatus": {
           "type": "string"
+        },
+        "assist": {
+          "type": "string"
         }
     },
     "goalAway": {
@@ -180,6 +183,9 @@
           "type": "number"
         },
         "goalStatus": {
+          "type": "string"
+        },
+        "assist": {
           "type": "string"
         }
     },
