@@ -147,6 +147,45 @@
     "referee_status": {
       "type": "string"
     },
+    "match_events": {
+      "type": "object",
+        "scorer": {
+          "type": "string"
+        },
+        "time": {
+          "type": "number"
+        },
+        "scoreHome": {
+          "type": "number"
+        },
+        "scoreAway": {
+          "type": "number"
+        },
+        "goalStatus": {
+          "type": "string"
+        },
+        "assist": {
+          "type": "string"
+        },
+        "player": {
+          "type": "string"
+        },
+        "card": {
+          "type": "string"
+        },
+        "cardStatus": {
+          "type": "string"
+        },
+        "in": {
+          "type": "string"
+        },
+        "out": {
+          "type": "string"
+        },
+        "teamStatus": {
+          "type": "string"
+        }
+    },
     "goalHome": {
       "type": "object",
         "scorer": {
@@ -189,24 +228,6 @@
           "type": "string"
         }
     },
-    "assistHome": {
-      "type": "object",
-      "assister": {
-        "type": "string"
-      },
-      "time": {
-        "type": "number"
-      }
-    },
-    "assistAway": {
-      "type": "object",
-      "assister": {
-        "type": "string"
-      },
-      "time": {
-        "type": "number"
-      }
-    },
     "yellowCardHome": {
       "type": "object",
       "player": {
@@ -214,6 +235,9 @@
       },
       "time": {
         "type": "number"
+      },
+      "status": {
+        "type": "string"
       }
     },
     "yellowCardAway": {
@@ -223,6 +247,9 @@
       },
       "time": {
         "type": "number"
+      },
+      "status": {
+        "type": "string"
       }
     },
     "redCardHome": {
