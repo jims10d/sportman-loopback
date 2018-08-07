@@ -160,6 +160,9 @@
         },
         "scoreAway": {
           "type": "number"
+        },
+        "goalStatus": {
+          "type": "string"
         }
     },
     "goalAway": {
@@ -175,6 +178,9 @@
         },
         "scoreAway": {
           "type": "number"
+        },
+        "goalStatus": {
+          "type": "string"
         }
     },
     "assistHome": {
