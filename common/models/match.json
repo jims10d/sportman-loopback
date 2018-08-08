@@ -231,6 +231,10 @@
         },
         "assist": {
           "type": "string"
+        },
+        "eventNumber": {
+          "type": "number",
+          "default": 0
         }
     },
     "goalAway": {
@@ -252,6 +256,10 @@
         },
         "assist": {
           "type": "string"
+        },
+        "eventNumber": {
+          "type": "number",
+          "default": 0
         }
     },
     "yellowCardHome": {
@@ -264,6 +272,10 @@
       },
       "status": {
         "type": "string"
+      },
+      "eventNumber": {
+        "type": "number",
+        "default": 0
       }
     },
     "yellowCardAway": {
@@ -276,6 +288,10 @@
       },
       "status": {
         "type": "string"
+      },
+      "eventNumber": {
+        "type": "number",
+        "default": 0
       }
     },
     "redCardHome": {
@@ -285,6 +301,10 @@
       },
       "time": {
         "type": "number"
+      },
+      "eventNumber": {
+        "type": "number",
+        "default": 0
       }
     },
     "redCardAway": {
@@ -294,6 +314,10 @@
       },
       "time": {
         "type": "number"
+      },
+      "eventNumber": {
+        "type": "number",
+        "default": 0
       }
     },
     "substituteHome": {
@@ -306,6 +330,10 @@
       },
       "time": {
         "type": "number"
+      },
+      "eventNumber": {
+        "type": "number",
+        "default": 0
       }
     },
     "substituteAway": {
@@ -318,6 +346,10 @@
       },
       "time": {
         "type": "number"
+      },
+      "eventNumber": {
+        "type": "number",
+        "default": 0
       }
     }
   },
