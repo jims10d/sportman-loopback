@@ -47,6 +47,10 @@
     "match_awayTeam": {
       "type": "string"
     },
+    "match_eventNumber": {
+      "type": "number",
+      "default": 0
+    },
     "match_homeTeamObj": {
       "type": "object",
         "team_name": {
