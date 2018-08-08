@@ -137,12 +137,34 @@
       "type": "string"
     },
     "halfTime": {
-      "type": "boolean",
-      "default": false
+      "type": "object",
+        "status": {
+          "type": "boolean",
+          "default": false
+        },
+        "homeTeamScore": {
+          "type": "number",
+          "default": 0
+        },
+        "awayTeamScore": {
+          "type": "number",
+          "default": 0
+        }
     },
     "fullTime": {
-      "type": "boolean",
-      "default": false
+      "type": "object",
+        "status": {
+          "type": "boolean",
+          "default": false
+        },
+        "homeTeamScore": {
+          "type": "number",
+          "default": 0
+        },
+        "awayTeamScore": {
+          "type": "number",
+          "default": 0
+        }
     },
     "referee_status": {
       "type": "string"
