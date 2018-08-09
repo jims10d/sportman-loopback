@@ -41,6 +41,24 @@
     "match_referee": {
       "type": "string"
     },
+    "match_refereeObj": {
+      "type": "object",
+        "name": {
+          "type": "string"
+        },
+        "fairnessRate": {
+          "type": "number",
+          "default": 0
+        },
+        "disciplineRate": {
+          "type": "number",
+          "default": 0
+        },
+        "decisionRate": {
+          "type": "number",
+          "default": 0
+        }
+    },
     "match_homeTeam": {
       "type": "string"
     },
@@ -168,6 +186,36 @@
         }
     },
     "fullTime": {
+      "type": "object",
+        "status": {
+          "type": "boolean",
+          "default": false
+        },
+        "homeTeamScore": {
+          "type": "number",
+          "default": 0
+        },
+        "awayTeamScore": {
+          "type": "number",
+          "default": 0
+        }
+    },
+    "extraTime": {
+      "type": "object",
+        "status": {
+          "type": "boolean",
+          "default": false
+        },
+        "homeTeamScore": {
+          "type": "number",
+          "default": 0
+        },
+        "awayTeamScore": {
+          "type": "number",
+          "default": 0
+        }
+    },
+    "penalty": {
       "type": "object",
         "status": {
           "type": "boolean",
