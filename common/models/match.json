@@ -170,6 +170,21 @@
     "countDownStarted": {
       "type": "string"
     },
+    "ballPossession": {
+      "type": "object",
+        "status": {
+          "type": "boolean",
+          "default": false
+        },
+        "homeTeam": {
+          "type": "number",
+          "default": 0
+        },
+        "awayTeam": {
+          "type": "number",
+          "default": 0
+        }
+    },
     "halfTime": {
       "type": "object",
         "status": {

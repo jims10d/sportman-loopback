@@ -193,6 +193,7 @@ var matches = [ // kecils
     timer:'',
     countDownTimer: '',
     countDownStarted: '',
+    ballPossession: '',
     halfTime: '',
     fullTime: '',
     referee_status: '',
