@@ -41,6 +41,9 @@
     "match_referee": {
       "type": "string"
     },
+    "match_analyst": {
+      "type": "string"
+    },
     "match_refereeObj": {
       "type": "object",
         "name": {
