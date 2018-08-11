@@ -163,7 +163,7 @@ var app = require('../server');
 
 var matches = [ // kecils
   {
-    id: 'Mafahffuitaisdfxxvsf',
+    id: 'Masdahdiy8912924',
     match_name: 'QWE122',
     match_venue: 'Planet Futsal',
     match_field: '1',
@@ -210,32 +210,32 @@ var matches = [ // kecils
   }
 ];
  
-// // this loads the accountDb configuration in ~/server/datasources.json
-// var dataSource = app.dataSources.SportmanDb;
+// this loads the accountDb configuration in ~/server/datasources.json
+var dataSource = app.dataSources.SportmanDb;
  
-// // this automigrates the Account model 
-// dataSource.autoupdate('match', function(err) { // kecil
-//   if (err) throw err;
+// this automigrates the Account model 
+dataSource.autoupdate('match', function(err) { // kecil
+  if (err) throw err;
  
-//   // this loads the Account model from ~/common/models/Account.json
-//   var Match = app.models.Match; // besar
-//   var count = matches.length; // kecils
-//   matches.forEach(function(match) { // kecils kecil
-//      // insert new records into the Account table
-//      Match.create(match, function(err, record) { // besar kecil
-//       if (err) return console.log(err);
+  // this loads the Account model from ~/common/models/Account.json
+  var Match = app.models.Match; // besar
+  var count = matches.length; // kecils
+  matches.forEach(function(match) { // kecils kecil
+     // insert new records into the Account table
+     Match.create(match, function(err, record) { // besar kecil
+      if (err) return console.log(err);
  
-//       console.log('Record created:', record);
+      console.log('Record created:', record);
  
-//       count--;
+      count--;
  
-//       if (count === 0) {
-//         console.log('done');
-//         dataSource.disconnect();
-//       }
-//     });
-//   });
-// });
+      if (count === 0) {
+        console.log('done');
+        dataSource.disconnect();
+      }
+    });
+  });
+});
 
 // var app = require('../server');
 
