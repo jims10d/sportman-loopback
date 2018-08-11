@@ -50,6 +50,21 @@
     "coach_id": {
       "type": "string"
     },
+    "invited_members": {
+      "type": "object",
+        "name": {
+          "type": "string",
+          "default": ""
+        },
+        "role": {
+          "type": "string",
+          "default": ""
+        },
+        "invite_number": {
+          "type": "number",
+          "default": 0
+        }
+    },
     "invited_member": {
       "type": "string"
     },
