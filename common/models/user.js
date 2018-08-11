@@ -442,6 +442,27 @@ module.exports = function(User) {
 				}				
 			});
 	};
+
+	User.addRefereeRating = function(UserId, RefereeRating, cb){
+		User.findOne({where:{id: UserId}},
+			function(err,instance){
+				if(instance===null){
+					cb(null,null);
+				}else{
+					User.updateAll({id: UserId}, {referee_rating: RefereeRating}, // update user data
+					function(err,info){
+						User.findOne({where:{id: UserId}},
+							function(err,instance){
+								if(instance===null){
+									cb(null,null);
+								}else{
+									cb(null,instance);
+								}
+							});
+					});
+				}				
+			});
+	};
 	
 	User.remoteMethod(
 		'getUser',
@@ -640,6 +661,18 @@ module.exports = function(User) {
 					],
 			returns: {arg: 'loginInfo', type: 'object', root: true},
 			http: {path: '/loginUser', verb: 'post'}
+		}
+	);
+
+	User.remoteMethod(
+		'addRefereeRating',
+		{
+			accepts: [
+					{arg: 'UserId', type: 'string'},
+					{arg: 'RefereeRating', type: 'string'}
+					],
+			returns: {arg: 'refereeRating', type: 'string', root: true},
+			http: {path: '/addRefereeRating', verb: 'put'}
 		}
 	);
 };

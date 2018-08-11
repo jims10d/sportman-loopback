@@ -97,117 +97,39 @@
 //   });
 // });
 
-// var app = require('../server');
-
-// var users = [ // kecils
-//   {
-//     id: 'U0124oisuoiyaoidffsdwe',
-//     username: 'organizer924791857',
-//     fullname: 'organizer924791857',
-//     password:'Organizer924791857',
-//     email: 'organizer924791857@gmail.com',
-//     role: 'Organizer',
-//     photo: '',
-//     createdCompetition: '',
-//     teamInvitation:'',
-//     team: '',
-//     teamRequested: '',
-//     ktp: '12391247192476942',
-//     age: '',
-//     dateOfBirth: '',
-//     address:'',
-//     position: '',
-//     shirtNumber: '',
-//     hp: '',
-//     profileCompleted:'',
-//     play: '',
-//     goal: '',
-//     assist: '',
-//     yellowCard: '',
-//     redCard:'',
-//     redCardGiven: '',
-//     yellowCardGiven: '',
-//     matchManaged: '',
-//     availableDayAndTime: ''
-//   }
-// ];
- 
-// // this loads the accountDb configuration in ~/server/datasources.json
-// var dataSource = app.dataSources.SportmanDb;
- 
-// // this automigrates the Account model 
-// dataSource.autoupdate('user', function(err) { // kecil
-//   if (err) throw err;
- 
-//   // this loads the Account model from ~/common/models/Account.json
-//   var User = app.models.User; // besar
-//   var count = users.length; // kecils
-//   users.forEach(function(user) { // kecils kecil
-//      // insert new records into the Account table
-//      User.create(user, function(err, record) { // besar kecil
-//       if (err) return console.log(err);
- 
-//       console.log('Record created:', record);
- 
-//       count--;
- 
-//       if (count === 0) {
-//         console.log('done');
-//         dataSource.disconnect();
-//       }
-//     });
-//   });
-// });
-
 var app = require('../server');
 
-var matches = [ // kecils
+var users = [ // kecils
   {
-    id: 'Matasdasda924',
-    match_name: 'QWE12dsd2',
-    match_venue: 'Planet Futsal',
-    match_field: '1',
-    match_time: '15:00',
-    match_countDown:'60',
-    match_length: '50',
-    match_break: '10',
-    match_date: '29/06/2018',
-    match_referee:'Mark Johnson',
-    match_refereeObj: '',
-    match_analyst:'Andrew Lint',
-    match_homeTeam: 'Portugal',
-    match_awayTeam: 'Argentina',
-    match_eventNumber: '0',
-    match_homeTeamObj: '',
-    match_awayTeamObj: '',
-    match_fixture:'3',
-    match_number: '1',
-    match_started: 'true',
-    fixture_break: '1',
-    timer_status: 'false',
-    match_winner:'',
-    match_loser: '',
-    match_pair: '',
-    match_group: '',
-    match_status: '',
-    live_status: 'false',
-    timer:'',
-    countDownTimer: '',
-    countDownStarted: '',
-    ballPossession: '',
-    match_stats: '',
-    halfTime: '',
-    fullTime: '',
-    referee_status: '',
-    match_events: '',
-    goalHome: '',
-    goalAway:'',
-    yellowCardHome: '',
-    yellowCardAway: '',
-    redCardHome: '',
-    redCardAway: '',
-    substituteHome: '',
-    substituteAway: ''
+    id: 'U0124oisuoiyaoidffsdwe',
+    username: 'organizer924791857',
+    fullname: 'organizer924791857',
+    password:'Organizer924791857',
+    email: 'organizer924791857@gmail.com',
+    role: 'Organizer',
+    photo: '',
+    createdCompetition: '',
+    referee_rating: '',
+    teamInvitation:'',
+    team: '',
+    teamRequested: '',
+    ktp: '12391247192476942',
+    age: '',
+    dateOfBirth: '',
+    address:'',
+    position: '',
+    shirtNumber: '',
+    hp: '',
+    profileCompleted:'',
+    play: '',
+    goal: '',
+    assist: '',
+    yellowCard: '',
+    redCard:'',
+    redCardGiven: '',
+    yellowCardGiven: '',
+    matchManaged: '',
+    availableDayAndTime: ''
   }
 ];
  
@@ -215,15 +137,15 @@ var matches = [ // kecils
 var dataSource = app.dataSources.SportmanDb;
  
 // this automigrates the Account model 
-dataSource.autoupdate('match', function(err) { // kecil
+dataSource.autoupdate('user', function(err) { // kecil
   if (err) throw err;
  
   // this loads the Account model from ~/common/models/Account.json
-  var Match = app.models.Match; // besar
-  var count = matches.length; // kecils
-  matches.forEach(function(match) { // kecils kecil
+  var User = app.models.User; // besar
+  var count = users.length; // kecils
+  users.forEach(function(user) { // kecils kecil
      // insert new records into the Account table
-     Match.create(match, function(err, record) { // besar kecil
+     User.create(user, function(err, record) { // besar kecil
       if (err) return console.log(err);
  
       console.log('Record created:', record);
@@ -237,6 +159,85 @@ dataSource.autoupdate('match', function(err) { // kecil
     });
   });
 });
+
+// var app = require('../server');
+
+// var matches = [ // kecils
+//   {
+//     id: 'Matasdasda924',
+//     match_name: 'QWE12dsd2',
+//     match_venue: 'Planet Futsal',
+//     match_field: '1',
+//     match_time: '15:00',
+//     match_countDown:'60',
+//     match_length: '50',
+//     match_break: '10',
+//     match_date: '29/06/2018',
+//     match_referee:'Mark Johnson',
+//     match_refereeObj: '',
+//     match_analyst:'Andrew Lint',
+//     match_homeTeam: 'Portugal',
+//     match_awayTeam: 'Argentina',
+//     match_eventNumber: '0',
+//     match_homeTeamObj: '',
+//     match_awayTeamObj: '',
+//     match_fixture:'3',
+//     match_number: '1',
+//     match_started: 'true',
+//     fixture_break: '1',
+//     timer_status: 'false',
+//     match_winner:'',
+//     match_loser: '',
+//     match_pair: '',
+//     match_group: '',
+//     match_status: '',
+//     live_status: 'false',
+//     timer:'',
+//     countDownTimer: '',
+//     countDownStarted: '',
+//     ballPossession: '',
+//     match_stats: '',
+//     halfTime: '',
+//     fullTime: '',
+//     referee_status: '',
+//     match_events: '',
+//     goalHome: '',
+//     goalAway:'',
+//     yellowCardHome: '',
+//     yellowCardAway: '',
+//     redCardHome: '',
+//     redCardAway: '',
+//     substituteHome: '',
+//     substituteAway: ''
+//   }
+// ];
+ 
+// // this loads the accountDb configuration in ~/server/datasources.json
+// var dataSource = app.dataSources.SportmanDb;
+ 
+// // this automigrates the Account model 
+// dataSource.autoupdate('match', function(err) { // kecil
+//   if (err) throw err;
+ 
+//   // this loads the Account model from ~/common/models/Account.json
+//   var Match = app.models.Match; // besar
+//   var count = matches.length; // kecils
+//   matches.forEach(function(match) { // kecils kecil
+//      // insert new records into the Account table
+//      Match.create(match, function(err, record) { // besar kecil
+//       if (err) return console.log(err);
+ 
+//       console.log('Record created:', record);
+ 
+//       count--;
+ 
+//       if (count === 0) {
+//         console.log('done');
+//         dataSource.disconnect();
+//       }
+//     });
+//   });
+// });
 
 // var app = require('../server');
 

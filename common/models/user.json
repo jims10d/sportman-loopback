@@ -44,6 +44,41 @@
           "type": "string"
         }
     },
+    "referee_rating": {
+      "type": "object",
+        "rate_counter": {
+          "type": "number",
+          "default": 0
+        },
+        "fairness_rate": {
+          "type": "number",
+          "default": 0
+        },
+        "decision_rate": {
+          "type": "number",
+          "default": 0
+        },
+        "discipline_rate": {
+          "type": "number",
+          "default": 0
+        },
+        "total_fairness_rate": {
+          "type": "number",
+          "default": 0
+        },
+        "total_decision_rate": {
+          "type": "number",
+          "default": 0
+        },
+        "total_discipline_rate": {
+          "type": "number",
+          "default": 0
+        },
+        "total_rating": {
+          "type": "number",
+          "default": 0
+        }
+    },
     "teamInvitation": {
       "type": "string"
     },
