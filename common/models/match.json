@@ -188,6 +188,73 @@
           "default": 0
         }
     },
+    "match_stats": {
+      "type": "object",
+        "homePossession": {
+          "type": "number",
+          "default": 0
+        },
+        "awayPossession": {
+          "type": "number",
+          "default": 0
+        },
+        "homeTotalShots": {
+          "type": "number",
+          "default": 0
+        },
+        "awayTotalShots": {
+          "type": "number",
+          "default": 0
+        },
+        "homeShotOnTarget": {
+          "type": "number",
+          "default": 0
+        },
+        "awayShotOnTarget": {
+          "type": "number",
+          "default": 0
+        },
+        "homeShotOffTarget": {
+          "type": "number",
+          "default": 0
+        },
+        "awayShotOffTarget": {
+          "type": "number",
+          "default": 0
+        },
+        "homeCornerKicks": {
+          "type": "number",
+          "default": 0
+        },
+        "awayCornerKicks": {
+          "type": "number",
+          "default": 0
+        },
+        "homeFouls": {
+          "type": "number",
+          "default": 0
+        },
+        "awayFouls": {
+          "type": "number",
+          "default": 0
+        },
+        "homeYellowCard": {
+          "type": "number",
+          "default": 0
+        },
+        "awayYellowCard": {
+          "type": "number",
+          "default": 0
+        },
+        "homeRedCard": {
+          "type": "number",
+          "default": 0
+        },
+        "awayRedCard": {
+          "type": "number",
+          "default": 0
+        }
+    },
     "halfTime": {
       "type": "object",
         "status": {
