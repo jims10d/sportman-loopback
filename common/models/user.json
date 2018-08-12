@@ -175,6 +175,9 @@
         "sunday": {
           "type": "string"
         }
+    },
+    "bookedDate": {
+      "type": "string"
     }
   },
   "validations": [],

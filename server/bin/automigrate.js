@@ -101,11 +101,11 @@ var app = require('../server');
 
 var users = [ // kecils
   {
-    id: 'U0qweaoidfasdfsdfsdwe',
-    username: 'organizer92479112857',
-    fullname: 'organizer92479112857',
-    password:'Organizer92479181257',
-    email: 'organizer92479112857@gmail.com',
+    id: 'U0qweaoidfasdfssdfsdfsdwe',
+    username: 'organizersdf92479112857',
+    fullname: 'organizesdfr92479112857',
+    password:'Organizersdf92479181257',
+    email: 'organizer9sdf2479112857@gmail.com',
     role: 'Organizer',
     photo: '',
     createdCompetition: '',
@@ -129,7 +129,8 @@ var users = [ // kecils
     redCardGiven: '',
     yellowCardGiven: '',
     matchManaged: '',
-    availableDayAndTime: ''
+    availableDayAndTime: '',
+    bookedDate: ''
   }
 ];
  
