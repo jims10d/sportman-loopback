@@ -60,7 +60,13 @@
         "decisionRate": {
           "type": "number",
           "default": 0
-        }
+        },
+      "default": {
+        "name": "",
+        "fairnessRate": 0,
+        "disciplineRate": 0,
+        "decisionRate": 0
+      }  
     },
     "match_homeTeam": {
       "type": "string"
