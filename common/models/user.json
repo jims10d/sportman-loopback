@@ -62,6 +62,18 @@
           "type": "number",
           "default": 0
         },
+         "total_fairness": {
+          "type": "number",
+          "default": 0
+        },
+        "total_decision": {
+          "type": "number",
+          "default": 0
+        },
+        "total_discipline": {
+          "type": "number",
+          "default": 0
+        },
         "total_fairness_rate": {
           "type": "number",
           "default": 0
