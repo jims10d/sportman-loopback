@@ -97,69 +97,69 @@
 //   });
 // });
 
-var app = require('../server');
+// var app = require('../server');
 
-var users = [ // kecils
-  {
-    id: 'U0qweaoidfasdfssdfsdfsdwe',
-    username: 'organizersdf92479112857',
-    fullname: 'organizesdfr92479112857',
-    password:'Organizersdf92479181257',
-    email: 'organizer9sdf2479112857@gmail.com',
-    role: 'Organizer',
-    photo: '',
-    createdCompetition: '',
-    referee_rating: '',
-    teamInvitation:'',
-    team: '',
-    teamRequested: '',
-    ktp: '12391247192476942',
-    age: '',
-    dateOfBirth: '',
-    address:'',
-    position: '',
-    shirtNumber: '',
-    hp: '',
-    profileCompleted:'',
-    play: '',
-    goal: '',
-    assist: '',
-    yellowCard: '',
-    redCard:'',
-    redCardGiven: '',
-    yellowCardGiven: '',
-    matchManaged: '',
-    availableDayAndTime: '',
-    bookedDate: ''
-  }
-];
+// var users = [ // kecils
+//   {
+//     id: 'U0qweaoidfasdfssdfsdfsdwe',
+//     username: 'organizersdf92479112857',
+//     fullname: 'organizesdfr92479112857',
+//     password:'Organizersdf92479181257',
+//     email: 'organizer9sdf2479112857@gmail.com',
+//     role: 'Organizer',
+//     photo: '',
+//     createdCompetition: '',
+//     referee_rating: '',
+//     teamInvitation:'',
+//     team: '',
+//     teamRequested: '',
+//     ktp: '12391247192476942',
+//     age: '',
+//     dateOfBirth: '',
+//     address:'',
+//     position: '',
+//     shirtNumber: '',
+//     hp: '',
+//     profileCompleted:'',
+//     play: '',
+//     goal: '',
+//     assist: '',
+//     yellowCard: '',
+//     redCard:'',
+//     redCardGiven: '',
+//     yellowCardGiven: '',
+//     matchManaged: '',
+//     availableDayAndTime: '',
+//     bookedDate: ''
+//   }
+// ];
  
-// this loads the accountDb configuration in ~/server/datasources.json
-var dataSource = app.dataSources.SportmanDb;
+// // this loads the accountDb configuration in ~/server/datasources.json
+// var dataSource = app.dataSources.SportmanDb;
  
-// this automigrates the Account model 
-dataSource.autoupdate('user', function(err) { // kecil
-  if (err) throw err;
+// // this automigrates the Account model 
+// dataSource.autoupdate('user', function(err) { // kecil
+//   if (err) throw err;
  
-  // this loads the Account model from ~/common/models/Account.json
-  var User = app.models.User; // besar
-  var count = users.length; // kecils
-  users.forEach(function(user) { // kecils kecil
-     // insert new records into the Account table
-     User.create(user, function(err, record) { // besar kecil
-      if (err) return console.log(err);
+//   // this loads the Account model from ~/common/models/Account.json
+//   var User = app.models.User; // besar
+//   var count = users.length; // kecils
+//   users.forEach(function(user) { // kecils kecil
+//      // insert new records into the Account table
+//      User.create(user, function(err, record) { // besar kecil
+//       if (err) return console.log(err);
  
-      console.log('Record created:', record);
+//       console.log('Record created:', record);
  
-      count--;
+//       count--;
  
-      if (count === 0) {
-        console.log('done');
-        dataSource.disconnect();
-      }
-    });
-  });
-});
+//       if (count === 0) {
+//         console.log('done');
+//         dataSource.disconnect();
+//       }
+//     });
+//   });
+// });
 
 // var app = require('../server');
 
@@ -374,55 +374,56 @@ dataSource.autoupdate('user', function(err) { // kecil
 //   });
 // });
 
-// var app = require('../server');
+var app = require('../server');
    
-// var teams = [ // kecils
-//   {
-//     team_abrName: 'abc',
-//     team_name: 'ABC FC',
-//     team_logo: '',
-//     team_manager: 'manager10101010101',
-//     team_coach: 'coach10101010101',
-//     team_position: '10',
-//     team_play: '10',
-//     team_point: '10',
-//     team_win: '3',
-//     team_draw: '1',
-//     team_lose: '6',
-//     team_goalFor: '10',
-//     team_goalAgainst: '10',
-//     coach_id: 'Co10281970317',
-//     invited_members: '',
-//     invited_member: '',
-//     team_squad: '',
-//     player_request: '',
-//     coach_request: ''
-//   }
-// ];
+var teams = [ // kecils
+  {
+    team_abrName: 'abc',
+    team_name: 'ABC FC',
+    team_logo: '',
+    team_manager: 'manager10101010101',
+    team_coach: 'coach10101010101',
+    team_position: '10',
+    team_play: '10',
+    team_point: '10',
+    team_win: '3',
+    team_draw: '1',
+    team_lose: '6',
+    team_goalFor: '10',
+    team_goalAgainst: '10',
+    coach_id: 'Co10281970317',
+    invited_members: '',
+    invited_member: '',
+    team_squad: '',
+    player_request: '',
+    coach_request: '',
+    availableJerseyNumber: ''
+  }
+];
  
-// // this loads the accountDb configuration in ~/server/datasources.json
-// var dataSource = app.dataSources.SportmanDb;
+// this loads the accountDb configuration in ~/server/datasources.json
+var dataSource = app.dataSources.SportmanDb;
  
-// // this automigrates the Account model 
-// dataSource.autoupdate('team', function(err) { // kecil
-//   if (err) throw err;
+// this automigrates the Account model 
+dataSource.autoupdate('team', function(err) { // kecil
+  if (err) throw err;
  
-//   // this loads the Account model from ~/common/models/Account.json
-//   var Team = app.models.Team; // besar
-//   var count = teams.length; // kecils
-//   teams.forEach(function(team) { // kecils kecil
-//      // insert new records into the Account table
-//      Team.create(team, function(err, record) { // besar kecil
-//       if (err) return console.log(err);
+  // this loads the Account model from ~/common/models/Account.json
+  var Team = app.models.Team; // besar
+  var count = teams.length; // kecils
+  teams.forEach(function(team) { // kecils kecil
+     // insert new records into the Account table
+     Team.create(team, function(err, record) { // besar kecil
+      if (err) return console.log(err);
  
-//       console.log('Record created:', record);
+      console.log('Record created:', record);
  
-//       count--;
+      count--;
  
-//       if (count === 0) {
-//         console.log('done');
-//         dataSource.disconnect();
-//       }
-//     });
-//   });
-// });
+      if (count === 0) {
+        console.log('done');
+        dataSource.disconnect();
+      }
+    });
+  });
+});
