@@ -101,7 +101,7 @@ var app = require('../server');
 
 var users = [ // kecils
   {
-    id: 'U0qweaoidfadasdasdfsdwe',
+    id: 'U0qweaoidfasdfsdfsdwe',
     username: 'organizer92479112857',
     fullname: 'organizer92479112857',
     password:'Organizer92479181257',

@@ -89,6 +89,10 @@
         "total_rating": {
           "type": "number",
           "default": 0
+        },
+        "total_rating_rate": {
+          "type": "number",
+          "default": 0
         }
     },
     "teamInvitation": {
