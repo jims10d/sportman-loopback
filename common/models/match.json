@@ -13,19 +13,24 @@
       "idInjection": true
     },
     "match_name": {
-      "type": "string"
+      "type": "string",
+      "default": ""
     },
     "match_venue": {
-      "type": "string"
+      "type": "string",
+      "default": ""
     },
     "match_field": {
-      "type": "string"
+      "type": "string",
+      "default": ""
     },
     "match_time": {
-      "type": "string"
+      "type": "string",
+      "default": ""
     },
     "match_countDown": {
-      "type": "string"
+      "type": "string",
+      "default": ""
     },
     "match_length": {
       "type": "number",
@@ -36,13 +41,16 @@
       "default": 0
     },
     "match_date": {
-      "type": "string"
+      "type": "string",
+      "default": ""
     },
     "match_referee": {
-      "type": "string"
+      "type": "string",
+      "default": ""
     },
     "match_analyst": {
-      "type": "string"
+      "type": "string",
+      "default": ""
     },
     "match_refereeObj": {
       "type": "object",
@@ -69,10 +77,12 @@
       }  
     },
     "match_homeTeam": {
-      "type": "string"
+      "type": "string",
+      "default": ""
     },
     "match_awayTeam": {
-      "type": "string"
+      "type": "string",
+      "default": ""
     },
     "match_eventNumber": {
       "type": "number",
@@ -104,7 +114,17 @@
         },
         "player": {
           "type": "string"
-        }
+        },
+      "default": {
+        "team_name": "",
+        "score": 0,
+        "formation": "",
+        "lineup": "",
+        "lastLineup": "",
+        "sub": "",
+        "lastSub": "",
+        "player": ""
+      }    
     },
     "match_awayTeamObj": {
       "type": "object",
@@ -132,37 +152,57 @@
         },
         "player": {
           "type": "string"
-        }
+        },
+      "default": {
+        "team_name": "",
+        "score": 0,
+        "formation": "",
+        "lineup": "",
+        "lastLineup": "",
+        "sub": "",
+        "lastSub": "",
+        "player": ""
+      }      
     },
     "match_fixture": {
-      "type": "string"
+      "type": "string",
+      "default": ""
     },
     "match_number": {
-      "type": "string"
+      "type": "string",
+      "default": ""
     },
     "match_started": {
-      "type": "string"
+      "type": "string",
+      "default": ""
     },
     "fixture_break": {
-      "type": "number"
+      "type": "number",
+      "default": 0
     },
     "timer_status": {
-      "type": "string"
+      "type": "string",
+      "default": ""
     },
     "match_winner": {
-      "type": "string"
+      "type": "string",
+      "default": ""
     },
     "match_loser": {
-      "type": "string"
+      "type": "string",
+      "default": ""
     },
     "match_pair": {
-      "type": "string"
+      "type": "string",
+      "default": ""
     },
     "match_group": {
-      "type": "string"
+      "type": "string",
+      "default": ""
     },
     "match_status": {
-      "type": "string"
+      "type": "string",
+      "default": ""
     },
     "live_status": {
       "type": "boolean",
@@ -177,7 +217,8 @@
       "default": 60
     },
     "countDownStarted": {
-      "type": "string"
+      "type": "string",
+      "default": ""
     },
     "ballPossession": {
       "type": "object",
@@ -192,7 +233,12 @@
         "awayTeam": {
           "type": "number",
           "default": 0
-        }
+        },
+        "default": {
+          "status": false,
+          "homeTeam": 0,
+          "awayTeam": 0
+        }  
     },
     "match_stats": {
       "type": "object",
@@ -259,7 +305,25 @@
         "awayRedCard": {
           "type": "number",
           "default": 0
-        }
+        },
+        "default": {
+          "homePossession": 0,
+          "awayPossession": 0,
+          "homeTotalShots": 0,
+          "awayTotalShots": 0,
+          "homeShotOnTarget": 0,
+          "awayShotOnTarget": 0,
+          "homeShotOffTarget": 0,
+          "awayShotOffTarget": 0,
+          "homeCornerKicks": 0,
+          "awayCornerKicks": 0,
+          "homeFouls": 0,
+          "awayFouls": 0,
+          "homeYellowCard": 0,
+          "awayYellowCard": 0,
+          "homeRedCard": 0,
+          "awayRedCard": 0
+        }  
     },
     "halfTime": {
       "type": "object",
@@ -274,7 +338,12 @@
         "awayTeamScore": {
           "type": "number",
           "default": 0
-        }
+        },
+        "default": {
+          "status": false,
+          "homeTeamScore": 0,
+          "awayTeamScore": 0
+        }  
     },
     "fullTime": {
       "type": "object",
@@ -289,6 +358,11 @@
         "awayTeamScore": {
           "type": "number",
           "default": 0
+        },
+        "default": {
+          "status": false,
+          "homeTeamScore": 0,
+          "awayTeamScore": 0
         }
     },
     "extraTime": {
@@ -304,6 +378,11 @@
         "awayTeamScore": {
           "type": "number",
           "default": 0
+        },
+        "default": {
+          "status": false,
+          "homeTeamScore": 0,
+          "awayTeamScore": 0
         }
     },
     "penalty": {
@@ -319,10 +398,16 @@
         "awayTeamScore": {
           "type": "number",
           "default": 0
+        },
+        "default": {
+          "status": false,
+          "homeTeamScore": 0,
+          "awayTeamScore": 0
         }
     },
     "referee_status": {
-      "type": "string"
+      "type": "string",
+      "default": ""
     },
     "match_events": {
       "type": "object",
@@ -386,6 +471,15 @@
         "eventNumber": {
           "type": "number",
           "default": 0
+        },
+        "default": {
+          "scorer": "",
+          "time": 0,
+          "scoreHome": 0,
+          "scoreAway": 0,
+          "goalStatus": "",
+          "assist": "",
+          "eventNumber": 0
         }
     },
     "goalAway": {
@@ -411,6 +505,15 @@
         "eventNumber": {
           "type": "number",
           "default": 0
+        },
+        "default": {
+          "scorer": "",
+          "time": 0,
+          "scoreHome": 0,
+          "scoreAway": 0,
+          "goalStatus": "",
+          "assist": "",
+          "eventNumber": 0
         }
     },
     "yellowCardHome": {
@@ -427,6 +530,12 @@
       "eventNumber": {
         "type": "number",
         "default": 0
+      },
+      "default": {
+        "player": "",
+        "time": 0,
+        "status": "",
+        "eventNumber": 0
       }
     },
     "yellowCardAway": {
@@ -443,6 +552,12 @@
       "eventNumber": {
         "type": "number",
         "default": 0
+      },
+      "default": {
+        "player": "",
+        "time": 0,
+        "status": "",
+        "eventNumber": 0
       }
     },
     "redCardHome": {
@@ -456,6 +571,11 @@
       "eventNumber": {
         "type": "number",
         "default": 0
+      },
+      "default": {
+        "player": "",
+        "time": 0,
+        "eventNumber": 0
       }
     },
     "redCardAway": {
@@ -469,6 +589,11 @@
       "eventNumber": {
         "type": "number",
         "default": 0
+      },
+      "default": {
+        "player": "",
+        "time": 0,
+        "eventNumber": 0
       }
     },
     "substituteHome": {
@@ -485,6 +610,12 @@
       "eventNumber": {
         "type": "number",
         "default": 0
+      },
+      "default": {
+        "in": "",
+        "out": "",
+        "time": 0,
+        "eventNumber": 0
       }
     },
     "substituteAway": {
@@ -501,6 +632,12 @@
       "eventNumber": {
         "type": "number",
         "default": 0
+      },
+      "default": {
+        "in": "",
+        "out": "",
+        "time": 0,
+        "eventNumber": 0
       }
     }
   },
