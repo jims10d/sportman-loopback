@@ -497,11 +497,11 @@ module.exports = function(User) {
 					} else {
 						var booked_date = data.toString();
 		
-						if(booked_date.indexOf(BookedDate) !== -1){
+						if(booked_date.includes(BookedDate)){
 							cb(null,instance);
 						}else{
 							booked_date = booked_date + ',' + BookedDate;
-							User.updateAll({username: Username}, {bookedDate: BookedDate}, // update user data
+							User.updateAll({username: Username}, {bookedDate: booked_date}, // update user data
 							function(err,info){
 								User.findOne({where:{username: Username}},
 									function(err,instance){
