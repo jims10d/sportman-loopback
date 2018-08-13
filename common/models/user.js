@@ -497,10 +497,9 @@ module.exports = function(User) {
 					} else {
 						var booked_date = data.toString();
 		
-						if(booked_date.includes(BookedDate)){
+						if(booked_date.indexOf(BookedDate) !== -1){
 							cb(null,instance);
 						}else{
-
 							booked_date = booked_date + ',' + BookedDate;
 							User.updateAll({username: Username}, {bookedDate: BookedDate}, // update user data
 							function(err,info){
