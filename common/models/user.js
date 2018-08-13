@@ -474,6 +474,50 @@ module.exports = function(User) {
 				}				
 			});
 	};
+
+	User.addBookedDate = function(BookedDate, Username, cb){
+		User.findOne({where:{username: Username}},
+			function(err,instance){
+				if(instance===null){
+					cb(null,null);
+				}else{
+					data = instance['bookedDate'];
+					if(data === null || data === ''){
+						User.updateAll({username: Username}, {bookedDate: BookedDate}, // update user data
+						function(err,info){
+							User.findOne({where:{username: Username}},
+								function(err,instance){
+									if(instance===null){
+										cb(null,null);
+									}else{
+										cb(null,instance);
+									}
+								});
+						});
+					} else {
+						var booked_date = data.toString();
+		
+						if(booked_date.includes(BookedDate)){
+							cb(null,instance);
+						}else{
+
+							booked_date = booked_date + ',' + BookedDate;
+							User.updateAll({username: Username}, {bookedDate: BookedDate}, // update user data
+							function(err,info){
+								User.findOne({where:{username: Username}},
+									function(err,instance){
+										if(instance===null){
+											cb(null,null);
+										}else{
+											cb(null,instance);
+										}
+									});
+							});
+						}
+					}	
+				}				
+			});
+	};
 	
 	User.remoteMethod(
 		'getUser',
@@ -693,6 +737,18 @@ module.exports = function(User) {
 					],
 			returns: {arg: 'refereeRating', type: 'string', root: true},
 			http: {path: '/addRefereeRating', verb: 'put'}
+		}
+	);
+
+	User.remoteMethod(
+		'addBookedDate',
+		{
+			accepts: [
+					{arg: 'BookedDate', type: 'string'},
+					{arg: 'Username', type: 'string'}
+					],
+			returns: {arg: 'bookedDate', type: 'string', root: true},
+			http: {path: '/addBookedDate', verb: 'put'}
 		}
 	);
 };
