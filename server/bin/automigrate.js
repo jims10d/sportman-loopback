@@ -285,56 +285,57 @@
 //   });
 // });
 
-// var app = require('../server');
+var app = require('../server');
 
-// var competitions = [ // kecils
-//   {
-//     id: 'CO2939ajsdadh123asdadasd',
-//     organizer: 'John Stone',
-//     comp_name: 'Unknown League',
-//     comp_fee:'Free',
-//     comp_regulation: '',
-//     comp_type: 'GroupStage',
-//     comp_location: 'Etihad Stadium',
-//     comp_address: '',
-//     comp_finish:'',
-//     comp_start: '',
-//     comp_notes: '',
-//     comp_numOfTeam: '12',
-//     comp_award: '',
-//     schedule_status: '',
-//     classement_status: '',
-//     register_status: '',
-//     comp_status: ''
-//   }
-// ];
+var competitions = [ // kecils
+  {
+    id: 'CO2939fsdffdfdfsdvdadh123asdadasd',
+    organizer: 'John Stone',
+    comp_name: 'Unknown League',
+    comp_fee:'Free',
+    comp_regulation: '',
+    comp_type: 'GroupStage',
+    comp_location: 'Etihad Stadium',
+    comp_address: '',
+    comp_finish:'',
+    comp_start: '',
+    comp_notes: '',
+    comp_numOfTeam: '12',
+    comp_award: '',
+    schedule_status: '',
+    classement_status: '',
+    register_status: '',
+    comp_status: '',
+    fixture_break: '1'
+  }
+];
  
-// // this loads the accountDb configuration in ~/server/datasources.json
-// var dataSource = app.dataSources.SportmanDb;
+// this loads the accountDb configuration in ~/server/datasources.json
+var dataSource = app.dataSources.SportmanDb;
  
-// // this automigrates the Account model 
-// dataSource.autoupdate('competition', function(err) { // kecil
-//   if (err) throw err;
+// this automigrates the Account model 
+dataSource.autoupdate('competition', function(err) { // kecil
+  if (err) throw err;
  
-//   // this loads the Account model from ~/common/models/Account.json
-//   var Competition = app.models.Competition; // besar
-//   var count = competitions.length; // kecils
-//   competitions.forEach(function(competition) { // kecils kecil
-//      // insert new records into the Account table
-//      Competition.create(competition, function(err, record) { // besar kecil
-//       if (err) return console.log(err);
+  // this loads the Account model from ~/common/models/Account.json
+  var Competition = app.models.Competition; // besar
+  var count = competitions.length; // kecils
+  competitions.forEach(function(competition) { // kecils kecil
+     // insert new records into the Account table
+     Competition.create(competition, function(err, record) { // besar kecil
+      if (err) return console.log(err);
  
-//       console.log('Record created:', record);
+      console.log('Record created:', record);
  
-//       count--;
+      count--;
  
-//       if (count === 0) {
-//         console.log('done');
-//         dataSource.disconnect();
-//       }
-//     });
-//   });
-// });
+      if (count === 0) {
+        console.log('done');
+        dataSource.disconnect();
+      }
+    });
+  });
+});
 
 // var app = require('../server');
    
@@ -374,56 +375,56 @@
 //   });
 // });
 
-var app = require('../server');
+// var app = require('../server');
    
-var teams = [ // kecils
-  {
-    team_abrName: 'abc',
-    team_name: 'ABC FC',
-    team_logo: '',
-    team_manager: 'manager10101010101',
-    team_coach: 'coach10101010101',
-    team_position: '10',
-    team_play: '10',
-    team_point: '10',
-    team_win: '3',
-    team_draw: '1',
-    team_lose: '6',
-    team_goalFor: '10',
-    team_goalAgainst: '10',
-    coach_id: 'Co10281970317',
-    invited_members: '',
-    invited_member: '',
-    team_squad: '',
-    player_request: '',
-    coach_request: '',
-    availableJerseyNumber: ''
-  }
-];
+// var teams = [ // kecils
+//   {
+//     team_abrName: 'abc',
+//     team_name: 'ABC FC',
+//     team_logo: '',
+//     team_manager: 'manager10101010101',
+//     team_coach: 'coach10101010101',
+//     team_position: '10',
+//     team_play: '10',
+//     team_point: '10',
+//     team_win: '3',
+//     team_draw: '1',
+//     team_lose: '6',
+//     team_goalFor: '10',
+//     team_goalAgainst: '10',
+//     coach_id: 'Co10281970317',
+//     invited_members: '',
+//     invited_member: '',
+//     team_squad: '',
+//     player_request: '',
+//     coach_request: '',
+//     availableJerseyNumber: ''
+//   }
+// ];
  
-// this loads the accountDb configuration in ~/server/datasources.json
-var dataSource = app.dataSources.SportmanDb;
+// // this loads the accountDb configuration in ~/server/datasources.json
+// var dataSource = app.dataSources.SportmanDb;
  
-// this automigrates the Account model 
-dataSource.autoupdate('team', function(err) { // kecil
-  if (err) throw err;
+// // this automigrates the Account model 
+// dataSource.autoupdate('team', function(err) { // kecil
+//   if (err) throw err;
  
-  // this loads the Account model from ~/common/models/Account.json
-  var Team = app.models.Team; // besar
-  var count = teams.length; // kecils
-  teams.forEach(function(team) { // kecils kecil
-     // insert new records into the Account table
-     Team.create(team, function(err, record) { // besar kecil
-      if (err) return console.log(err);
+//   // this loads the Account model from ~/common/models/Account.json
+//   var Team = app.models.Team; // besar
+//   var count = teams.length; // kecils
+//   teams.forEach(function(team) { // kecils kecil
+//      // insert new records into the Account table
+//      Team.create(team, function(err, record) { // besar kecil
+//       if (err) return console.log(err);
  
-      console.log('Record created:', record);
+//       console.log('Record created:', record);
  
-      count--;
+//       count--;
  
-      if (count === 0) {
-        console.log('done');
-        dataSource.disconnect();
-      }
-    });
-  });
-});
+//       if (count === 0) {
+//         console.log('done');
+//         dataSource.disconnect();
+//       }
+//     });
+//   });
+// });
