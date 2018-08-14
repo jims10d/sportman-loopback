@@ -450,21 +450,21 @@ module.exports = function(Team) {
 				if(instance===null){
 					cb(null,null);
 				}else{
-					coachRequest = instance['coach_request']; //get every posts he has liked
-					coachRequestNow = coachRequest.toString(); //store all post he has liked now to string
-					//if the postId is in mid
+					coachRequest = instance['coach_request']; 
+					coachRequestNow = coachRequest.toString(); 
+				
 					if(coachRequestNow.includes(CoachRequest + ',')){
 						coachRequestNow = coachRequestNow.replace(CoachRequest + ',','');
 					}
-					//if the postId at the last
+				
 					else if(coachRequestNow.includes(',' + CoachRequest)){
 						coachRequestNow = coachRequestNow.replace(',' + CoachRequest,'');
 					}
-					//postId is at the first
+				
 					else {						
 						coachRequestNow = coachRequestNow.replace(CoachRequest,'');
 					}
-					Team.updateAll({team_name: TeamName}, {coach_request: coachRequestNow}, //update
+					Team.updateAll({team_name: TeamName}, {coach_request: coachRequestNow}, // update
 					function(err,info){
 						Team.findOne({where:{team_name: TeamName}},
 							function(err,instance){
@@ -478,6 +478,42 @@ module.exports = function(Team) {
 				}				
 			});
 	};
+
+	Team.delPlayerRequest = function(TeamName , PlayerRequest, cb){
+		Team.findOne({where:{team_name: TeamName}},
+			function(err,instance){
+				if(instance===null){
+					cb(null,null);
+				}else{
+					playerRequest = instance['player_request']; 
+					playerRequestNow = playerRequest.toString(); 
+				
+					if(playerRequestNow.includes(PlayerRequest + ',')){
+						playerRequestNow = playerRequestNow.replace(PlayerRequest + ',','');
+					}
+				
+					else if(playerRequestNow.includes(',' + PlayerRequest)){
+						playerRequestNow = playerRequestNow.replace(',' + PlayerRequest,'');
+					}
+				
+					else {						
+						playerRequestNow = playerRequestNow.replace(PlayerRequest,'');
+					}
+					Team.updateAll({team_name: TeamName}, {player_request: playerRequestNow}, // update
+					function(err,info){
+						Team.findOne({where:{team_name: TeamName}},
+							function(err,instance){
+								if(instance===null){
+									cb(null,null);
+								}else{
+									cb(null,instance);
+								}
+							});
+					});
+				}				
+			});
+	};
+
 
 
 	Team.remoteMethod(

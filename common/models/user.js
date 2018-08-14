@@ -68,7 +68,7 @@ module.exports = function(User) {
 	};
 
 	User.getGoalKeeperByTeam = function(teamName, cb){
-		User.find({where:{team:teamName,position:'Goalkeeper'}},
+		User.find({where:{team:teamName,position:'GK'}},
 			function(err,instance){
 				if(instance===null){
 					cb(null,null);
@@ -79,7 +79,7 @@ module.exports = function(User) {
 	};
 
 	User.getDefenderByTeam = function(teamName, cb){
-		User.find({where:{team:teamName,position:'Defender'}},
+		User.find({where:{team:teamName,position:'Def'}},
 			function(err,instance){
 				if(instance===null){
 					cb(null,null);
@@ -90,7 +90,7 @@ module.exports = function(User) {
 	};
 
 	User.getMidfielderByTeam = function(teamName, cb){
-		User.find({where:{team:teamName,position:'Midfielder'}},
+		User.find({where:{team:teamName,position:'Mid'}},
 			function(err,instance){
 				if(instance===null){
 					cb(null,null);
@@ -101,7 +101,7 @@ module.exports = function(User) {
 	};
 
 	User.getAttackerByTeam = function(teamName, cb){
-		User.find({where:{team:teamName,position:'Attacker'}},
+		User.find({where:{team:teamName,position:'Att'}},
 			function(err,instance){
 				if(instance===null){
 					cb(null,null);
