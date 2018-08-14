@@ -62,7 +62,11 @@
           "type": "number",
           "default": 0
         },
-         "total_fairness": {
+        "integrity_rate": {
+          "type": "number",
+          "default": 0
+        },
+        "total_fairness": {
           "type": "number",
           "default": 0
         },
@@ -71,6 +75,10 @@
           "default": 0
         },
         "total_discipline": {
+          "type": "number",
+          "default": 0
+        },
+        "total_integrity": {
           "type": "number",
           "default": 0
         },
@@ -83,6 +91,10 @@
           "default": 0
         },
         "total_discipline_rate": {
+          "type": "number",
+          "default": 0
+        },
+        "total_integrity_rate": {
           "type": "number",
           "default": 0
         },

@@ -97,69 +97,69 @@
 //   });
 // });
 
-// var app = require('../server');
+var app = require('../server');
 
-// var users = [ // kecils
-//   {
-//     id: 'U0qweaoidfasdfssdfsdfsdwe',
-//     username: 'organizersdf92479112857',
-//     fullname: 'organizesdfr92479112857',
-//     password:'Organizersdf92479181257',
-//     email: 'organizer9sdf2479112857@gmail.com',
-//     role: 'Organizer',
-//     photo: '',
-//     createdCompetition: '',
-//     referee_rating: '',
-//     teamInvitation:'',
-//     team: '',
-//     teamRequested: '',
-//     ktp: '12391247192476942',
-//     age: '',
-//     dateOfBirth: '',
-//     address:'',
-//     position: '',
-//     shirtNumber: '',
-//     hp: '',
-//     profileCompleted:'',
-//     play: '',
-//     goal: '',
-//     assist: '',
-//     yellowCard: '',
-//     redCard:'',
-//     redCardGiven: '',
-//     yellowCardGiven: '',
-//     matchManaged: '',
-//     availableDayAndTime: '',
-//     bookedDate: ''
-//   }
-// ];
+var users = [ // kecils
+  {
+    id: 'U0qweaoidfasdrefehfdfsdwe',
+    username: 'organizersdf9247dfsdf9112857',
+    fullname: 'organizesdfr9247sdfsd9112857',
+    password:'Organizersdf92sdfsdf479181257',
+    email: 'organizer9sdf2479sdfsdf112857@gmail.com',
+    role: 'Organizer',
+    photo: '',
+    createdCompetition: '',
+    referee_rating: '',
+    teamInvitation:'',
+    team: '',
+    teamRequested: '',
+    ktp: '12391247192476942',
+    age: '',
+    dateOfBirth: '',
+    address:'',
+    position: '',
+    shirtNumber: '',
+    hp: '',
+    profileCompleted:'',
+    play: '',
+    goal: '',
+    assist: '',
+    yellowCard: '',
+    redCard:'',
+    redCardGiven: '',
+    yellowCardGiven: '',
+    matchManaged: '',
+    availableDayAndTime: '',
+    bookedDate: ''
+  }
+];
  
-// // this loads the accountDb configuration in ~/server/datasources.json
-// var dataSource = app.dataSources.SportmanDb;
+// this loads the accountDb configuration in ~/server/datasources.json
+var dataSource = app.dataSources.SportmanDb;
  
-// // this automigrates the Account model 
-// dataSource.autoupdate('user', function(err) { // kecil
-//   if (err) throw err;
+// this automigrates the Account model 
+dataSource.autoupdate('user', function(err) { // kecil
+  if (err) throw err;
  
-//   // this loads the Account model from ~/common/models/Account.json
-//   var User = app.models.User; // besar
-//   var count = users.length; // kecils
-//   users.forEach(function(user) { // kecils kecil
-//      // insert new records into the Account table
-//      User.create(user, function(err, record) { // besar kecil
-//       if (err) return console.log(err);
+  // this loads the Account model from ~/common/models/Account.json
+  var User = app.models.User; // besar
+  var count = users.length; // kecils
+  users.forEach(function(user) { // kecils kecil
+     // insert new records into the Account table
+     User.create(user, function(err, record) { // besar kecil
+      if (err) return console.log(err);
  
-//       console.log('Record created:', record);
+      console.log('Record created:', record);
  
-//       count--;
+      count--;
  
-//       if (count === 0) {
-//         console.log('done');
-//         dataSource.disconnect();
-//       }
-//     });
-//   });
-// });
+      if (count === 0) {
+        console.log('done');
+        dataSource.disconnect();
+      }
+    });
+  });
+});
 
 // var app = require('../server');
 
@@ -240,52 +240,52 @@
 //   });
 // });
 
-var app = require('../server');
+// var app = require('../server');
 
-var classements = [ // kecils
-  {
-    id: 'CL2939ajsdadfdg',
-    position: '1',
-    team: 'Argentina',
-    group:'D',
-    play: '3',
-    win: '3',
-    draw: '0',
-    lose:'0',
-    goalDifference: '+10',
-    goalFor: '10',
-    goalAgainst: '',
-    point: '9',
-    status: 'Winner'
-  }
-];
+// var classements = [ // kecils
+//   {
+//     id: 'CL2939ajsdadfdg',
+//     position: '1',
+//     team: 'Argentina',
+//     group:'D',
+//     play: '3',
+//     win: '3',
+//     draw: '0',
+//     lose:'0',
+//     goalDifference: '+10',
+//     goalFor: '10',
+//     goalAgainst: '',
+//     point: '9',
+//     status: 'Winner'
+//   }
+// ];
  
-// this loads the accountDb configuration in ~/server/datasources.json
-var dataSource = app.dataSources.SportmanDb;
+// // this loads the accountDb configuration in ~/server/datasources.json
+// var dataSource = app.dataSources.SportmanDb;
  
-// this automigrates the Account model 
-dataSource.autoupdate('classement', function(err) { // kecil
-  if (err) throw err;
+// // this automigrates the Account model 
+// dataSource.autoupdate('classement', function(err) { // kecil
+//   if (err) throw err;
  
-  // this loads the Account model from ~/common/models/Account.json
-  var Classement = app.models.Classement; // besar
-  var count = classements.length; // kecils
-  classements.forEach(function(classement) { // kecils kecil
-     // insert new records into the Account table
-     Classement.create(classement, function(err, record) { // besar kecil
-      if (err) return console.log(err);
+//   // this loads the Account model from ~/common/models/Account.json
+//   var Classement = app.models.Classement; // besar
+//   var count = classements.length; // kecils
+//   classements.forEach(function(classement) { // kecils kecil
+//      // insert new records into the Account table
+//      Classement.create(classement, function(err, record) { // besar kecil
+//       if (err) return console.log(err);
  
-      console.log('Record created:', record);
+//       console.log('Record created:', record);
  
-      count--;
+//       count--;
  
-      if (count === 0) {
-        console.log('done');
-        dataSource.disconnect();
-      }
-    });
-  });
-});
+//       if (count === 0) {
+//         console.log('done');
+//         dataSource.disconnect();
+//       }
+//     });
+//   });
+// });
 
 // var app = require('../server');
 
