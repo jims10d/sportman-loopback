@@ -240,73 +240,23 @@
 //   });
 // });
 
-// var app = require('../server');
-
-// var classements = [ // kecils
-//   {
-//     id: 'CL2939ajsdadh123',
-//     position: '1',
-//     team: 'Argentina',
-//     group:'D',
-//     play: '3',
-//     win: '3',
-//     draw: '0',
-//     lose:'0',
-//     goalDifference: '+10',
-//     points: '9',
-//     status: 'Winner'
-//   }
-// ];
- 
-// // this loads the accountDb configuration in ~/server/datasources.json
-// var dataSource = app.dataSources.SportmanDb;
- 
-// // this automigrates the Account model 
-// dataSource.autoupdate('classement', function(err) { // kecil
-//   if (err) throw err;
- 
-//   // this loads the Account model from ~/common/models/Account.json
-//   var Classement = app.models.Classement; // besar
-//   var count = classements.length; // kecils
-//   classements.forEach(function(classement) { // kecils kecil
-//      // insert new records into the Account table
-//      Classement.create(classement, function(err, record) { // besar kecil
-//       if (err) return console.log(err);
- 
-//       console.log('Record created:', record);
- 
-//       count--;
- 
-//       if (count === 0) {
-//         console.log('done');
-//         dataSource.disconnect();
-//       }
-//     });
-//   });
-// });
-
 var app = require('../server');
 
-var competitions = [ // kecils
+var classements = [ // kecils
   {
-    id: 'CO2939fsdffdfdfsdvdadh123asdadasd',
-    organizer: 'John Stone',
-    comp_name: 'Unknown League',
-    comp_fee:'Free',
-    comp_regulation: '',
-    comp_type: 'GroupStage',
-    comp_location: 'Etihad Stadium',
-    comp_address: '',
-    comp_finish:'',
-    comp_start: '',
-    comp_notes: '',
-    comp_numOfTeam: '12',
-    comp_award: '',
-    schedule_status: '',
-    classement_status: '',
-    register_status: '',
-    comp_status: '',
-    fixture_break: '1'
+    id: 'CL2939ajsdadfdg',
+    position: '1',
+    team: 'Argentina',
+    group:'D',
+    play: '3',
+    win: '3',
+    draw: '0',
+    lose:'0',
+    goalDifference: '+10',
+    goalFor: '10',
+    goalAgainst: '',
+    point: '9',
+    status: 'Winner'
   }
 ];
  
@@ -314,15 +264,15 @@ var competitions = [ // kecils
 var dataSource = app.dataSources.SportmanDb;
  
 // this automigrates the Account model 
-dataSource.autoupdate('competition', function(err) { // kecil
+dataSource.autoupdate('classement', function(err) { // kecil
   if (err) throw err;
  
   // this loads the Account model from ~/common/models/Account.json
-  var Competition = app.models.Competition; // besar
-  var count = competitions.length; // kecils
-  competitions.forEach(function(competition) { // kecils kecil
+  var Classement = app.models.Classement; // besar
+  var count = classements.length; // kecils
+  classements.forEach(function(classement) { // kecils kecil
      // insert new records into the Account table
-     Competition.create(competition, function(err, record) { // besar kecil
+     Classement.create(classement, function(err, record) { // besar kecil
       if (err) return console.log(err);
  
       console.log('Record created:', record);
@@ -336,6 +286,58 @@ dataSource.autoupdate('competition', function(err) { // kecil
     });
   });
 });
+
+// var app = require('../server');
+
+// var competitions = [ // kecils
+//   {
+//     id: 'CO2939fsdffdfdfsdvdadh123asdadasd',
+//     organizer: 'John Stone',
+//     comp_name: 'Unknown League',
+//     comp_fee:'Free',
+//     comp_regulation: '',
+//     comp_type: 'GroupStage',
+//     comp_location: 'Etihad Stadium',
+//     comp_address: '',
+//     comp_finish:'',
+//     comp_start: '',
+//     comp_notes: '',
+//     comp_numOfTeam: '12',
+//     comp_award: '',
+//     schedule_status: '',
+//     classement_status: '',
+//     register_status: '',
+//     comp_status: '',
+//     fixture_break: '1'
+//   }
+// ];
+ 
+// // this loads the accountDb configuration in ~/server/datasources.json
+// var dataSource = app.dataSources.SportmanDb;
+ 
+// // this automigrates the Account model 
+// dataSource.autoupdate('competition', function(err) { // kecil
+//   if (err) throw err;
+ 
+//   // this loads the Account model from ~/common/models/Account.json
+//   var Competition = app.models.Competition; // besar
+//   var count = competitions.length; // kecils
+//   competitions.forEach(function(competition) { // kecils kecil
+//      // insert new records into the Account table
+//      Competition.create(competition, function(err, record) { // besar kecil
+//       if (err) return console.log(err);
+ 
+//       console.log('Record created:', record);
+ 
+//       count--;
+ 
+//       if (count === 0) {
+//         console.log('done');
+//         dataSource.disconnect();
+//       }
+//     });
+//   });
+// });
 
 // var app = require('../server');
    

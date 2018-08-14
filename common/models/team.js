@@ -187,12 +187,12 @@ module.exports = function(Team) {
 				if(instance===null){
 					cb(null,null);
 				}else{
-					data = instance['coach_request']; //get everyone who has like this Competition
+					data = instance['coach_request']; 
 					if(data === null || data === ''){
-						//if this is the first Competition he see
+	
 						console.log("tes");
 						theMembersNow = Username;
-						Team.updateAll({id: TeamId}, {coach_request: theMembersNow}, //update
+						Team.updateAll({id: TeamId}, {coach_request: theMembersNow}, // update
 						function(err,info){
 							Team.findOne({where:{id: TeamId}},
 								function(err,instance){

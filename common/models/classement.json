@@ -13,7 +13,8 @@
       "idInjection": true
     },
     "position": {
-      "type": "string"
+      "type": "number",
+      "default": 0
     },
     "team": {
       "type": "string"
@@ -22,7 +23,8 @@
       "type": "string"
     },
     "play": {
-      "type": "string"
+      "type": "number",
+      "default": 0
     },
     "win": {
       "type": "number",
@@ -33,13 +35,24 @@
       "default": 0
     },
     "lose": {
-      "type": "string"
+      "type": "number",
+      "default": 0
     },
     "goalDifference": {
-      "type": "string"
+      "type": "number",
+      "default": 0
     },
-    "points": {
-      "type": "string"
+    "goalFor": {
+      "type": "number",
+      "default": 0
+    },
+    "goalAgainst": {
+      "type": "number",
+      "default": 0
+    },
+    "point": {
+      "type": "number",
+      "default": 0
     },
     "status": {
       "type": "string"
