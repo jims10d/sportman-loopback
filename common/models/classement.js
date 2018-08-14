@@ -12,7 +12,7 @@ module.exports = function(Classement) {
 	};
 	
 	Classement.getClassementByCompIdAndTeamName = function(compId, teamName, cb){
-		Classement.find({where:{competition_id:compId,team:teamName}},
+		Classement.findOne({where:{competition_id:compId,team:teamName}},
 			function(err,instance){
 				if(instance===null){
 					cb(null,null);
