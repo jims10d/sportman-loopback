@@ -69,11 +69,16 @@
           "type": "number",
           "default": 0
         },
+        "integrityRate": {
+          "type": "number",
+          "default": 0
+        },
       "default": {
         "name": "",
         "fairnessRate": 0,
         "disciplineRate": 0,
-        "decisionRate": 0
+        "decisionRate": 0,
+        "integrityRate": 0
       }  
     },
     "match_homeTeam": {
