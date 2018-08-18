@@ -165,7 +165,7 @@ var app = require('../server');
 
 var matches = [ // kecils
   {
-    id: 'Matjaishd02y984y19',
+    id: 'Matjaissdfhd02y984y19',
     match_name: 'QWE12dsd2',
     match_venue: 'Planet Futsal',
     match_field: '1',
@@ -201,6 +201,7 @@ var matches = [ // kecils
     halfTime: '',
     fullTime: '',
     referee_status: '',
+    referee_ratingStatus: '',
     match_events: '',
     goalHome: '',
     goalAway:'',

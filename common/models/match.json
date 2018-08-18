@@ -414,6 +414,10 @@
       "type": "string",
       "default": ""
     },
+    "referee_ratingStatus": {
+      "type": "boolean",
+      "default": false
+    },
     "match_events": {
       "type": "object",
         "scorer": {
