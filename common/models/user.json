@@ -191,6 +191,9 @@
     "bookedDate": {
       "type": "string"
     },
+    "bookedTime": {
+      "type": "string"
+    },
     "ban": {
       "type": "object",
         "status": {

@@ -101,11 +101,11 @@ var app = require('../server');
 
 var users = [ // kecils
   {
-    id: 'U0qweaoidfasdr12314124fdfsdwe',
-    username: 'organiz123123ersdf9247dfsdf9112857',
-    fullname: 'organi123zesdfr9247sdfsd9112857',
-    password:'Organiz123ersdf92sdfsdf479181257',
-    email: 'organi123zer9sdf2479sdfsdf112857@gmail.com',
+    id: 'U0qweaoidfasdrasd12314124fdfsdwe',
+    username: 'orgaqwniz123123ersdf9247dfsdf9112857',
+    fullname: 'orgawni123zesdfr9247sdfsd9112857',
+    password:'Organqwiz123ersdf92sdfsdf479181257',
+    email: 'organi1qw23zer9sdf2479sdfsdf112857@gmail.com',
     role: 'Organizer',
     photo: '',
     createdCompetition: '',
@@ -131,6 +131,7 @@ var users = [ // kecils
     matchManaged: '',
     availableDayAndTime: '',
     bookedDate: '',
+    bookedTime: '',
     ban: ''
   }
 ];
