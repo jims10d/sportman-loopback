@@ -190,6 +190,22 @@
     },
     "bookedDate": {
       "type": "string"
+    },
+    "ban": {
+      "type": "object",
+        "status": {
+          "type": "boolean",
+          "default": false
+        },
+        "start": {
+          "type": "string"
+        },
+        "end": {
+          "type": "string"
+        },
+        "numberOfDays": {
+          "type": "string"
+        }
     }
   },
   "validations": [],
