@@ -24,28 +24,36 @@
       "type": "string"
     },
     "team_position": {
-      "type": "string"
+      "type": "number",
+      "default": 0
     },
     "team_play": {
-      "type": "string"
+      "type": "number",
+      "default": 0
     },
     "team_point": {
-      "type": "string"
+      "type": "number",
+      "default": 0
     },
     "team_win": {
-      "type": "string"
+      "type": "number",
+      "default": 0
     },
     "team_draw": {
-      "type": "string"
+      "type": "number",
+      "default": 0
     },
     "team_lose": {
-      "type": "string"
+      "type": "number",
+      "default": 0
     },
     "team_goalFor": {
-      "type": "string"
+      "type": "number",
+      "default": 0
     },
     "team_goalAgainst": {
-      "type": "string"
+      "type": "number",
+      "default": 0
     },
     "coach_id": {
       "type": "string"
