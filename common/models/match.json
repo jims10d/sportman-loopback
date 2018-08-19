@@ -201,6 +201,14 @@
       "type": "string",
       "default": ""
     },
+    "pair_status": {
+      "type": "string",
+      "default": ""
+    },
+    "last_pair": {
+      "type": "string",
+      "default": ""
+    },
     "match_group": {
       "type": "string",
       "default": ""
