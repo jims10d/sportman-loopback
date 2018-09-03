@@ -97,71 +97,72 @@
 //   });
 // });
 
-// var app = require('../server');
+var app = require('../server');
 
-// var users = [ // kecils
-//   {
-//     id: 'U0qweaoidfasdrasd12314124fdfsdwe',
-//     username: 'orgaqwniz123123ersdf9247dfsdf9112857',
-//     fullname: 'orgawni123zesdfr9247sdfsd9112857',
-//     password:'Organqwiz123ersdf92sdfsdf479181257',
-//     email: 'organi1qw23zer9sdf2479sdfsdf112857@gmail.com',
-//     role: 'Organizer',
-//     photo: '',
-//     createdCompetition: '',
-//     referee_rating: '',
-//     teamInvitation:'',
-//     team: '',
-//     teamRequested: '',
-//     ktp: '12391247192476942',
-//     age: '',
-//     dateOfBirth: '',
-//     address:'',
-//     position: '',
-//     shirtNumber: '',
-//     hp: '',
-//     profileCompleted:'',
-//     play: '',
-//     goal: '',
-//     assist: '',
-//     yellowCard: '',
-//     redCard:'',
-//     redCardGiven: '',
-//     yellowCardGiven: '',
-//     matchManaged: '',
-//     availableDayAndTime: '',
-//     bookedDate: '',
-//     bookedTime: '',
-//     ban: ''
-//   }
-// ];
- 
-// // this loads the accountDb configuration in ~/server/datasources.json
-// var dataSource = app.dataSources.SportmanDb;
- 
-// // this automigrates the Account model 
-// dataSource.autoupdate('user', function(err) { // kecil
-//   if (err) throw err;
- 
-//   // this loads the Account model from ~/common/models/Account.json
-//   var User = app.models.User; // besar
-//   var count = users.length; // kecils
-//   users.forEach(function(user) { // kecils kecil
-//      // insert new records into the Account table
-//      User.create(user, function(err, record) { // besar kecil
-//       if (err) return console.log(err);
- 
-//       console.log('Record created:', record);
- 
-//       count--;
- 
-//       if (count === 0) {
-//         console.log('done');
-//         dataSource.disconnect();
-//       }
-//     });
-//   });
-// });
+var users = [ // kecils
+  {
+    id: 'U0qweaoidfasdrsdfsasd12314124fdfsdwe',
+    username: 'orgaqwniz1sdf23123ersdf9247dfsdf9112857',
+    fullname: 'orgawnisdf123zesdfr9247sdfsd9112857',
+    password:'Organqwsdfiz123ersdf92sdfsdf479181257',
+    email: 'organi1qw2sdf3zer9sdf2479sdfsdf112857@gmail.com',
+    role: 'Organizer',
+    photo: '',
+    createdCompetition: '',
+    referee_rating: '',
+    teamInvitation:'',
+    team: '',
+    teamRequested: '',
+    ktp: '12391247192476942',
+    age: '',
+    dateOfBirth: '',
+    address:'',
+    position: '',
+    shirtNumber: '',
+    hp: '',
+    profileCompleted:'',
+    play: '',
+    goal: '',
+    assist: '',
+    yellowCard: '',
+    redCard:'',
+    redCardGiven: '',
+    yellowCardGiven: '',
+    matchManaged: '',
+    availableDayAndTime: '',
+    bookedDate: '',
+    bookedTime: '',
+    ban: '',
+    oneSignalId: ''
+  }
+];
+
+// this loads the accountDb configuration in ~/server/datasources.json
+var dataSource = app.dataSources.SportmanDb;
+
+// this automigrates the Account model 
+dataSource.autoupdate('user', function(err) { // kecil
+  if (err) throw err;
+
+  // this loads the Account model from ~/common/models/Account.json
+  var User = app.models.User; // besar
+  var count = users.length; // kecils
+  users.forEach(function(user) { // kecils kecil
+    // insert new records into the Account table
+    User.create(user, function(err, record) { // besar kecil
+      if (err) return console.log(err);
+
+      console.log('Record created:', record);
+
+      count--;
+
+      if (count === 0) {
+        console.log('done');
+        dataSource.disconnect();
+      }
+    });
+  });
+});
 
 // var app = require('../server');
 
@@ -382,56 +383,56 @@
 //   });
 // });
 
-var app = require('../server');
+// var app = require('../server');
    
-var teams = [ // kecils
-  {
-    team_abrName: 'abc',
-    team_name: 'ABC FC',
-    team_logo: '',
-    team_manager: 'manager10101010101',
-    team_coach: 'coach10101010101',
-    team_position: '10',
-    team_play: '10',
-    team_point: '10',
-    team_win: '3',
-    team_draw: '1',
-    team_lose: '6',
-    team_goalFor: '10',
-    team_goalAgainst: '10',
-    coach_id: 'Co10281970317',
-    invited_members: '',
-    invited_member: '',
-    team_squad: '',
-    player_request: '',
-    coach_request: '',
-    availableJerseyNumber: ''
-  }
-];
+// var teams = [ // kecils
+//   {
+//     team_abrName: 'abc',
+//     team_name: 'ABC FC',
+//     team_logo: '',
+//     team_manager: 'manager10101010101',
+//     team_coach: 'coach10101010101',
+//     team_position: '10',
+//     team_play: '10',
+//     team_point: '10',
+//     team_win: '3',
+//     team_draw: '1',
+//     team_lose: '6',
+//     team_goalFor: '10',
+//     team_goalAgainst: '10',
+//     coach_id: 'Co10281970317',
+//     invited_members: '',
+//     invited_member: '',
+//     team_squad: '',
+//     player_request: '',
+//     coach_request: '',
+//     availableJerseyNumber: ''
+//   }
+// ];
  
-// this loads the accountDb configuration in ~/server/datasources.json
-var dataSource = app.dataSources.SportmanDb;
+// // this loads the accountDb configuration in ~/server/datasources.json
+// var dataSource = app.dataSources.SportmanDb;
  
-// this automigrates the Account model 
-dataSource.autoupdate('team', function(err) { // kecil
-  if (err) throw err;
+// // this automigrates the Account model 
+// dataSource.autoupdate('team', function(err) { // kecil
+//   if (err) throw err;
  
-  // this loads the Account model from ~/common/models/Account.json
-  var Team = app.models.Team; // besar
-  var count = teams.length; // kecils
-  teams.forEach(function(team) { // kecils kecil
-     // insert new records into the Account table
-     Team.create(team, function(err, record) { // besar kecil
-      if (err) return console.log(err);
+//   // this loads the Account model from ~/common/models/Account.json
+//   var Team = app.models.Team; // besar
+//   var count = teams.length; // kecils
+//   teams.forEach(function(team) { // kecils kecil
+//      // insert new records into the Account table
+//      Team.create(team, function(err, record) { // besar kecil
+//       if (err) return console.log(err);
  
-      console.log('Record created:', record);
+//       console.log('Record created:', record);
  
-      count--;
+//       count--;
  
-      if (count === 0) {
-        console.log('done');
-        dataSource.disconnect();
-      }
-    });
-  });
-});
+//       if (count === 0) {
+//         console.log('done');
+//         dataSource.disconnect();
+//       }
+//     });
+//   });
+// });

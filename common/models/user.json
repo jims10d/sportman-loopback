@@ -209,6 +209,9 @@
         "numberOfDays": {
           "type": "string"
         }
+    },
+    "oneSignalId": {
+      "type": "string"
     }
   },
   "validations": [],
@@ -387,6 +390,13 @@
       "principalId": "$everyone",
       "permission": "ALLOW",
       "property": "search"
+    },
+    {
+      "accessType": "EXECUTE",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "ALLOW",
+      "property": "saveOneSignalId"
     }
   ],
   "methods": {}

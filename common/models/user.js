@@ -517,6 +517,20 @@ module.exports = function(User) {
 				}				
 			});
 	};
+
+	User.saveOneSignalId = function(UserId, oneSignalId, cb){
+		User.updateAll({id:UserId}, {oneSignalId: oneSignalId},
+			function(err,info){
+				User.findOne({where:{id: UserId}}, 
+					function(err,instance){
+						if(instance===null){
+							cb(null,null);
+						} else {
+							cb(null, instance);
+						}
+				})
+		});
+	}
 	
 	User.remoteMethod(
 		'getUser',
@@ -748,6 +762,18 @@ module.exports = function(User) {
 					],
 			returns: {arg: 'bookedDate', type: 'string', root: true},
 			http: {path: '/addBookedDate', verb: 'put'}
+		}
+	);
+
+	User.remoteMethod(
+		'saveOneSignalId',
+		{
+			accepts: [
+					{arg: 'userId', type: 'string'},
+					{arg: 'oneSignalId', type: 'string'}
+					],
+			returns: {type: 'string', root: true},
+			http: {path: '/saveOneSignalId', verb: 'put'}
 		}
 	);
 };
