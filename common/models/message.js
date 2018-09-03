@@ -110,7 +110,7 @@ module.exports = function(Message) {
 								};
 
 								var message = { 
-								  app_id: "0010ee59-1672-4d84-acaf-2256df52939c",
+								  app_id: "1a71f983-cfe6-445c-a194-826c599b310f",
 								  contents: {"en": receiver + " : " + messageContent},
 								  include_player_ids: [oneSignalId],
 								  isAndroid: true,
