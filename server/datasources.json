@@ -4,13 +4,13 @@
     "connector": "memory"
   },
   "SportmanDb": {
-    "host": "us-cdbr-sl-dfw-01.cleardb.net",
-    "port": 3306,
-    "url": "mysql://b7f5f59994dbfa:dd455d76@us-cdbr-sl-dfw-01.cleardb.net:3306/ibmx_35d1eda45baf9cc?reconnect=true",
-    "database": "ibmx_35d1eda45baf9cc",
-    "password": "dd455d76",
+    "host": "sl-us-south-1-portal.1.dblayer.com",
+    "port": 17034,
+    "url": "mysql://admin:DTNXDTJQNQXDYVAZ@sl-us-south-1-portal.1.dblayer.com:17034/compose",
+    "database": "compose",
+    "password": "DTNXDTJQNQXDYVAZ",
     "name": "SportmanDb",
-    "user": "b7f5f59994dbfa",
+    "user": "admin",
     "connector": "mysql"
   }
 }
